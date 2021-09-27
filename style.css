@@ -1,0 +1,83 @@
+:root {
+    --bleu-fonce: #12355B;
+    --bleu-moyen: #1C5D99;
+    --bleu-clair: #2D93AD;
+    --jaune: #EDF060;
+    --orange: #F0803C;
+    --rouge: #B3001B;
+}
+
+@font-face {
+    src: url("assets/font/brazier_flame.ttf") format("truetype");
+    font-family: "Brazier Flame";
+}
+
+/*Mise en page du body et centrer le div #game*/
+body{
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Brazier Flame";
+    background: linear-gradient(to right, var(--bleu-fonce), var(--bleu-moyen), var(--bleu-clair), var(--jaune), var(--orange), var(--rouge));
+}
+
+/*Mise en page de l'élément #game et flexbox pour ses enfants*/
+#game {
+    width: 500px;
+    min-height: 100px;
+    background-color: var(--bleu-moyen);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--bleu-clair);
+}
+
+/*Ajuster la taille du logo, de l'image temporaire et le text*/
+.imageTemporaire, .text {
+    width: 400px;
+}
+
+/*Aligner le titre au centre de l'affiche*/
+.logoJeu {
+    text-align: center;
+    color: var(--jaune);
+    width: 100%;
+    -webkit-text-stroke: 1px var(--orange);
+}
+
+.chapitre1 {
+    /*-webkit-text-stroke: 1px var(--bleu-clair);*/
+    color: var(--bleu-fonce);
+    /*background-color: var(--bleu-clair);*/
+    padding: 5px;
+}
+
+/*Aligner les 3 options horizontalement et mettre le plus d'espace entre les éléments*/
+.option {
+    display: flex;
+    width: 400px;
+    margin: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+}
+
+/*Mise en page du style des boutons*/
+.choix-1, .choix-2, .choix-3 {
+    background-color: var(--bleu-fonce);
+    color: var(--bleu-clair);
+    text-transform: capitalize;
+    border: none;
+    font-family: "Brazier Flame";
+}
+
+/*Effet de survole sur les boutons*/
+.choix-1:hover, .choix-2:hover, .choix-3:hover {
+    background-color: var(--orange);
+    color: var(--rouge);
+    text-transform: uppercase;
+}
+
+
