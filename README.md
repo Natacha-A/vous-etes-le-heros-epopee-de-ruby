@@ -1,4 +1,5 @@
 # L'épopée de Ruby
+<<<<<<< HEAD
 [Développement web- Projet vous êtes le héros](https://github.com/Natacha-A/vous-etes-le-heros-epopee-de-ruby)
 
 **Genre:** Action et Fantaisie
@@ -10,3 +11,6 @@
 ## Synopsis
 ![Diagramme]
 (file:///G:/anatacha_ps1_582_324/vous-etes-le-heros-epopee-de-ruby/assets/image/abdallah_natacha_ps1_582_324.drawio.png)
+=======
+[Développement web- Projet vous êtes le héros]()
+>>>>>>> parent of 7d6ccbc... descriptionSynopsis
