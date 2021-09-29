@@ -47,7 +47,7 @@ body{
     -webkit-text-stroke: 1px var(--orange);
 }
 
-.chapitre1 {
+.chapitre {
     /*-webkit-text-stroke: 1px var(--bleu-clair);*/
     color: var(--bleu-fonce);
     /*background-color: var(--bleu-clair);*/
