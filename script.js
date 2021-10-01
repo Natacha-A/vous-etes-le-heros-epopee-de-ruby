@@ -1,11 +1,3 @@
-let le_reveil = document.getElementsByClassName("game");
-let village_brule = document.getElementsByClassName("game");
-let armee_muspel = document.getElementsByClassName("game");
-let royaume_nifl = document.getElementsByClassName("game");
-let rencontre_gunthra = document.getElementsByClassName("game");
-let temple_glace = document.getElementsByClassName("game");
-let le_rituel = document.getElementsByClassName("game");
-
 const chaptersObj = {
         le_reveil: {
             subtitle: "L'aventure Commence!!",
@@ -54,3 +46,4 @@ function goToChapter(chapterName) {
     console.log(chapter.img);
     //console.log(chapter.options);
 }
+//Appeler la fonction, n'oublie pas les guillemets: goToChapter("le_reveil");
