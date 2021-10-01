@@ -1,3 +1,4 @@
+//Terminer la création des objets principaux (les lozanges) et commencer les objets des options(les rectangles)
 const chaptersObj = {
         le_reveil: {
             subtitle: "L'aventure Commence!!",
