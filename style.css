@@ -23,7 +23,7 @@ body{
 }
 
 /*Mise en page de l'élément #game et flexbox pour ses enfants*/
-#game {
+#idGame {
     width: 500px;
     min-height: 100px;
     background-color: var(--bleu-moyen);
