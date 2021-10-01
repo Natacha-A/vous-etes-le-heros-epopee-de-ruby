@@ -23,7 +23,7 @@ body{
 }
 
 /*Mise en page de l'élément #game et flexbox pour ses enfants*/
-#game {
+#idGame {
     width: 500px;
     min-height: 100px;
     background-color: var(--bleu-moyen);
@@ -47,7 +47,7 @@ body{
     -webkit-text-stroke: 1px var(--orange);
 }
 
-.chapitre1 {
+.chapitre {
     /*-webkit-text-stroke: 1px var(--bleu-clair);*/
     color: var(--bleu-fonce);
     /*background-color: var(--bleu-clair);*/
