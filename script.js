@@ -3,7 +3,7 @@ const chaptersObj = {
         le_reveil: {
             subtitle: "L'aventure Commence!!",
             text: "Tu te reveille au son de quelqu'un qui cogne à la porte. C'est Fjorm, elle vous supplie de l'aider contre le royaume de Muspel qui menace de détruire son royaume Nifl.",
-            img: "image/royaume_askr.png",
+            img: "image/fjorm_determine.jpg",
         },
         village_brule: {
             subtitle: "Un Dilemme incontournable",
@@ -35,6 +35,21 @@ const chaptersObj = {
             text: "Une fois dans le temple Fjorm s'apprête à tout sacrifier pour sauver ce qui reste de son royaume et d'épargner le reste du monde de cette tragédie.",
             img: "image/fjorm_temple.png",
         },
+        royaume_muspel: {
+            subtitle: "Le Royaume de Muspel",
+            text: "Vous arrivez à Muspel juste à temps pour voir une énorme armée marchez vers vous. Tu propose à ton équipe de rester discrèt pour éviter un combat prolongué, mais Fjorm et Laergarn propose de séparer un petit group de soldat du reste de l'armée pour voler leurs vêtements de guerre dans le but de faciliter leur quête dans le royaume. Alfonse est entrain de réfléchir à une autre solution, mais il est d'accord avec les filles, il faut continuer de s'avancer sans ce faire repérer par les soldats ou tout autre personne de Muspel. À toi de jouer tacticien, qu'est-ce que tu va faire?",
+            img: "image/royaume_muspel.png",
+        },
+        mission_infiltration: {
+            subtitle: "Mission infiltrer le Château de Flame",
+            text: "Laegarn reussi de vous faire rentrer dans le chateau sans problème. Il reste maintenant de trouver où ils ont pris les enfants (Ygl et Veronica). Vous commencer votre recherche au premier niveau du chateau, vous ne trouvez pas les enfants, mais vous entendez des soldats parler des enfants: `J'espère qu'on va avoir une promotion après le sacrifice, dit le premier soldat.` `J'espère qu'il vont être sacrifier aujourd'hui, car celui du royaume Nifl est agassant, il ne cesse de me supplier de le laisser partir. Il est fou ce petit là!! Si le roi entend ça, il va tuer toute ma famille, puis il me laissera dans une cage remplit de feu, dit un autre soldat.` Les soldats descend un escalier pour aller dans le dungeon, votre équipe les suis sans faire du bruit. Les soldats continue de marcher au déla de la cellule des enfants. Tu n'est pas sur si c'est une bonne idée de sauver les enfants maintenant, tu réfléchis avec ton équipe pour prendre la meilleure décision. Est-ce que vous voulez les sauver maintenant ou attendre un peu?",
+            img: "image/soldat.png",
+        },
+        combat_final: {
+            subtitle: "Un Combat Décisive!!",
+            text: "C'est maintenant ou jamais! Le temps pour faire face au roi de la flame éternelle Surtr est arrivée. Surtr vous regarde avec une grimace qui forme sur son visage, `Je suis surpris que vous avez réussi de trucquer mon armée, mais c'est fini ici et maintenant!! Vous allez faire une très bonne addition au sacrifice, le pouvoir que ça va me donné, je serais invincible!! Mwuahahahahahaha!!!` `On va voir qui va avoir le dernier mot Surtr!! Fjorm cri en ce précipitant vers le roi pour l'attaquer.` Est-ce que vous êtes prés pour le combat ultime?",
+            img: "image/surtr_debout.webp",
+        }
 };
 
 //Créer un tableau pour mettre l'objet chaptersObj
