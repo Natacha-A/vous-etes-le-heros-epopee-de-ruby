@@ -15,18 +15,19 @@ const chaptersObj = {
                 },
             ],
         },
+        //Condition if else if pour les choix du tableau des options: goToChapter(chapterName);
         le_sommeil: {
             subtitle: "Je suis fatigué...",
             text: "*Yawn* je veux dormir encore, je ne veux pas me lever, quitte sans moi Alfonse, tu dit. Mais sérieux!? Cette jeune femme nous demande de l'aide et toi tu ne pense qu'à dormir!? Si tu ne veux pas te lever je vais te prendre par force tacticien! dit Alfonse. *THUD* OUCH!! ok ok ok, je vais venir, tu dit. Sheesh Alfonse, tu exagère un peu, tu chuchote à toi même.",
-            img: "royaume_askr.png",
+            img: "image/royaume_askr.png",
         },
         voyage_nifl: {
             subtitle: "Le Voyage Vers le Royaume de Nifl",
             text: "Tu prend la main de Fjorm avec beaucoup d'enthousiasme et tu te précipite dehors avec elle. `*Soupir* Tu est comme un enfant, dit Alfonse en hochant sa tête.` `Hey! Ce n'est pas ma faute que j'aime l'aventure!! tu répond avec embarras. Ah, avant que j'oublie, Fjorm raconte nous ta situation, tu as dit que t'avais besoin de l'aide n'est-ce pas? tu dis.` `Nifl a été attaqué par Muspel, j'ai été séparé de ma famille, je ne sais même pas s'ils sont encore vivants, dit Fjorm avec des larmes qui coule de ses yeux.` `Ok on va t'aider Fjorm, allons-y à Nifl pour retrouver ta soeur!!`",
-            img: "fjorm_lance.png",
+            img: "image/fjorm_lance.png",
             option: [
                 choix = {
-                    text: "",
+                    text: "Votre groupe voyage à travers Askr",
                     action: "goToChapter(village_brule)",
                 },
             ],
@@ -35,6 +36,49 @@ const chaptersObj = {
             subtitle: "Un Dilemme incontournable",
             text: "Tu entend des cris venant d'un village assez proche. Vous vous précipiteriez vers celui-ci. Une fois arrivée au village, un villageois gravement blessé vous demande de les aider `À l'aide notre village est entrain de se faire attaquer, aider nous je vous ensupplie` il dit avant de succomber à ces blessures.",
             img: "image/village_brule_02.png",
+            options: [
+                choix1 = {
+                    text: "Tu ignore leurs cris de désespoir",
+                    action: "goToChapter(massacre_paysans)",
+                },
+                choix2 = {
+                    text: "Tu essaye d'évacuer tout le monde du village",
+                    action: "goToChapter(armee_muspel)",
+                },
+                choix3 = {
+                    text: "Tu prend du temps pour trouver une meilleure solution",
+                    action: "goToChapter(pression_equipe)",
+                },
+            ],
+        },
+        //Condition if else if pour les choix du tableau des options: goToChapter(chapterName);
+        massacre_paysans: {
+            subtitle: "Sacrifice Essentiel",
+            text: "Tu ignore les cris désepérer des paysans et tout le monde meurt. `Comment ose tu les laisser mourrir comme ça!? dit Alfonse et Fjorm simultanément.` `On doit faire vite, on n'a pas le temps à perdre! Il faut qu'on retrouve la soeur de Fjorm le plus rapidement possible!! tu dis pressé.`",
+            img: "image/summoner_heros.webp",
+            option: [
+                choix = {
+                    text: "Tu continue de traverser le village sans regarder derrière toi",
+                    action: "goToChapter(village_detruit)",
+                },
+            ],
+        },
+        //Chapitre dans un chapitre (Sous-chapitre)
+        village_detruit: {
+            subtitle: "Monstre",
+            text: "Le village est complétement détruit et il n'y a aucun survivant. Tu poursuis ton voyage sans remord. Bravo, tu as laisser ton les citoyens du villages mourrir! J'espère que tu est fière de toi même... Tu est un monstre!!",
+            img: "image/summoner_heros_souri.png",
+            option: [
+                choix = {
+                    text: "Tu continue ton voyage vers Nifl",
+                    action: "goToChapter(royaume_nifl)",
+                },
+            ],
+        },
+        pression_equipe: {
+            subtitle: "Un Risque Morale",
+            text: "Ton équipe te presse de te dépecher, car l'armée enemie s'avance vers vous",
+            img: "image/alfonse.png",
         },
         armee_muspel: {  
             subtitle: "Un Choix Mortel",
