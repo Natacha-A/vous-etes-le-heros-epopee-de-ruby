@@ -4,6 +4,32 @@ const chaptersObj = {
             subtitle: "L'aventure Commence!!",
             text: "Tu te reveille au son de quelqu'un qui cogne à la porte. C'est Fjorm, elle vous supplie de l'aider contre le royaume de Muspel qui menace de détruire son royaume Nifl.",
             img: "image/fjorm_determine.jpg",
+            options: [
+                choix1 = {
+                    text: "Tu refuse de te lever de ton lit",
+                    action: "goToChapter(le_sommeil)",
+                },
+                choix2 = {
+                    text: "Tu choisit de suivre Fjorm dans sa quête",
+                    action: "goToChapter(voyage_nifl)",
+                },
+            ],
+        },
+        le_sommeil: {
+            subtitle: "Je suis fatigué...",
+            text: "*Yawn* je veux dormir encore, je ne veux pas me lever, quitte sans moi Alfonse, tu dit. Mais sérieux!? Cette jeune femme nous demande de l'aide et toi tu ne pense qu'à dormir!? Si tu ne veux pas te lever je vais te prendre par force tacticien! dit Alfonse. *THUD* OUCH!! ok ok ok, je vais venir, tu dit. Sheesh Alfonse, tu exagère un peu, tu chuchote à toi même.",
+            img: "royaume_askr.png",
+        },
+        voyage_nifl: {
+            subtitle: "Le Voyage Vers le Royaume de Nifl",
+            text: "Tu prend la main de Fjorm avec beaucoup d'enthousiasme et tu te précipite dehors avec elle. `*Soupir* Tu est comme un enfant, dit Alfonse en hochant sa tête.` `Hey! Ce n'est pas ma faute que j'aime l'aventure!! tu répond avec embarras. Ah, avant que j'oublie, Fjorm raconte nous ta situation, tu as dit que t'avais besoin de l'aide n'est-ce pas? tu dis.` `Nifl a été attaqué par Muspel, j'ai été séparé de ma famille, je ne sais même pas s'ils sont encore vivants, dit Fjorm avec des larmes qui coule de ses yeux.` `Ok on va t'aider Fjorm, allons-y à Nifl pour retrouver ta soeur!!`",
+            img: "fjorm_lance.png",
+            option: [
+                choix = {
+                    text: "",
+                    action: "goToChapter(village_brule)",
+                },
+            ],
         },
         village_brule: {
             subtitle: "Un Dilemme incontournable",
