@@ -77,7 +77,7 @@ const chaptersObj = {
         },
         pression_equipe: {
             subtitle: "Un Risque Morale",
-            text: "Ton équipe te presse de te dépecher, car l'armée enemie s'avance vers vous",
+            text: "Ton équipe te presse de te dépecher, car l'armée enemie s'avance vers vous.",
             img: "image/alfonse.png",
         },
         armee_muspel: {  
@@ -119,7 +119,7 @@ const chaptersObj = {
             subtitle: "Un Combat Décisive!!",
             text: "C'est maintenant ou jamais! Le temps pour faire face au roi de la flame éternelle Surtr est arrivée. Surtr vous regarde avec une grimace qui forme sur son visage, `Je suis surpris que vous avez réussi de trucquer mon armée, mais c'est fini ici et maintenant!! Vous allez faire une très bonne addition au sacrifice, le pouvoir que ça va me donné, je serais invincible!! Mwuahahahahahaha!!!` `On va voir qui va avoir le dernier mot Surtr!! Fjorm cri en ce précipitant vers le roi pour l'attaquer.` Est-ce que vous êtes prés pour le combat ultime?",
             img: "image/surtr_debout.webp",
-        }
+        },
 };
 
 //Créer un tableau pour mettre l'objet chaptersObj
