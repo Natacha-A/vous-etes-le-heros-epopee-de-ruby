@@ -256,7 +256,43 @@ const chaptersObj = {
                     text: "Vous êtes arrivé en plus de 7 jours.",
                     action: "goToChapter(gunthra_morte)",
                 },
-            ]
+            ],
+        },
+        //Choix 1 du royaume_nifl (Je ne suis pas sur si je mes le chapitre suivant dans les options. Ils n'y a pas d'option, il y a juste un résultat. Ça va s'afficher automatiquement.)
+        gunthra_lance: {
+            subtitle: "La lance légendaire",
+            text: "Vous arrivez juste à temps pour que Gunthrà vous donne la lance, puis elle meurt de ses blessures.",
+            img: "image/fjorm_lance.png",
+            options: [
+                choix = {
+                    text: "Vous continuez vers le temple de glace.",
+                    action: "goToChapter(temple_glace)",
+                },
+            ],
+        },
+        //Choix 2 du royaume_nifl
+        gunthra_vivante: {
+            subtitle: "Réunion de Soeur",
+            text: "Tu arrive avant 7 jours. Vous avez traités les blessures de Gunthrà juste à temps, elle va survivre. Elle vous donne la lance et vous donne une carte du chemin vers le Temple de la Glace.",
+            img: "image/fjorm_determine.jpg",
+            options: [
+                choix = {
+                    text: "Vous continuez vers le temple de glace.",
+                    action: "goToChapter(temple_glace)",
+                },
+            ],
+        },
+        //Choix 3 du royaume_nifl
+        gunthra_morte: {
+            subtitle: "Le roi de la flame",
+            text: "Gunthrà est morte et vous n'avez pas recu la lance.",
+            img: "image/gunthra_battue.png",
+            options: [
+                choix = {
+                    text: "Tu utilise de la magie pour retourner dans le temps.",
+                    action: "goToChapter(royaume_nifl)",
+                },
+            ],
         },
         temple_glace: {
             subtitle: "Le Rituel de Glace",
