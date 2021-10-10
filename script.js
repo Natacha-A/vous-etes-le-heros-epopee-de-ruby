@@ -1,5 +1,6 @@
 //Terminer la création des objets principaux (les lozanges) et commencer les objets des options(les rectangles)
 const chaptersObj = {
+    //Chapitre 1
         le_reveil: {
             subtitle: "L'aventure Commence!!",
             text: "Tu te reveille au son de quelqu'un qui cogne à la porte. C'est Fjorm, elle vous supplie de l'aider contre le royaume de Muspel qui menace de détruire son royaume Nifl.",
@@ -38,6 +39,7 @@ const chaptersObj = {
                 },
             ],
         },
+    //Chapitre 2
         village_brule: {
             subtitle: "Un Dilemme incontournable",
             text: "Tu entend des cris venant d'un village assez proche. Vous vous précipiteriez vers celui-ci. Une fois arrivée au village, un villageois gravement blessé vous demande de les aider `À l'aide notre village est entrain de se faire attaquer, aider nous je vous ensupplie` il dit avant de succomber à ces blessures.",
@@ -110,7 +112,7 @@ const chaptersObj = {
         armee_muspel: {  
             subtitle: "Un Choix Mortel",
             text: "L'armée enemie vous prend par surprise. Laveaten, le premier général de Muspel attaque le joueur, mais tu esquive son attaque prématuré assez facilement. Alfonse et le reste de ton équipe se précipitent à tes côtés, les villageois encore vivant ce tasse du chemin le plus vite possible et le reste sont entrain de brûler vivant à cause de la flame éternelle. Le combat commence tous les armes sont pointées vers l'enemi qui va gagner?",
-            img: "image/laevatein_combat.png",
+            img: "image/laveaten_combat.jpg",
             options: [
                 choix = {
                     text: "Tu défend le village de l'armée avec ton équipe!",
@@ -144,16 +146,117 @@ const chaptersObj = {
                 },
             ],
         },
-        //Chapitre 2 Le royaume de Nifl
+    //Chapitre 3 Le royaume de Nifl
         royaume_nifl: {
             subtitle: "Les nouveaux occupants",
             text: "Vous arrivez à Nifl et le territoire est remplis d'enemis. Vous décidez de vous aventurier pour trouver la soeur de Fjorm, car elle est la seul qui possède le pouvoir de vous aider à vaincre Surtr, le roi de Muspel. Soudainement, tu entend une dizaine de pas s'approcher vers vous, ce sont des soldats de Muspel avec leur général Laegjarn. Vous voulez éviter le combat le plus que possible, car les soldats peuple le territoire de Nifl. Quoi faire?",
-            img: "image/laergarn_debout.png",
+            img: "image/fjorm_lance.png",
+            options: [
+                choix = {
+                    text: "Vous vous cachez derrière un arbre.",
+                    action: "goToChapter(combat_evite)",
+                },
+                choix = {
+                    text: "Vous décidez de les approcher et de parler avec eux.",
+                    action: "goToChapter(combat_general)",
+                },
+                choix = {
+                    text: "Vous décidez de les confronter!",
+                    action: "goToChapter(blessure_grave)",
+                },
+            ],
         },
+        //Choix 1 du royaume_nifl
+        combat_evite: {
+            subtitle: "Infiltration Secrete",
+            text: "Les générals passent prés de vous sans vous voir.",
+            img: "image/general_muspel.webp",
+            options: [
+                choix = {
+                    text: "Vous évitez un combat inutile.",
+                    action: "goToChapter(repos_group)",
+                },
+            ],
+        },
+        //Résultat du choix 1 du royaume_nifl
+        repos_group: {
+            subtitle: "Une Pause Mérité!",
+            text: "Vous décidez de prendre une pause avant que le soleil ce couche pour récuperer un peu d'énergie avant de continuer votre aventure.",
+            img: "image/nifl.jpg",
+            options: [
+                choix = {
+                    text: "Vous reprenez votre recherche de la soeur de Fjorm.",
+                    action: "goToChapter(rencontre_gunthra)",
+                },
+            ],
+        },
+        //Choix 2 du royaume_nifl
+        combat_general: {
+            subtitle: "Combat Décisive",
+            text: "Au début, Laergarn et sa soeur se moquent de vos efforts de résister à l'attaque de leur père Surtr. Parcontre, tu ne cède pas, tu les invites à un combat contre toi et ton équipe pour décider qu'est-ce qui va ce passer après. Si on perd tu peut nous tuer, mais si on gagne vous vous tassez de notre chemin. On va rencontrer Gunthrà que vous le voulez ou non!!",
+            img: "image/summoner_heros.webp",
+            options: [
+                choix = {
+                    text: "Vous gagnez le combat contre les générals.",
+                    action: "goToChapter(nouveau_membre)",
+                },
+            ],
+        },
+        //Résultat du choix 2 du royaume_nifl
+        nouveau_membre: {
+            subtitle: "Preuve de Force!!",
+            text: "Laergarn et sa soeur épuissées sont impressionnées par votre prouesse sur le terrain. Elles prend la décision de rejoindre votre équipe en tant qu'espion. Elles vont vous faire part des prochaines étapes du plan de leur père.",
+            img: "image/laergarn_debout.png",
+            options: [
+                choix = {
+                    text: "Vous reprenez votre recherche de la soeur de Fjorm.",
+                    action: "goToChapter(rencontre_gunthra)",
+                },
+            ],
+        },
+        //Choix 3 du royaume_nifl
+        blessure_grave: {
+            subtitle: "Grave Erreur",
+            text: "Tu décide de surprendre l'enemi avant qu'ils vous attaque. Votre tentative échoue et les générals délivrent une puissante contre attaque qui rend ton équipe incapable de ce battre. Affaibli, ton équipe décide de fuir la scène de bataille.",
+            img: "image/general_muspel.webp",
+            option: [
+                choix = {
+                    text: "Vous prenez fuite sans regarder derrière vous.",
+                    action: "goToChapter(fuite_blessure)",
+                }
+            ]
+        },
+        //Résultat du choix 3 du royaume_nifl
+        fuite_blessure: {
+            subtitle: "Échec Humiliant",
+            text: "Vous avez réussi de vous échapper des générals et de leur armée, mais tous les membres de l'équipe sont blessé. Vous arrêtez votre quête pendant quelques jours pour traiter vos blessures.",
+            img: "image/summoner_heros_retraite.png",
+            options: [
+                choix = {
+                    text: "Vous reprenez votre recherche de la soeur de Fjorm.",
+                    action: "goToChapter(rencontre_gunthra)",
+                },
+            ],
+        },
+    //Chapitre 4
         rencontre_gunthra: {
             subtitle: "À la rencontre de Gunthrà",
             text: "Fjorm dirige la recherche de sa soeur Gunthrà. Fjorm peut ressentir le pouvoir de sa soeur à cause de son lien avec le dieu de leur royaume Nifl. Dans un rien de temps Fjorm retrouve Gunthrà cachée derrière des ruines d'une maison. Vous vous précipité vers elle, elle est blessée, elle ne sait pas combien de temps elle va survivre encore. Il ne reste pas beaucoup de temps, elle doit donner la lance à sa soeur pour qu'elle puisse faire le rituel de la glace afin d'avoir une chance contre Surtr. Il faut faire vite, est-ce que tu est arrivée avant 7 jours tacticien?",
-            img: "image/gunthra_debout.png",
+            img: "image/fjorm_presse.png",
+            options: [
+                choix = {
+                    text: "Vous êtes arrivé en 7 jours pille.",
+                    action: "goToChapter(gunthra_lance)",
+                },
+                choix = {
+                    text: "Vous êtes arrivé en moins de 7 jours.",
+                    action: "goToChapter(gunthra_vivante)",
+                },
+                choix = {
+                    text: "Vous êtes arrivé en plus de 7 jours.",
+                    action: "goToChapter(gunthra_morte)",
+                },
+            ]
         },
         temple_glace: {
             subtitle: "Le Rituel de Glace",
