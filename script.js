@@ -28,6 +28,7 @@ const chaptersObj = {
                 },
             ],
         },
+    //Chapitre 2
         voyage_nifl: {
             subtitle: "Le Voyage Vers le Royaume de Nifl",
             text: "Tu prend la main de Fjorm avec beaucoup d'enthousiasme et tu te précipite dehors avec elle. `*Soupir* Tu est comme un enfant, dit Alfonse en hochant sa tête.` `Hey! Ce n'est pas ma faute que j'aime l'aventure!! tu répond avec embarras. Ah, avant que j'oublie, Fjorm raconte nous ta situation, tu as dit que t'avais besoin de l'aide n'est-ce pas? tu dis.` `Nifl a été attaqué par Muspel, j'ai été séparé de ma famille, je ne sais même pas s'ils sont encore vivants, dit Fjorm avec des larmes qui coule de ses yeux.` `Ok on va t'aider Fjorm, allons-y à Nifl pour retrouver ta soeur!!`",
@@ -39,7 +40,7 @@ const chaptersObj = {
                 },
             ],
         },
-    //Chapitre 2
+    //Chapitre 3
         village_brule: {
             subtitle: "Un Dilemme incontournable",
             text: "Tu entend des cris venant d'un village assez proche. Vous vous précipiteriez vers celui-ci. Une fois arrivée au village, un villageois gravement blessé vous demande de les aider `À l'aide notre village est entrain de se faire attaquer, aider nous je vous ensupplie` il dit avant de succomber à ces blessures.",
@@ -60,6 +61,7 @@ const chaptersObj = {
             ],
         },
         //Condition if else if pour les choix du tableau des options: goToChapter(chapterName);
+        //Choix 1 du village qui brûle.
         massacre_paysans: {
             subtitle: "Sacrifice Essentiel",
             text: "Tu ignore les cris désepérer des paysans et tout le monde meurt. `Comment ose tu les laisser mourrir comme ça!? dit Alfonse et Fjorm simultanément.` `On doit faire vite, on n'a pas le temps à perdre! Il faut qu'on retrouve la soeur de Fjorm le plus rapidement possible!! tu dis pressé.`",
@@ -71,7 +73,7 @@ const chaptersObj = {
                 },
             ],
         },
-        //Chapitre dans un chapitre (Sous-chapitre)
+        //Résultat 1 du vilage qui brûle.
         village_detruit: {
             subtitle: "Monstre",
             text: "Le village est complétement détruit et il n'y a aucun survivant. Tu poursuis ton voyage sans remord. Bravo, tu as laisser tous les citoyens du villages mourrir! J'espère que tu est fière de toi même... Tu est un monstre!!",
@@ -83,6 +85,7 @@ const chaptersObj = {
                 },
             ],
         },
+        //Choix 3 du village qui brûle.
         pression_equipe: {
             subtitle: "Un Risque Morale",
             text: "Ton équipe te presse de te dépecher, car l'armée enemie s'avance vers vous.",
@@ -94,6 +97,7 @@ const chaptersObj = {
                 },
             ],
         },
+        //Résultat 3 du vilage qui brûle.
         assassinat_secret: {
             subtitle: "Le Plan Secret",
             text: "Vous séparez des petits group de soldats pour mieux les abattres sans ce faire voir par les autres qui sont occupés à détruire le village et à pourchasser les villageois.",
@@ -109,6 +113,7 @@ const chaptersObj = {
                 },
             ],
         },
+    //Chapitre 4 et choix 2 du village qui brûle.
         armee_muspel: {  
             subtitle: "Un Choix Mortel",
             text: "L'armée enemie vous prend par surprise. Laveaten, le premier général de Muspel attaque le joueur, mais tu esquive son attaque prématuré assez facilement. Alfonse et le reste de ton équipe se précipitent à tes côtés, les villageois encore vivant ce tasse du chemin le plus vite possible et le reste sont entrain de brûler vivant à cause de la flame éternelle. Le combat commence tous les armes sont pointées vers l'enemi qui va gagner?",
@@ -124,6 +129,7 @@ const chaptersObj = {
                 },
             ]
         },
+        //Résultat 1 de l'armée de muspel
         survivant_village: {
             subtitle: "Première Victoire",
             text: "L'armée ce discipe et vous aidez les survivants à éteindre le feu. Ils vous remerci avec un peu de nourriture. Puis, vous dites vos adieux et vous quittez le village un peu déçu que vous n'avez pas sauvé tout les paysans.",
@@ -135,6 +141,7 @@ const chaptersObj = {
                 },
             ],
         },
+        //Résultat 2 de l'assassinat secret
         victoire_village: {
             subtitle: "Sains et Sauve!!",
             text: "Vous avez sauvé tous les paysans. Vous les aidez à éteindre le reste du feu et ils vous remerci avec un grand festin et une soirée de repos dans une taverne.",
@@ -146,7 +153,7 @@ const chaptersObj = {
                 },
             ],
         },
-    //Chapitre 3 Le royaume de Nifl
+    //Chapitre 5 Le royaume de Nifl
         royaume_nifl: {
             subtitle: "Les nouveaux occupants",
             text: "Vous arrivez à Nifl et le territoire est remplis d'enemis. Vous décidez de vous aventurier pour trouver la soeur de Fjorm, car elle est la seul qui possède le pouvoir de vous aider à vaincre Surtr, le roi de Muspel. Soudainement, tu entend une dizaine de pas s'approcher vers vous, ce sont des soldats de Muspel avec leur général Laegjarn. Vous voulez éviter le combat le plus que possible, car les soldats peuple le territoire de Nifl. Quoi faire?",
@@ -238,7 +245,7 @@ const chaptersObj = {
                 },
             ],
         },
-    //Chapitre 4
+    //Chapitre 6
         rencontre_gunthra: {
             subtitle: "À la rencontre de Gunthrà",
             text: "Fjorm dirige la recherche de sa soeur Gunthrà. Fjorm peut ressentir le pouvoir de sa soeur à cause de son lien avec le dieu de leur royaume Nifl. Dans un rien de temps Fjorm retrouve Gunthrà cachée derrière des ruines d'une maison. Vous vous précipité vers elle, elle est blessée, elle ne sait pas combien de temps elle va survivre encore. Il ne reste pas beaucoup de temps, elle doit donner la lance à sa soeur pour qu'elle puisse faire le rituel de la glace afin d'avoir une chance contre Surtr. Il faut faire vite, est-ce que tu est arrivée avant 7 jours tacticien?",
@@ -285,8 +292,40 @@ const chaptersObj = {
         //Choix 3 du royaume_nifl
         gunthra_morte: {
             subtitle: "Le roi de la flame",
-            text: "Gunthrà est morte et vous n'avez pas recu la lance.",
+            text: "Gunthrà est morte tué par Surtr et vous n'avez pas recu la lance.",
             img: "image/gunthra_battue.png",
+            options: [
+                choix = {
+                    text: "Tu utilise de la magie pour retourner dans le temps.",
+                    action: "goToChapter(royaume_nifl)",
+                },
+                choix = {
+                    text: "Tu décide de continuer votre voyage avec désespoir.",
+                    action: "goToChapter(temple_glace)",
+                },
+            ],
+        },
+    //Chapitre 7
+        temple_glace: {
+            subtitle: "Le Rituel de Glace",
+            text: "Arrivée au temple de la glace, Fjorm fait face à une décision entrer et faire le rituel ou non. Il y a un risque à faire ce rituel, mais Fjorm sait cela depuis longtemps. Sa détermination à vaincre Surtr et libérer le monde de ce dictateur écrase sa peur de mourrir, mais quand même... Le rituel pourrait ne simplement pas marcher et là quoi faire... Personne ne serait capable de tuer le roi avec le pouvoir de la flame éternelle. NON, il faut faire ce rituel à tout prix!! C'est notre seule chance de vaincre Surtr! dit Fjorm. Tacticien, c'est à toi de jouer, qu'est ce que vous allez faire?",
+            img: "image/temple.jpg",
+            options: [
+                choix = {
+                    text: "Fjorm hésite de rentrer au temple.",
+                    action: "goToChapter(rester_dehors)",
+                },
+                choix = {
+                    text: "Fjorm rentre avec détermination dans le temple.",
+                    action: "goToChapter(entrer_dedans)",
+                },
+            ],
+        },
+        //Choix et résultat 1 du temple de  glace
+        rester_dehors: {
+            subtitle: "Mort Gracé",
+            text: "Vous décidez d'attendre que Fjorm reprenne du courage, mais elle est envahit par le désespoir face au sort inconnu de sa famille, elle pleure sans cesse pendant des heures, rien ne peut l'aider maintenant. Vous mourrez a cause du froid glaciale causé par le pouvoir de Fjorm.",
+            img: "image/famille_nifl.jpg",
             options: [
                 choix = {
                     text: "Tu utilise de la magie pour retourner dans le temps.",
@@ -294,30 +333,125 @@ const chaptersObj = {
                 },
             ],
         },
-        temple_glace: {
-            subtitle: "Le Rituel de Glace",
-            text: "Arrivée au temple de la glace, Fjorm fait face à une décision entrer et faire le rituel ou non. Il y a un risque à faire ce rituel, mais Fjorm sait cela depuis longtemps. Sa détermination à vaincre Surtr et libérer le monde de ce dictateur écrase sa peur de mourrir, mais quand même... Le rituel pourrait ne simplement pas marcher et là quoi faire... Personne ne serait capable de tuer le roi avec le pouvoir de la flame éternelle. NON, il faut faire ce rituel à tout prix!! C'est notre seule chance de vaincre Surtr! dit Fjorm. Tacticien, c'est à toi de jouer, qu'est ce que vous allez faire?",
-            img: "image/temple.jpg",
+        //Choix et résultat 2 du temple de  glace
+        entrer_dedans: {
+            subtitle: "Dans le Temple de Glace",
+            text: "Fjorm décide de prendre un grand souffle avant d'entrer dans le temple de glace. Le reste de l'équipe l'attend dehors avec enthousiasme.",
+            img: "image/fjorm_determine.jpg",
+            options: [
+                choix = {
+                    text: "Fjorm se prépare a faire le rituel de glace.",
+                    action: "goToChapter(le_rituel)",
+                },
+            ],
         },
+    //Chapitre 8
         le_rituel: {
             subtitle: "La Lance Légendaire",
             text: "Une fois dans le temple Fjorm s'apprête à tout sacrifier pour sauver ce qui reste de son royaume et d'épargner le reste du monde de cette tragédie.",
             img: "image/fjorm_temple.png",
+            options: [
+                choix = {
+                    text: "Fjorm essaye de faire le rituel sans la lance.",
+                    action: "goToChapter(rituel_echoue)",
+                },
+                choix = {
+                    text: "Fjorm utilise la lance pour faire le rituel.",
+                    action: "goToChapter(rituel_reussi)",
+                },
+                choix = {
+                    text: "Fjorm quitte le temple sans faire le rituel.",
+                    action: "goToChapter(rituel_evite)",
+                },
+            ],
         },
+        //Choix et résultat 1 du rituel de glace
+        rituel_echoue: {
+            subtitle: "Mission Échoué",
+            text: "Fjorm meurt pendant le rituel de la glace, car elle ne possède pas la lance légendaire de Gunthra.",
+            img: "image/fjorm_perdue.jpg",
+            options: [
+                choix = {
+                    text: "Tu utilise de la magie pour retourner dans le temps.",
+                    action: "goToChapter(royaume_nifl)",
+                },
+            ],
+        },
+        //Choix et résultat 2 du rituel de glace
+        rituel_reussi: {
+            subtitle: "Rituel Réussi",
+            text: "",
+            img: "image/fjorm_temple.png",
+            options: [
+                choix = {
+                    text: "Vous continuez votre voyage avec tant d'enthousiasme.",
+                    action: "goToChapter(royaume_muspel)",
+                },
+            ],
+        },
+        //Choix et résultat 3 du rituel de glace
+        rituel_evite: {
+            subtitle: "Fuite de Fjorm",
+            text: "",
+            img: "image/fjorm_presse.png",
+            options: [
+                choix = {
+                    text: "Vous continuez votre voyage avec déçu du résultat.",
+                    action: "goToChapter(royaume_muspel)",
+                },
+            ],
+        },
+    //Chapitre 9
         royaume_muspel: {
             subtitle: "Le Royaume de Muspel",
             text: "Vous arrivez à Muspel juste à temps pour voir une énorme armée marchez vers vous. Tu propose à ton équipe de rester discrèt pour éviter un combat prolongué, mais Fjorm et Laergarn propose de séparer un petit group de soldat du reste de l'armée pour voler leurs vêtements de guerre dans le but de faciliter leur quête dans le royaume. Alfonse est entrain de réfléchir à une autre solution, mais il est d'accord avec les filles, il faut continuer de s'avancer sans ce faire repérer par les soldats ou tout autre personne de Muspel. À toi de jouer tacticien, qu'est-ce que tu va faire?",
             img: "image/royaume_muspel.png",
+            options: [
+                choix = {
+                    text: "Voler les déguisements d'un petit group de soldats.",
+                    action: "goToChapter(uniforme_soldat)",
+                },
+                choix = {
+                    text: "Faire face contre l'armée.",
+                    action: "goToChapter(group_capturer)",
+                },
+            ],
         },
+    //Chapitre 10
         mission_infiltration: {
             subtitle: "Mission infiltrer le Château de Flame",
             text: "Laegarn reussi de vous faire rentrer dans le chateau sans problème. Il reste maintenant de trouver où ils ont pris les enfants (Ygl et Veronica). Vous commencer votre recherche au premier niveau du chateau, vous ne trouvez pas les enfants, mais vous entendez des soldats parler des enfants: `J'espère qu'on va avoir une promotion après le sacrifice, dit le premier soldat.` `J'espère qu'il vont être sacrifier aujourd'hui, car celui du royaume Nifl est agassant, il ne cesse de me supplier de le laisser partir. Il est fou ce petit là!! Si le roi entend ça, il va tuer toute ma famille, puis il me laissera dans une cage remplit de feu, dit un autre soldat.` Les soldats descend un escalier pour aller dans le dungeon, votre équipe les suis sans faire du bruit. Les soldats continue de marcher au déla de la cellule des enfants. Tu n'est pas sur si c'est une bonne idée de sauver les enfants maintenant, tu réfléchis avec ton équipe pour prendre la meilleure décision. Est-ce que vous voulez les sauver maintenant ou attendre un peu?",
             img: "image/soldat.png",
+            options: [
+                choix = {
+                    text: "Voler les déguisements d'un petit group de soldats.",
+                    action: "goToChapter(sauve_enfant)",
+                },
+                choix = {
+                    text: "Faire face contre l'armée.",
+                    action: "goToChapter(ne_sauve_pas_enfant)",
+                },
+            ],
         },
+    //Chapitre 11
         combat_final: {
             subtitle: "Un Combat Décisive!!",
             text: "C'est maintenant ou jamais! Le temps pour faire face au roi de la flame éternelle Surtr est arrivée. Surtr vous regarde avec une grimace qui forme sur son visage, `Je suis surpris que vous avez réussi de trucquer mon armée, mais c'est fini ici et maintenant!! Vous allez faire une très bonne addition au sacrifice, le pouvoir que ça va me donné, je serais invincible!! Mwuahahahahahaha!!!` `On va voir qui va avoir le dernier mot Surtr!! Fjorm cri en ce précipitant vers le roi pour l'attaquer.` Est-ce que vous êtes prés pour le combat ultime?",
             img: "image/surtr_debout.webp",
+            options: [
+                choix = {
+                    text: "Fjorm perçe le coeur de Surt avec sa lance.",
+                    action: "goToChapter(bonne_fin)",
+                },
+                choix = {
+                    text: "Fjorm essaye de fuir la battaille.",
+                    action: "goToChapter(mauvaise_fin)",
+                },
+                choix = {
+                    text: "Fjorm tente de blesser Surtr avec sa lance.",
+                    action: "goToChapter(fin_neutre)",
+                },
+            ],
         },
 };
 
