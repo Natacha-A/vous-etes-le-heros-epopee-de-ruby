@@ -35,7 +35,7 @@ body{
 }
 
 /*Ajuster la taille du logo, de l'image temporaire et le text*/
-.imageTemporaire, .text {
+#image, #text {
     width: 400px;
 }
 
@@ -47,7 +47,7 @@ body{
     -webkit-text-stroke: 1px var(--orange);
 }
 
-.chapitre {
+#chapitre {
     /*-webkit-text-stroke: 1px var(--bleu-clair);*/
     color: var(--bleu-fonce);
     /*background-color: var(--bleu-clair);*/

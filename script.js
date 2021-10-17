@@ -40,7 +40,7 @@ const chaptersObj = {
                 }
             ]
         },
-    //Chapitre 3
+    //Chapitre 3: la décision ici affect si Fjorm reçoit la lance ou non.
         village_brule: {
             subtitle: "Un Dilemme incontournable",
             text: "Tu entend des cris venant d'un village assez proche. Vous vous précipiteriez vers celui-ci. Une fois arrivée au village, un villageois gravement blessé vous demande de les aider `À l'aide notre village est entrain de se faire attaquer, aider nous je vous ensupplie` il dit avant de succomber à ces blessures.",
@@ -108,7 +108,7 @@ const chaptersObj = {
                     action: "goToChapter(armee_muspel)",
                 },
                 choix = {
-                    text: "L'armée ce discipe pour de bon!",
+                    text: "Vous tuez le reste des soldats!",
                     action: "goToChapter(victoire_village)",
                 }
             ]
@@ -144,7 +144,7 @@ const chaptersObj = {
         //Résultat 2 de l'assassinat secret
         victoire_village: {
             subtitle: "Sains et Sauve!!",
-            text: "Vous avez sauvé tous les paysans. Vous les aidez à éteindre le reste du feu et ils vous remerci avec un grand festin et une soirée de repos dans une taverne.",
+            text: "Les autres soldats fuient les lieux. Vous avez sauvé tous les paysans. Vous les aidez à éteindre le reste du feu et ils vous remerci avec un grand festin et une soirée de repos dans une taverne.",
             img: "assets/image/village_askr.png",
             options: [
                 choix = {
@@ -153,7 +153,7 @@ const chaptersObj = {
                 }
             ]
         },
-    //Chapitre 5 Le royaume de Nifl
+    //Chapitre 5 Le royaume de Nifl: la décision ici affect si Fjorm reçoit la lance ou non.
         royaume_nifl: {
             subtitle: "Les nouveaux occupants",
             text: "Vous arrivez à Nifl et le territoire est remplis d'enemis. Vous décidez de vous aventurier pour trouver la soeur de Fjorm, car elle est la seul qui possède le pouvoir de vous aider à vaincre Surtr, le roi de Muspel. Soudainement, tu entend une dizaine de pas s'approcher vers vous, ce sont des soldats de Muspel avec leur général Laegjarn. Vous voulez éviter le combat le plus que possible, car les soldats peuple le territoire de Nifl. Quoi faire?",
@@ -229,18 +229,6 @@ const chaptersObj = {
             option: [
                 choix = {
                     text: "Vous prenez fuite sans regarder derrière vous.",
-                    action: "goToChapter(fuite_blessure)",
-                }
-            ]
-        },
-        //Résultat du choix 3 du royaume_nifl
-        fuite_blessure: {
-            subtitle: "Échec Humiliant",
-            text: "Vous avez réussi de vous échapper des générals et de leur armée, mais tous les membres de l'équipe sont blessé. Vous arrêtez votre quête pendant quelques jours pour traiter vos blessures.",
-            img: "assets/image/summoner_heros_retraite.png",
-            options: [
-                choix = {
-                    text: "Vous reprenez votre recherche de la soeur de Fjorm.",
                     action: "goToChapter(rencontre_gunthra)",
                 }
             ]
@@ -265,7 +253,7 @@ const chaptersObj = {
                 }
             ]
         },
-        //Choix 1 du royaume_nifl (Je ne suis pas sur si je mes le chapitre suivant dans les options. Ils n'y a pas d'option, il y a juste un résultat. Ça va s'afficher automatiquement.)
+        //Choix 1 du royaume_nifl: si tempsRestant == 7 executer ce choix. (Je ne suis pas sur si je mes le chapitre suivant dans les options. Ils n'y a pas d'option, il y a juste un résultat. Ça va s'afficher automatiquement.)
         gunthra_lance: {
             subtitle: "La lance légendaire",
             text: "Vous arrivez juste à temps pour que Gunthrà vous donne la lance, puis elle meurt de ses blessures.",
@@ -277,7 +265,7 @@ const chaptersObj = {
                 }
             ]
         },
-        //Choix 2 du royaume_nifl
+        //Choix 2 du royaume_nifl: si tempsRestant < 7 executer ce choix.
         gunthra_vivante: {
             subtitle: "Réunion de Soeur",
             text: "Tu arrive avant 7 jours. Vous avez traités les blessures de Gunthrà juste à temps, elle va survivre. Elle vous donne la lance et vous donne une carte du chemin vers le Temple de la Glace.",
@@ -289,10 +277,10 @@ const chaptersObj = {
                 }
             ]
         },
-        //Choix 3 du royaume_nifl
+        //Choix 3 du royaume_nifl: si tempsRestant > 7 executer ce choix.
         gunthra_morte: {
             subtitle: "Le roi de la flame",
-            text: "Gunthrà est morte tué par Surtr et vous n'avez pas recu la lance.",
+            text: "Gunthrà est morte tué par Surtr avant qu'elle puisse donner la lance à sa soeur Fjorm.",
             img: "assets/image/gunthra_battue.png",
             options: [
                 choix = {
@@ -305,35 +293,23 @@ const chaptersObj = {
                 }
             ]
         },
-    //Chapitre 7
+    //Chapitre 7: supprimer les choix de ce chapitre?
         temple_glace: {
             subtitle: "Le Rituel de Glace",
             text: "Arrivée au temple de la glace, Fjorm fait face à une décision entrer et faire le rituel ou non. Il y a un risque à faire ce rituel, mais Fjorm sait cela depuis longtemps. Sa détermination à vaincre Surtr et libérer le monde de ce dictateur écrase sa peur de mourrir, mais quand même... Le rituel pourrait ne simplement pas marcher et là quoi faire... Personne ne serait capable de tuer le roi avec le pouvoir de la flame éternelle. NON, il faut faire ce rituel à tout prix!! C'est notre seule chance de vaincre Surtr! dit Fjorm. Tacticien, c'est à toi de jouer, qu'est ce que vous allez faire?",
             img: "assets/image/temple.jpg",
             options: [
                 choix = {
-                    text: "Fjorm hésite de rentrer au temple.",
-                    action: "goToChapter(rester_dehors)",
-                },
-                choix = {
                     text: "Fjorm rentre avec détermination dans le temple.",
                     action: "goToChapter(entrer_dedans)",
+                },
+                choix = {
+                    text: "Fjorm hésite de rentrer au temple.",
+                    action: "goToChapter(rester_dehors)",
                 }
             ]
         },
         //Choix et résultat 1 du temple de  glace
-        rester_dehors: {
-            subtitle: "Mort Gracé",
-            text: "Vous décidez d'attendre que Fjorm reprenne du courage, mais elle est envahit par le désespoir face au sort inconnu de sa famille, elle pleure sans cesse pendant des heures, rien ne peut l'aider maintenant. Vous mourrez a cause du froid glaciale causé par le pouvoir de Fjorm.",
-            img: "assets/image/famille_nifl.jpg",
-            options: [
-                choix = {
-                    text: "Tu utilise de la magie pour retourner dans le temps.",
-                    action: "goToChapter(royaume_nifl)",
-                }
-            ]
-        },
-        //Choix et résultat 2 du temple de  glace
         entrer_dedans: {
             subtitle: "Dans le Temple de Glace",
             text: "Fjorm décide de prendre un grand souffle avant d'entrer dans le temple de glace. Le reste de l'équipe l'attend dehors avec enthousiasme.",
@@ -345,19 +321,31 @@ const chaptersObj = {
                 }
             ]
         },
-    //Chapitre 8
+        //Choix et résultat 2 du temple de  glace
+        rester_dehors: {
+            subtitle: "Mort Gracé",
+            text: "Vous décidez d'attendre que Fjorm reprenne du courage, mais elle est envahit par le désespoir face au sort inconnu de sa famille, elle pleure sans cesse pendant des heures, rien ne peut l'aider maintenant. Vous mourrez a cause du froid glaciale causé par le pouvoir de Fjorm.",
+            img: "assets/image/famille_nifl.jpg",
+            options: [
+                choix = {
+                    text: "Tu utilise de la magie pour retourner dans le temps.",
+                    action: "goToChapter(royaume_nifl)",
+                }
+            ]
+        },
+    //Chapitre 8: ce chapitre est important pour la fin. Si tu veux l'enlever il faut que tu modifie la mauvaise fin et la fin neutre.
         le_rituel: {
             subtitle: "La Lance Légendaire",
             text: "Une fois dans le temple Fjorm s'apprête à tout sacrifier pour sauver ce qui reste de son royaume et d'épargner le reste du monde de cette tragédie.",
             img: "assets/image/fjorm_temple.png",
             options: [
                 choix = {
-                    text: "Fjorm essaye de faire le rituel sans la lance.",
-                    action: "goToChapter(rituel_echoue)",
-                },
-                choix = {
                     text: "Fjorm utilise la lance pour faire le rituel.",
                     action: "goToChapter(rituel_reussi)",
+                },
+                choix = {
+                    text: "Fjorm essaye de faire le rituel sans la lance.",
+                    action: "goToChapter(rituel_echoue)",
                 },
                 choix = {
                     text: "Fjorm quitte le temple sans faire le rituel.",
@@ -366,6 +354,18 @@ const chaptersObj = {
             ]
         },
         //Choix et résultat 1 du rituel de glace
+        rituel_reussi: {
+            subtitle: "Rituel Réussi",
+            text: "Fjorm perçe le voile glacé du autel avec la lance, puis une lumière éblouissante l'engloutie complètement. Cette lumière lève Fjorm du sol avant de la descendre réenergisée.",
+            img: "assets/image/fjorm_temple.png",
+            options: [
+                choix = {
+                    text: "Vous continuez votre voyage avec tant d'enthousiasme.",
+                    action: "goToChapter(royaume_muspel)",
+                }
+            ]
+        },
+        //Choix et résultat 2 du rituel de glace
         rituel_echoue: {
             subtitle: "Mission Échoué",
             text: "Fjorm essaye de faire le rituel sans la lance légendaire, mais elle échoue. Elle meurt peut après le rituel de la glace, transformer en popsicle humain.",
@@ -374,18 +374,6 @@ const chaptersObj = {
                 choix = {
                     text: "Tu utilise de la magie pour retourner dans le temps.",
                     action: "goToChapter(royaume_nifl)",
-                }
-            ]
-        },
-        //Choix et résultat 2 du rituel de glace
-        rituel_reussi: {
-            subtitle: "Rituel Réussi",
-            text: "Fjorm perçe le voile glacé du altar avec la lance, puis une lumière éblouissante l'engloutie complètement. Cette lumière lève Fjorm du sol avant de la descendre réenergisée.",
-            img: "assets/image/fjorm_temple.png",
-            options: [
-                choix = {
-                    text: "Vous continuez votre voyage avec tant d'enthousiasme.",
-                    action: "goToChapter(royaume_muspel)",
                 }
             ]
         },
@@ -401,7 +389,7 @@ const chaptersObj = {
                 }
             ]
         },
-    //Chapitre 9
+    //Chapitre 9: retirer le choix du group capturer de ce chapitre.
         royaume_muspel: {
             subtitle: "Le Royaume de Muspel",
             text: "Vous arrivez à Muspel juste à temps pour voir une énorme armée marchez vers vous. Tu propose à ton équipe de rester discrèt pour éviter un combat prolongué, mais Fjorm et Laergarn propose de séparer un petit group de soldat du reste de l'armée pour voler leurs vêtements de guerre dans le but de faciliter leur quête dans le royaume. Alfonse est entrain de réfléchir à une autre solution, mais il est d'accord avec les filles, il faut continuer de s'avancer sans ce faire repérer par les soldats ou tout autre personne de Muspel. À toi de jouer tacticien, qu'est-ce que tu va faire?",
@@ -420,40 +408,28 @@ const chaptersObj = {
         //Choix 1 du royaume de muspel
         uniforme_soldat: {
             subtitle: "Plan Déguisement",
-            text: "",
+            text: "Vous isolez un petit group de soldat et vous les tuez en cachette hors de vue des autres. Vous mettez l'uniforme, puis vous suivez un autre group de soldats qui vont vers le chateau.",
             img: "assets/image/summoner_heros_combat.png",
             option: [
                 choix = {
-                    text: "Tu suis les autres soldats vers la salle du rituel.",
+                    text: "Vous rentrer dans le chateau.",
                     action: "goToChapter(mission_infiltration)",
                 }
             ]
         },
         //Choix 2 du royaume de muspel
         group_capturer: {
-            subtitle: "Capturé",
-            text: "",
+            subtitle: "Le rituel de la Flamme",
+            text: "Vous êtes capturé rapidement par les soldats. Ils vous amènent dans le temple du rituel de la flamme ou vous êtes sacrifiés un après l'autre dans un bain de flamme et de souffrance.",
             img: "assets/image/soldat.jpg",
             option: [
                 choix = {
-                    text: "Tu ouvre la cellule avec ton pouvoir.",
-                    action: "goToChapter(evader_prison)",
+                    text: "Tu retourne dans le temps avec ton pouvoir.",
+                    action: "goToChapter(royaume_muspel)",
                 }
             ]
         },
-        //Résultat 2 du royaume de muspel
-        evader_prison: {
-            subtitle: "L'évasion Secrète",
-            text: "",
-            img: "assets/image/alfonse_combat.jpg",
-            option: [
-                choix = {
-                    text: "Tu ouvre une porte dans le chateau.",
-                    action: "goToChapter(mission_infiltration)",
-                }
-            ]
-        },
-    //Chapitre 10
+    //Chapitre 10: retirer les choix de ce chapitre.
         mission_infiltration: {
             subtitle: "Mission infiltrer le Château de Flame",
             text: "Laegarn reussi de vous faire rentrer dans le chateau sans problème. Il reste maintenant de trouver où ils ont pris les enfants (Ygl et Veronica). Vous commencer votre recherche au premier niveau du chateau, vous ne trouvez pas les enfants, mais vous entendez des soldats parler des enfants: `J'espère qu'on va avoir une promotion après le sacrifice, dit le premier soldat.` `J'espère qu'il vont être sacrifier aujourd'hui, car celui du royaume Nifl est agassant, il ne cesse de me supplier de le laisser partir. Il est fou ce petit là!! Si le roi entend ça, il va tuer toute ma famille, puis il me laissera dans une cage remplit de feu, dit un autre soldat.` Les soldats descend un escalier pour aller dans le dungeon, votre équipe les suis sans faire du bruit. Les soldats continue de marcher au déla de la cellule des enfants. Tu n'est pas sur si c'est une bonne idée de sauver les enfants maintenant, tu réfléchis avec ton équipe pour prendre la meilleure décision. Est-ce que vous voulez les sauver maintenant ou attendre un peu?",
@@ -476,7 +452,7 @@ const chaptersObj = {
             img: "assets/image/ygl.png",
             option: [
                 choix = {
-                    text: "Tu ouvre une porte dans le chateau.",
+                    text: "Vous vous dirigez vers la chambre du roi.",
                     action: "goToChapter(combat_final)",
                 }
             ]
@@ -537,9 +513,9 @@ const chaptersObj = {
                 }
             ]
         },
-        //Choix et résultat 3 combat final
+        //Choix et résultat 3 combat final: Retirer la fin neutre.
         fin_neutre: {
-            subtitle: "Espoir Perdu",
+            subtitle: "Battaille Perdue",
             text: "Les enfants sont tués avec la flamme de Surtr, mais le reste de ton équipe est gravement blessé. Tu décide d'utiliser le peu de force qui te reste pour retourner dans le temps, au moment ou de ta rencontre avec Fjorm.",
             img: "assets/image/surtr_combat.png",
             options: [
@@ -556,10 +532,20 @@ const chaptersObj = {
 //let chapitreArr = [chaptersObj];
 
 function goToChapter(chapterName) {
-    let chapter = chaptersObj[chapterName];
-    console.log(chapter.subtitle);
-    console.log(chapter.text);
-    console.log(chapter.img);
+    //Récupérer les éléments du DOM (HTML)
+    let chapter = document.getElementById("chapitre");
+    let textDescription = document.getElementById("text");
+    let image = document.getElementById("image");
+
+    //Afficher le soustire, la description de l'histoire et l'image à l'aide d'une variable qui contient le tableau des objets des chapitres, le nom de chaque chapitre et la propriété spécifiée dans l'objet.
+    chapter.textContent = chaptersObj[chapterName].subtitle;
+    textDescription.textContent = chaptersObj[chapterName].text;
+    image.innerHTML = `<img src="${chaptersObj[chapterName].img}" alt="image_chapitre"/>`;
+    
+    //Il n'y a pas d'erreur dans la console quand j'appelle la fonction, mais l'image ne s'affiche pas.
+    console.log(chapter.textContent);
+    console.log(textDescription.textContent);
+    console.log(image.innerHTML);
     console.log(chapter.options);
 }
 //Appeler la fonction, n'oublie pas les guillemets: goToChapter("le_reveil");
