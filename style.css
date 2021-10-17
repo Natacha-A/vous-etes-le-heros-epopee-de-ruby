@@ -35,7 +35,7 @@ body{
 }
 
 /*Ajuster la taille du logo, de l'image temporaire et le text*/
-#image, #text {
+#divImage, img, .image, #text {
     width: 400px;
 }
 
@@ -55,7 +55,7 @@ body{
 }
 
 /*Aligner les 3 options horizontalement et mettre le plus d'espace entre les éléments*/
-.option {
+#options {
     display: flex;
     width: 400px;
     margin: 10px;
@@ -65,19 +65,21 @@ body{
 }
 
 /*Mise en page du style des boutons*/
-.choix-1, .choix-2, .choix-3 {
+.choix {
     background-color: var(--bleu-fonce);
     color: var(--bleu-clair);
     text-transform: capitalize;
     border: none;
     font-family: "Brazier Flame";
+    padding-left: 2.5px;
+    padding-right: 2.5px;
 }
 
 /*Effet de survole sur les boutons*/
-.choix-1:hover, .choix-2:hover, .choix-3:hover {
+.choix:hover {
     background-color: var(--orange);
     color: var(--rouge);
-    text-transform: uppercase;
+    
 }
 
 

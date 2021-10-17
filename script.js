@@ -7,12 +7,12 @@ const chaptersObj = {
             img: "assets/image/fjorm_determine.jpg",
             options: [
                 choix = {
-                    text: "Tu refuse de te lever de ton lit",
-                    action: "goToChapter(le_sommeil)",
+                    text: "Tu suis Fjorm dans sa quête",
+                    action: "goToChapter(voyage_nifl)",
                 },
                 choix = {
-                    text: "Tu choisit de suivre Fjorm dans sa quête",
-                    action: "goToChapter(voyage_nifl)",
+                    text: "Tu refuse de te lever du lit",
+                    action: "goToChapter(le_sommeil)",
                 }
             ]
         },
@@ -535,7 +535,8 @@ function goToChapter(chapterName) {
     //Récupérer les éléments du DOM (HTML)
     let chapter = document.getElementById("chapitre");
     let textDescription = document.getElementById("text");
-    let image = document.getElementById("image");
+    let image = document.getElementById("divImage");
+    let options = document.getElementById("options");
 
     //Afficher le soustire, la description de l'histoire et l'image à l'aide d'une variable qui contient le tableau des objets des chapitres, le nom de chaque chapitre et la propriété spécifiée dans l'objet.
     chapter.textContent = chaptersObj[chapterName].subtitle;
@@ -546,6 +547,18 @@ function goToChapter(chapterName) {
     console.log(chapter.textContent);
     console.log(textDescription.textContent);
     console.log(image.innerHTML);
-    console.log(chapter.options);
+
+    //Créer la boucle for() pour afficher les choix dans chaque champ de text.
+    let textButton = "";
+    for (let i = 0; i < chaptersObj[chapterName].options.length; i++) {
+        let option = chaptersObj[chapterName].options[i].action;
+        textButton += `<div id="options"><input class="choix" type="button" value="${chaptersObj[chapterName].options[i].text}" onclick="${chaptersObj[chapterName].options[i].action}"/></div>`;
+        console.log(textButton);
+    }
+    //Relier le tableau des options au bouton text pour afficher le text à la bonne place.
+    options.innerHTML = textButton;
 }
+
+//Appeller la fonction goToChapter pour vérifier que tout fonctionne.
+goToChapter("le_reveil");
 //Appeler la fonction, n'oublie pas les guillemets: goToChapter("le_reveil");
