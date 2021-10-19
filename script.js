@@ -226,7 +226,7 @@ const chaptersObj = {
             subtitle: "Grave Erreur",
             text: "Tu décide de surprendre l'enemi avant qu'ils vous attaque. Votre tentative échoue et les générals délivrent une puissante contre attaque qui rend ton équipe incapable de ce battre. Affaibli, ton équipe décide de fuir la scène de bataille.",
             img: "assets/image/general_muspel.webp",
-            option: [
+            options: [
                 {
                     text: "Vous prenez fuite sans regarder derrière vous.",
                     action: "goToChapter(`rencontre_gunthra`)",
