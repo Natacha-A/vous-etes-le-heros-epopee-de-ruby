@@ -6,11 +6,11 @@ const chaptersObj = {
             text: "Tu te reveille au son de quelqu'un qui cogne à la porte. C'est Fjorm, elle vous supplie de l'aider contre le royaume de Muspel qui menace de détruire son royaume Nifl.",
             img: "assets/image/fjorm_determine.jpg",
             options: [
-                choix = {
+                {
                     text: "Tu suis Fjorm dans sa quête",
                     action: "goToChapter(voyage_nifl)",
                 },
-                choix = {
+                {
                     text: "Tu refuse de te lever du lit",
                     action: "goToChapter(le_sommeil)",
                 }
@@ -22,7 +22,7 @@ const chaptersObj = {
             text: "*Yawn* je veux dormir encore, je ne veux pas me lever, quitte sans moi Alfonse, tu dit. Mais sérieux!? Cette jeune femme nous demande de l'aide et toi tu ne pense qu'à dormir!? Si tu ne veux pas te lever je vais te prendre par force tacticien! dit Alfonse. *THUD* OUCH!! ok ok ok, je vais venir, tu dit. Sheesh Alfonse, tu exagère un peu, tu chuchote à toi même.",
             img: "assets/image/royaume_askr.png",
             options: [
-                choix = {
+                {
                     text: "Tu te dirige vers la porte pour saluer l'étranger",
                     action: "goToChapter(voyage_nifl)",
                 }
@@ -34,7 +34,7 @@ const chaptersObj = {
             text: "Tu prend la main de Fjorm avec beaucoup d'enthousiasme et tu te précipite dehors avec elle. `*Soupir* Tu est comme un enfant, dit Alfonse en hochant sa tête.` `Hey! Ce n'est pas ma faute que j'aime l'aventure!! tu répond avec embarras. Ah, avant que j'oublie, Fjorm raconte nous ta situation, tu as dit que t'avais besoin de l'aide n'est-ce pas? tu dis.` `Nifl a été attaqué par Muspel, j'ai été séparé de ma famille, je ne sais même pas s'ils sont encore vivants, dit Fjorm avec des larmes qui coule de ses yeux.` `Ok on va t'aider Fjorm, allons-y à Nifl pour retrouver ta soeur!!`",
             img: "assets/image/fjorm_lance.png",
             options: [
-                choix = {
+                {
                     text: "Votre groupe voyage à travers Askr",
                     action: "goToChapter(village_brule)",
                 }
@@ -46,15 +46,15 @@ const chaptersObj = {
             text: "Tu entend des cris venant d'un village assez proche. Vous vous précipiteriez vers celui-ci. Une fois arrivée au village, un villageois gravement blessé vous demande de les aider `À l'aide notre village est entrain de se faire attaquer, aider nous je vous ensupplie` il dit avant de succomber à ces blessures.",
             img: "assets/image/village_brule_02.png",
             options: [
-                choix = {
+                {
                     text: "Tu ignore leurs cris de désespoir",
                     action: "goToChapter(massacre_paysans)",
                 },
-                choix = {
+                {
                     text: "Tu essaye d'évacuer tout le monde du village",
                     action: "goToChapter(armee_muspel)",
                 },
-                choix = {
+                {
                     text: "Tu prend du temps pour trouver une meilleure solution",
                     action: "goToChapter(pression_equipe)",
                 }
@@ -67,7 +67,7 @@ const chaptersObj = {
             text: "Tu ignore les cris désepérer des paysans et tout le monde meurt. `Comment ose tu les laisser mourrir comme ça!? dit Alfonse et Fjorm simultanément.` `On doit faire vite, on n'a pas le temps à perdre! Il faut qu'on retrouve la soeur de Fjorm le plus rapidement possible!! tu dis pressé.`",
             img: "assets/image/summoner_heros.webp",
             options: [
-                choix = {
+                {
                     text: "Tu continue de traverser le village sans regarder derrière toi",
                     action: "goToChapter(village_detruit)",
                 }
@@ -79,7 +79,7 @@ const chaptersObj = {
             text: "Le village est complétement détruit et il n'y a aucun survivant. Tu poursuis ton voyage sans remord. Bravo, tu as laisser tous les citoyens du villages mourrir! J'espère que tu est fière de toi même... Tu est un monstre!!",
             img: "assets/image/summoner_heros_souri.png",
             options: [
-                choix = {
+                {
                     text: "Tu continue ton voyage vers Nifl.",
                     action: "goToChapter(royaume_nifl)",
                 }
@@ -91,7 +91,7 @@ const chaptersObj = {
             text: "Ton équipe te presse de te dépecher, car l'armée enemie s'avance vers vous.",
             img: "assets/image/alfonse.png",
             options: [
-                choix = {
+                {
                     text: "Tu surprend l'enemi entrain d'encercler des paysans!",
                     action: "goToChapter(assassinat_secret)",
                 }
@@ -103,11 +103,11 @@ const chaptersObj = {
             text: "Vous séparez des petits group de soldats pour mieux les abattres sans ce faire voir par les autres qui sont occupés à détruire le village et à pourchasser les villageois.",
             img: "assets/image/alfonse_attaque.png",
             options: [
-                choix = {
+                {
                     text: "L'armée remarque votre présence.",
                     action: "goToChapter(armee_muspel)",
                 },
-                choix = {
+                {
                     text: "Vous tuez le reste des soldats!",
                     action: "goToChapter(victoire_village)",
                 }
@@ -119,11 +119,11 @@ const chaptersObj = {
             text: "L'armée enemie vous prend par surprise. Laveaten, le premier général de Muspel attaque le joueur, mais tu esquive son attaque prématuré assez facilement. Alfonse et le reste de ton équipe se précipitent à tes côtés, les villageois encore vivant ce tasse du chemin le plus vite possible et le reste sont entrain de brûler vivant à cause de la flame éternelle. Le combat commence tous les armes sont pointées vers l'enemi qui va gagner?",
             img: "assets/image/laveaten_combat.jpg",
             options: [
-                choix = {
+                {
                     text: "Tu défend le village de l'armée avec ton équipe!",
                     action: "goToChapter(survivant_village)",
                 },
-                choix = {
+                {
                     text: "Tu t'enfuis avec ton équipe.",
                     action: "goToChapter(village_detruit)",
                 }
@@ -135,7 +135,7 @@ const chaptersObj = {
             text: "L'armée ce discipe et vous aidez les survivants à éteindre le feu. Ils vous remerci avec un peu de nourriture. Puis, vous dites vos adieux et vous quittez le village un peu déçu que vous n'avez pas sauvé tout les paysans.",
             img: "assets/image/village_brule_01.jpg",
             options: [
-                choix = {
+                {
                     text: "Vous continuez votre voyage vers Nifl.",
                     action: "goToChapter(royaume_nifl)",
                 }
@@ -496,7 +496,7 @@ const chaptersObj = {
             img: "assets/image/surtr_perdue.jpg",
             options: [
                 choix = {
-                    text: "Tu as gagné!!",
+                    text: "Youpe, le monde est sauvé!!",
                     action: "goToChapter(le_reveil)"
                 }
             ]
@@ -560,5 +560,5 @@ function goToChapter(chapterName) {
 }
 
 //Appeller la fonction goToChapter pour vérifier que tout fonctionne.
-goToChapter("le_sommeil");
+goToChapter("le_reveil");
 //Appeler la fonction, n'oublie pas les guillemets: goToChapter("le_reveil");
