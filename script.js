@@ -23,7 +23,7 @@ const chaptersObj = {
             img: "assets/image/royaume_askr.png",
             options: [
                 choix = {
-                    text: "Tu suis Fjorm réticent dans sa quête",
+                    text: "Tu te dirige vers la porte pour saluer l'étranger",
                     action: "goToChapter(voyage_nifl)",
                 }
             ]
@@ -560,5 +560,5 @@ function goToChapter(chapterName) {
 }
 
 //Appeller la fonction goToChapter pour vérifier que tout fonctionne.
-goToChapter("le_reveil");
+goToChapter("le_sommeil");
 //Appeler la fonction, n'oublie pas les guillemets: goToChapter("le_reveil");
