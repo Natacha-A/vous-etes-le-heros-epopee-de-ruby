@@ -8,11 +8,11 @@ const chaptersObj = {
             options: [
                 {
                     text: "Tu suis Fjorm dans sa quête",
-                    action: "goToChapter(voyage_nifl)",
+                    action: "goToChapter(`voyage_nifl`)",
                 },
                 {
                     text: "Tu refuse de te lever du lit",
-                    action: "goToChapter(le_sommeil)",
+                    action: "goToChapter(`le_sommeil`)",
                 }
             ]
         },
@@ -24,7 +24,7 @@ const chaptersObj = {
             options: [
                 {
                     text: "Tu te dirige vers la porte pour saluer l'étranger",
-                    action: "goToChapter(voyage_nifl)",
+                    action: "goToChapter(`voyage_nifl`)",
                 }
             ]
         },
@@ -36,7 +36,7 @@ const chaptersObj = {
             options: [
                 {
                     text: "Votre groupe voyage à travers Askr",
-                    action: "goToChapter(village_brule)",
+                    action: "goToChapter(`village_brule`)",
                 }
             ]
         },
@@ -47,16 +47,16 @@ const chaptersObj = {
             img: "assets/image/village_brule_02.png",
             options: [
                 {
-                    text: "Tu ignore leurs cris de désespoir",
-                    action: "goToChapter(massacre_paysans)",
+                    text: "Tu ignore leurs cris",
+                    action: "goToChapter(`massacre_paysans`)",
                 },
                 {
-                    text: "Tu essaye d'évacuer tout le monde du village",
-                    action: "goToChapter(armee_muspel)",
+                    text: "Tu évacue village",
+                    action: "goToChapter(`armee_muspel`)",
                 },
                 {
-                    text: "Tu prend du temps pour trouver une meilleure solution",
-                    action: "goToChapter(pression_equipe)",
+                    text: "Tu dévisage un plan",
+                    action: "goToChapter(`pression_equipe`)",
                 }
             ]
         },
@@ -68,8 +68,8 @@ const chaptersObj = {
             img: "assets/image/summoner_heros.webp",
             options: [
                 {
-                    text: "Tu continue de traverser le village sans regarder derrière toi",
-                    action: "goToChapter(village_detruit)",
+                    text: "Tu quitte le village sans regarder derrière toi",
+                    action: "goToChapter(`village_detruit`)",
                 }
             ]
         },
@@ -80,8 +80,8 @@ const chaptersObj = {
             img: "assets/image/summoner_heros_souri.png",
             options: [
                 {
-                    text: "Tu continue ton voyage vers Nifl.",
-                    action: "goToChapter(royaume_nifl)",
+                    text: "Tu continue vers Nifl.",
+                    action: "goToChapter(`royaume_nifl`)",
                 }
             ]
         },
@@ -92,8 +92,8 @@ const chaptersObj = {
             img: "assets/image/alfonse.png",
             options: [
                 {
-                    text: "Tu surprend l'enemi entrain d'encercler des paysans!",
-                    action: "goToChapter(assassinat_secret)",
+                    text: "Tu surprend l'enemi",
+                    action: "goToChapter(`assassinat_secret`)",
                 }
             ]
         },
@@ -104,12 +104,12 @@ const chaptersObj = {
             img: "assets/image/alfonse_attaque.png",
             options: [
                 {
-                    text: "L'armée remarque votre présence.",
-                    action: "goToChapter(armee_muspel)",
+                    text: "L'armée vous remarque",
+                    action: "goToChapter(`armee_muspel`)",
                 },
                 {
-                    text: "Vous tuez le reste des soldats!",
-                    action: "goToChapter(victoire_village)",
+                    text: "Vous tuez les autres soldats!",
+                    action: "goToChapter(`victoire_village`)",
                 }
             ]
         },
@@ -120,12 +120,12 @@ const chaptersObj = {
             img: "assets/image/laveaten_combat.jpg",
             options: [
                 {
-                    text: "Tu défend le village de l'armée avec ton équipe!",
-                    action: "goToChapter(survivant_village)",
+                    text: "Tu défend le village de l'armée!",
+                    action: "goToChapter(`survivant_village`)",
                 },
                 {
-                    text: "Tu t'enfuis avec ton équipe.",
-                    action: "goToChapter(village_detruit)",
+                    text: "Tu t'enfuis avec ton équipe",
+                    action: "goToChapter(`village_detruit`)",
                 }
             ]
         },
@@ -136,8 +136,8 @@ const chaptersObj = {
             img: "assets/image/village_brule_01.jpg",
             options: [
                 {
-                    text: "Vous continuez votre voyage vers Nifl.",
-                    action: "goToChapter(royaume_nifl)",
+                    text: "Vous continuez vers Nifl.",
+                    action: "goToChapter(`royaume_nifl`)",
                 }
             ]
         },
@@ -147,9 +147,9 @@ const chaptersObj = {
             text: "Les autres soldats fuient les lieux. Vous avez sauvé tous les paysans. Vous les aidez à éteindre le reste du feu et ils vous remerci avec un grand festin et une soirée de repos dans une taverne.",
             img: "assets/image/village_askr.png",
             options: [
-                choix = {
-                    text: "Vous continuez votre voyage vers Nifl.",
-                    action: "goToChapter(royaume_nifl)",
+                {
+                    text: "Vous continuez vers Nifl.",
+                    action: "goToChapter(`royaume_nifl`)",
                 }
             ]
         },
@@ -159,17 +159,17 @@ const chaptersObj = {
             text: "Vous arrivez à Nifl et le territoire est remplis d'enemis. Vous décidez de vous aventurier pour trouver la soeur de Fjorm, car elle est la seul qui possède le pouvoir de vous aider à vaincre Surtr, le roi de Muspel. Soudainement, tu entend une dizaine de pas s'approcher vers vous, ce sont des soldats de Muspel avec leur général Laegjarn. Vous voulez éviter le combat le plus que possible, car les soldats peuple le territoire de Nifl. Quoi faire?",
             img: "assets/image/fjorm_lance.png",
             options: [
-                choix = {
-                    text: "Vous vous cachez derrière un arbre.",
-                    action: "goToChapter(combat_evite)",
+                {
+                    text: "Ce cacher",
+                    action: "goToChapter(`combat_evite`)",
                 },
-                choix = {
-                    text: "Vous décidez de les approcher et de parler avec eux.",
-                    action: "goToChapter(combat_general)",
+                {
+                    text: "Discuter avec elles",
+                    action: "goToChapter(`combat_general`)",
                 },
-                choix = {
-                    text: "Vous décidez de les confronter!",
-                    action: "goToChapter(blessure_grave)",
+                {
+                    text: "Les attaquer",
+                    action: "goToChapter(`blessure_grave`)",
                 }
             ]
         },
@@ -179,9 +179,9 @@ const chaptersObj = {
             text: "Les générals passent prés de vous sans vous voir. Vous les observez pour s'assurer qu'ils ne retourne pas en arrière.",
             img: "assets/image/general_muspel.webp",
             options: [
-                choix = {
+                {
                     text: "Vous restez caché jusqu'à l'aube.",
-                    action: "goToChapter(repos_group)",
+                    action: "goToChapter(`repos_group`)",
                 }
             ]
         },
@@ -191,9 +191,9 @@ const chaptersObj = {
             text: "Vous décidez de prendre une pause avant que le soleil ce couche pour récuperer un peu d'énergie avant de continuer votre aventure.",
             img: "assets/image/nifl.jpg",
             options: [
-                choix = {
+                {
                     text: "Vous reprenez votre chemin.",
-                    action: "goToChapter(rencontre_gunthra)",
+                    action: "goToChapter(`rencontre_gunthra`)",
                 }
             ]
         },
@@ -203,9 +203,9 @@ const chaptersObj = {
             text: "Au début, Laergarn et sa soeur se moquent de vos efforts de résister à l'attaque de leur père Surtr. Parcontre, tu ne cède pas, tu les invites à un combat contre toi et ton équipe pour décider qu'est-ce qui va ce passer après. Si on perd tu peut nous tuer, mais si on gagne vous vous tassez de notre chemin. On va rencontrer Gunthrà que vous le voulez ou non!!",
             img: "assets/image/summoner_heros.webp",
             options: [
-                choix = {
+                {
                     text: "Vous gagnez le combat contre les générals.",
-                    action: "goToChapter(nouveau_membre)",
+                    action: "goToChapter(`nouveau_membre`)",
                 }
             ]
         },
@@ -215,9 +215,9 @@ const chaptersObj = {
             text: "Laergarn et sa soeur épuissées sont impressionnées par votre prouesse sur le terrain. Elles prend la décision de rejoindre votre équipe en tant qu'espion. Elles vont vous faire part des prochaines étapes du plan de leur père.",
             img: "assets/image/laergarn_debout.png",
             options: [
-                choix = {
+                {
                     text: "Vous reprenez votre recherche de la soeur de Fjorm.",
-                    action: "goToChapter(rencontre_gunthra)",
+                    action: "goToChapter(`rencontre_gunthra`)",
                 }
             ]
         },
@@ -227,9 +227,9 @@ const chaptersObj = {
             text: "Tu décide de surprendre l'enemi avant qu'ils vous attaque. Votre tentative échoue et les générals délivrent une puissante contre attaque qui rend ton équipe incapable de ce battre. Affaibli, ton équipe décide de fuir la scène de bataille.",
             img: "assets/image/general_muspel.webp",
             option: [
-                choix = {
+                {
                     text: "Vous prenez fuite sans regarder derrière vous.",
-                    action: "goToChapter(rencontre_gunthra)",
+                    action: "goToChapter(`rencontre_gunthra`)",
                 }
             ]
         },
@@ -239,17 +239,17 @@ const chaptersObj = {
             text: "Fjorm dirige la recherche de sa soeur Gunthrà. Fjorm peut ressentir le pouvoir de sa soeur à cause de son lien avec le dieu de leur royaume Nifl. Dans un rien de temps Fjorm retrouve Gunthrà cachée derrière des ruines d'une maison. Vous vous précipité vers elle, elle est blessée, elle ne sait pas combien de temps elle va survivre encore. Il ne reste pas beaucoup de temps, elle doit donner la lance à sa soeur pour qu'elle puisse faire le rituel de la glace afin d'avoir une chance contre Surtr. Il faut faire vite, est-ce que tu est arrivée avant 7 jours tacticien?",
             img: "assets/image/fjorm_presse.png",
             options: [
-                choix = {
+                {
                     text: "Vous êtes arrivé en 7 jours pille.",
-                    action: "goToChapter(gunthra_lance)",
+                    action: "goToChapter(`gunthra_lance`)",
                 },
-                choix = {
+                {
                     text: "Vous êtes arrivé en moins de 7 jours.",
-                    action: "goToChapter(gunthra_vivante)",
+                    action: "goToChapter(`gunthra_vivante`)",
                 },
-                choix = {
+                {
                     text: "Vous êtes arrivé en plus de 7 jours.",
-                    action: "goToChapter(gunthra_morte)",
+                    action: "goToChapter(`gunthra_morte`)",
                 }
             ]
         },
@@ -259,9 +259,9 @@ const chaptersObj = {
             text: "Vous arrivez juste à temps pour que Gunthrà vous donne la lance, puis elle meurt de ses blessures.",
             img: "assets/image/fjorm_lance.png",
             options: [
-                choix = {
+                {
                     text: "Vous continuez vers le temple de glace.",
-                    action: "goToChapter(temple_glace)",
+                    action: "goToChapter(`temple_glace`)",
                 }
             ]
         },
@@ -271,9 +271,9 @@ const chaptersObj = {
             text: "Tu arrive avant 7 jours. Vous avez traités les blessures de Gunthrà juste à temps, elle va survivre. Elle vous donne la lance et vous donne une carte du chemin vers le Temple de la Glace.",
             img: "assets/image/fjorm_determine.jpg",
             options: [
-                choix = {
+                {
                     text: "Vous continuez vers le temple de glace.",
-                    action: "goToChapter(temple_glace)",
+                    action: "goToChapter(`temple_glace`)",
                 }
             ]
         },
@@ -283,13 +283,13 @@ const chaptersObj = {
             text: "Gunthrà est morte tué par Surtr avant qu'elle puisse donner la lance à sa soeur Fjorm.",
             img: "assets/image/gunthra_battue.png",
             options: [
-                choix = {
+                {
                     text: "Tu utilise de la magie pour retourner dans le temps.",
-                    action: "goToChapter(royaume_nifl)",
+                    action: "goToChapter(`royaume_nifl`)",
                 },
-                choix = {
+                {
                     text: "Tu décide de continuer votre voyage avec désespoir.",
-                    action: "goToChapter(temple_glace)",
+                    action: "goToChapter(`temple_glace`)",
                 }
             ]
         },
@@ -299,13 +299,13 @@ const chaptersObj = {
             text: "Arrivée au temple de la glace, Fjorm fait face à une décision entrer et faire le rituel ou non. Il y a un risque à faire ce rituel, mais Fjorm sait cela depuis longtemps. Sa détermination à vaincre Surtr et libérer le monde de ce dictateur écrase sa peur de mourrir, mais quand même... Le rituel pourrait ne simplement pas marcher et là quoi faire... Personne ne serait capable de tuer le roi avec le pouvoir de la flame éternelle. NON, il faut faire ce rituel à tout prix!! C'est notre seule chance de vaincre Surtr! dit Fjorm. Tacticien, c'est à toi de jouer, qu'est ce que vous allez faire?",
             img: "assets/image/temple.jpg",
             options: [
-                choix = {
+                {
                     text: "Fjorm rentre avec détermination dans le temple.",
-                    action: "goToChapter(entrer_dedans)",
+                    action: "goToChapter(`entrer_dedans`)",
                 },
-                choix = {
+                {
                     text: "Fjorm hésite de rentrer au temple.",
-                    action: "goToChapter(rester_dehors)",
+                    action: "goToChapter(`rester_dehors`)",
                 }
             ]
         },
@@ -315,21 +315,21 @@ const chaptersObj = {
             text: "Fjorm décide de prendre un grand souffle avant d'entrer dans le temple de glace. Le reste de l'équipe l'attend dehors avec enthousiasme.",
             img: "assets/image/fjorm_determine.jpg",
             options: [
-                choix = {
+                {
                     text: "Fjorm se prépare a faire le rituel de glace.",
-                    action: "goToChapter(le_rituel)",
+                    action: "goToChapter(`le_rituel`)",
                 }
             ]
         },
         //Choix et résultat 2 du temple de  glace
         rester_dehors: {
-            subtitle: "Mort Gracé",
+            subtitle: "Mort Glacé",
             text: "Vous décidez d'attendre que Fjorm reprenne du courage, mais elle est envahit par le désespoir face au sort inconnu de sa famille, elle pleure sans cesse pendant des heures, rien ne peut l'aider maintenant. Vous mourrez a cause du froid glaciale causé par le pouvoir de Fjorm.",
             img: "assets/image/famille_nifl.jpg",
             options: [
-                choix = {
+                {
                     text: "Tu utilise de la magie pour retourner dans le temps.",
-                    action: "goToChapter(royaume_nifl)",
+                    action: "goToChapter(`royaume_nifl`)",
                 }
             ]
         },
@@ -339,17 +339,17 @@ const chaptersObj = {
             text: "Une fois dans le temple Fjorm s'apprête à tout sacrifier pour sauver ce qui reste de son royaume et d'épargner le reste du monde de cette tragédie.",
             img: "assets/image/fjorm_temple.png",
             options: [
-                choix = {
+                {
                     text: "Fjorm utilise la lance pour faire le rituel.",
-                    action: "goToChapter(rituel_reussi)",
+                    action: "goToChapter(`rituel_reussi`)",
                 },
-                choix = {
+                {
                     text: "Fjorm essaye de faire le rituel sans la lance.",
-                    action: "goToChapter(rituel_echoue)",
+                    action: "goToChapter(`rituel_echoue`)",
                 },
-                choix = {
+                {
                     text: "Fjorm quitte le temple sans faire le rituel.",
-                    action: "goToChapter(rituel_evite)",
+                    action: "goToChapter(`rituel_evite`)",
                 }
             ]
         },
@@ -359,9 +359,9 @@ const chaptersObj = {
             text: "Fjorm perçe le voile glacé du autel avec la lance, puis une lumière éblouissante l'engloutie complètement. Cette lumière lève Fjorm du sol avant de la descendre réenergisée.",
             img: "assets/image/fjorm_temple.png",
             options: [
-                choix = {
+                {
                     text: "Vous continuez votre voyage avec tant d'enthousiasme.",
-                    action: "goToChapter(royaume_muspel)",
+                    action: "goToChapter(`royaume_muspel`)",
                 }
             ]
         },
@@ -371,9 +371,9 @@ const chaptersObj = {
             text: "Fjorm essaye de faire le rituel sans la lance légendaire, mais elle échoue. Elle meurt peut après le rituel de la glace, transformer en popsicle humain.",
             img: "assets/image/fjorm_perdue.jpg",
             options: [
-                choix = {
+                {
                     text: "Tu utilise de la magie pour retourner dans le temps.",
-                    action: "goToChapter(royaume_nifl)",
+                    action: "goToChapter(`royaume_nifl`)",
                 }
             ]
         },
@@ -383,9 +383,9 @@ const chaptersObj = {
             text: "Fjorm rentre dans le temple, elle semble voir quelque chose d'effrayant. Cette créature lui dit de quitter le temple et de ne jamais revenir, car la mort l'attend peu importe si elle fait le rituel ou non. Sa durée sur cette terre est très limité. Elle savais cela, mais elle a quand même peur, peur de ne plus être auprès de ces ami, peur que le rituel de glace ne soit pas assez puissant pour combattre Surtr. Elle quitte le temple en pleurant et te dit de l'amener le plus loin que possible du temple.",
             img: "assets/image/fjorm_presse.png",
             options: [
-                choix = {
+                {
                     text: "Vous continuez votre voyage avec déçu du résultat.",
-                    action: "goToChapter(royaume_muspel)",
+                    action: "goToChapter(`royaume_muspel`)",
                 }
             ]
         },
@@ -395,13 +395,13 @@ const chaptersObj = {
             text: "Vous arrivez à Muspel juste à temps pour voir une énorme armée marchez vers vous. Tu propose à ton équipe de rester discrèt pour éviter un combat prolongué, mais Fjorm et Laergarn propose de séparer un petit group de soldat du reste de l'armée pour voler leurs vêtements de guerre dans le but de faciliter leur quête dans le royaume. Alfonse est entrain de réfléchir à une autre solution, mais il est d'accord avec les filles, il faut continuer de s'avancer sans ce faire repérer par les soldats ou tout autre personne de Muspel. À toi de jouer tacticien, qu'est-ce que tu va faire?",
             img: "assets/image/royaume_muspel.png",
             options: [
-                choix = {
+                {
                     text: "Voler les déguisements d'un petit group de soldats.",
-                    action: "goToChapter(uniforme_soldat)",
+                    action: "goToChapter(`uniforme_soldat`)",
                 },
-                choix = {
+                {
                     text: "Faire face contre l'armée.",
-                    action: "goToChapter(group_capturer)",
+                    action: "goToChapter(`group_capturer`)",
                 }
             ]
         },
@@ -411,9 +411,9 @@ const chaptersObj = {
             text: "Vous isolez un petit group de soldat et vous les tuez en cachette hors de vue des autres. Vous mettez l'uniforme, puis vous suivez un autre group de soldats qui vont vers le chateau.",
             img: "assets/image/summoner_heros_combat.png",
             option: [
-                choix = {
+                {
                     text: "Vous rentrer dans le chateau.",
-                    action: "goToChapter(mission_infiltration)",
+                    action: "goToChapter(`mission_infiltration`)",
                 }
             ]
         },
@@ -423,9 +423,9 @@ const chaptersObj = {
             text: "Vous êtes capturé rapidement par les soldats. Ils vous amènent dans le temple du rituel de la flamme ou vous êtes sacrifiés un après l'autre dans un bain de flamme et de souffrance.",
             img: "assets/image/soldat.jpg",
             option: [
-                choix = {
+                {
                     text: "Tu retourne dans le temps avec ton pouvoir.",
-                    action: "goToChapter(royaume_muspel)",
+                    action: "goToChapter(`royaume_muspel`)",
                 }
             ]
         },
@@ -435,13 +435,13 @@ const chaptersObj = {
             text: "Laegarn reussi de vous faire rentrer dans le chateau sans problème. Il reste maintenant de trouver où ils ont pris les enfants (Ygl et Veronica). Vous commencer votre recherche au premier niveau du chateau, vous ne trouvez pas les enfants, mais vous entendez des soldats parler des enfants: `J'espère qu'on va avoir une promotion après le sacrifice, dit le premier soldat.` `J'espère qu'il vont être sacrifier aujourd'hui, car celui du royaume Nifl est agassant, il ne cesse de me supplier de le laisser partir. Il est fou ce petit là!! Si le roi entend ça, il va tuer toute ma famille, puis il me laissera dans une cage remplit de feu, dit un autre soldat.` Les soldats descend un escalier pour aller dans le dungeon, votre équipe les suis sans faire du bruit. Les soldats continue de marcher au déla de la cellule des enfants. Tu n'est pas sur si c'est une bonne idée de sauver les enfants maintenant, tu réfléchis avec ton équipe pour prendre la meilleure décision. Est-ce que vous voulez les sauver maintenant ou attendre un peu?",
             img: "assets/image/soldat.png",
             options: [
-                choix = {
+                {
                     text: "Libérer les enfants de leur cellule.",
-                    action: "goToChapter(sauve_enfant)",
+                    action: "goToChapter(`sauve_enfant`)",
                 },
-                choix = {
+                {
                     text: "Retourner dans la chambre du roi.",
-                    action: "goToChapter(ne_sauve_pas_enfant)",
+                    action: "goToChapter(`ne_sauve_pas_enfant`)",
                 }
             ]
         },
@@ -451,9 +451,9 @@ const chaptersObj = {
             text: "",
             img: "assets/image/ygl.png",
             option: [
-                choix = {
+                {
                     text: "Vous vous dirigez vers la chambre du roi.",
-                    action: "goToChapter(combat_final)",
+                    action: "goToChapter(`combat_final`)",
                 }
             ]
         },
@@ -463,9 +463,9 @@ const chaptersObj = {
             text: "",
             img: "assets/image/soldat_combat.jpg",
             options: [
-                choix = {
+                {
                     text: "Tu utilise de la magie pour retourner dans le temps. ",
-                    action: "goToChapter(royaume_muspel)",
+                    action: "goToChapter(`royaume_muspel`)",
                 }
             ]
         },
@@ -475,17 +475,17 @@ const chaptersObj = {
             text: "C'est maintenant ou jamais! Le temps pour faire face au roi de la flame éternelle Surtr est arrivée. Surtr vous regarde avec une grimace qui forme sur son visage, `Je suis surpris que vous avez réussi de trucquer mon armée, mais c'est fini ici et maintenant!! Vous allez faire une très bonne addition au sacrifice, le pouvoir que ça va me donné, je serais invincible!! Mwuahahahahahaha!!!` `On va voir qui va avoir le dernier mot Surtr!! Fjorm cri en ce précipitant vers le roi pour l'attaquer.` Est-ce que vous êtes prés pour le combat ultime?",
             img: "assets/image/surtr_debout.webp",
             options: [
-                choix = {
+                {
                     text: "Fjorm perçe le coeur de Surt avec sa lance.",
-                    action: "goToChapter(bonne_fin)",
+                    action: "goToChapter(`bonne_fin`)",
                 },
-                choix = {
+                {
                     text: "Fjorm essaye de fuir la battaille.",
-                    action: "goToChapter(mauvaise_fin)",
+                    action: "goToChapter(`mauvaise_fin`)",
                 },
-                choix = {
+                {
                     text: "Fjorm tente de blesser Surtr avec sa lance.",
-                    action: "goToChapter(fin_neutre)",
+                    action: "goToChapter(`fin_neutre`)",
                 }
             ]
         },
@@ -495,9 +495,9 @@ const chaptersObj = {
             text: "Après un long combat féroce, Fjorm réussi de tuer le roi de la flamme Surtr et libérer le monde de ce tyrant.",
             img: "assets/image/surtr_perdue.jpg",
             options: [
-                choix = {
+                {
                     text: "Youpe, le monde est sauvé!!",
-                    action: "goToChapter(le_reveil)"
+                    action: "goToChapter(`le_reveil`)"
                 }
             ]
         },
@@ -507,9 +507,9 @@ const chaptersObj = {
             text: "Surtr réduit tous les membres de ton équipe en cendre. Tu est encore vivant, mais pas pour longtemps. Avant de fermer tes yeux pour la dernière fois, tu voix Surtr entrain de s'éclatter de rire.",
             img: "assets/image/surtr.jpg",
             options: [
-                choix = {
+                {
                     text: "Tu as perdu, rejouer!",
-                    action: "goToChapter(le_reveil)"
+                    action: "goToChapter(`le_reveil`)"
                 }
             ]
         },
@@ -519,9 +519,9 @@ const chaptersObj = {
             text: "Les enfants sont tués avec la flamme de Surtr, mais le reste de ton équipe est gravement blessé. Tu décide d'utiliser le peu de force qui te reste pour retourner dans le temps, au moment ou de ta rencontre avec Fjorm.",
             img: "assets/image/surtr_combat.png",
             options: [
-                choix = {
+                {
                     text: "Tu est blessé, rejouer!",
-                    action: "goToChapter(le_reveil)"
+                    action: "goToChapter(`le_reveil`)"
                 }
             ]
         }
