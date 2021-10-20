@@ -543,4 +543,4 @@ function goToChapter(chapterName) {
 //Appeller la fonction goToChapter pour vérifier que tout fonctionne.
 //goToChapter("le_reveil");
 //Appeler la fonction, n'oublie pas les guillemets: goToChapter("le_reveil");
-compteurTemps("3", "royaume_nifl");
+compteurTemps(3, "royaume_nifl");
