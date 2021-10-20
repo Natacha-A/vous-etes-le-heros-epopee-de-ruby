@@ -78,7 +78,7 @@ const chaptersObj = {
             options: [
                 {
                     text: "Tu quitte le village sans regarder derrière toi",
-                    action: "goToChapter(`village_detruit`)",
+                    action: "compteurTemps(2, `village_detruit`)",
                 }
             ]
         },
@@ -118,7 +118,7 @@ const chaptersObj = {
                 },
                 {
                     text: "Vous tuez les autres soldats!",
-                    action: "goToChapter(`victoire_village`)",
+                    action: "compteurTemps(4, `victoire_village`)",
                 }
             ]
         },
@@ -130,11 +130,11 @@ const chaptersObj = {
             options: [
                 {
                     text: "Tu défend le village de l'armée!",
-                    action: "goToChapter(`survivant_village`)",
+                    action: "compteurTemps(3, `survivant_village`)",
                 },
                 {
                     text: "Tu t'enfuis avec ton équipe",
-                    action: "goToChapter(`village_detruit`)",
+                    action: "compteurTemps(2, `village_detruit`)",
                 }
             ]
         },
@@ -162,7 +162,7 @@ const chaptersObj = {
                 }
             ]
         },
-    //Chapitre 5 Le royaume de Nifl: la décision ici affect si Fjorm reçoit la lance ou non.
+    //Chapitre 5 Le royaume de Nifl: la décision ici affect si Fjorm reçoit la lance ou non. Ajouter 4 jours blessureGrave choisit avec la fonction compteurTemps
         royaume_nifl: {
             subtitle: "Les nouveaux occupants",
             text: "Vous arrivez à Nifl et le territoire est remplis d'enemis. Vous décidez de vous aventurier pour trouver la soeur de Fjorm, car elle est la seul qui possède le pouvoir de vous aider à vaincre Surtr, le roi de Muspel. Soudainement, tu entend une dizaine de pas s'approcher vers vous, ce sont des soldats de Muspel avec leur général Laegjarn. Vous voulez éviter le combat le plus que possible, car les soldats peuple le territoire de Nifl. Quoi faire?",
@@ -178,11 +178,11 @@ const chaptersObj = {
                 },
                 {
                     text: "Les attaquer",
-                    action: "goToChapter(`blessure_grave`)",
+                    action: "compteurTemps(4, `blessure_grave`)",
                 }
             ]
         },
-        //Choix 1 du royaume_nifl
+        //Choix 1 du royaume_nifl Ajouter 2 jours au résultat final du choix choisit avec la fonction compteurTemps
         combat_evite: {
             subtitle: "Infiltration Secrete",
             text: "Les générals passent prés de vous sans vous voir. Vous les observez pour s'assurer qu'ils ne retourne pas en arrière.",
@@ -190,7 +190,7 @@ const chaptersObj = {
             options: [
                 {
                     text: "Vous restez caché jusqu'à l'aube.",
-                    action: "goToChapter(`repos_group`)",
+                    action: "compteurTemps(2, `repos_group`)",
                 }
             ]
         },
@@ -206,7 +206,7 @@ const chaptersObj = {
                 }
             ]
         },
-        //Choix 2 du royaume_nifl
+        //Choix 2 du royaume_nifl Ajouter 3 jours au résultat final du choix choisit avec la fonction compteurTemps
         combat_general: {
             subtitle: "Combat Décisive",
             text: "Au début, Laergarn et sa soeur se moquent de vos efforts de résister à l'attaque de leur père Surtr. Parcontre, tu ne cède pas, tu les invites à un combat contre toi et ton équipe pour décider qu'est-ce qui va ce passer après. Si on perd tu peut nous tuer, mais si on gagne vous vous tassez de notre chemin. On va rencontrer Gunthrà que vous le voulez ou non!!",
@@ -214,7 +214,7 @@ const chaptersObj = {
             options: [
                 {
                     text: "Vous gagnez le combat contre les générals.",
-                    action: "goToChapter(`nouveau_membre`)",
+                    action: "compteurTemps(3, `nouveau_membre`)",
                 }
             ]
         },
@@ -230,7 +230,7 @@ const chaptersObj = {
                 }
             ]
         },
-        //Choix 3 du royaume_nifl
+        //Choix 3 du royaume_nifl Ajouter 4 jours au résultat final du choix choisit avec la fonction compteurTemps
         blessure_grave: {
             subtitle: "Grave Erreur",
             text: "Tu décide de surprendre l'enemi avant qu'ils vous attaque. Votre tentative échoue et les générals délivrent une puissante contre attaque qui rend ton équipe incapable de ce battre. Affaibli, ton équipe décide de fuir la scène de bataille.",
@@ -541,6 +541,6 @@ function goToChapter(chapterName) {
 }
 
 //Appeller la fonction goToChapter pour vérifier que tout fonctionne.
-//goToChapter("le_reveil");
+goToChapter("le_reveil");
 //Appeler la fonction, n'oublie pas les guillemets: goToChapter("le_reveil");
-compteurTemps(3, "royaume_nifl");
+//Vérifier que le nombre s'incrémente : compteurTemps(3, "royaume_nifl");
