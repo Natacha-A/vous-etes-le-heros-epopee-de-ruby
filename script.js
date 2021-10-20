@@ -441,41 +441,13 @@ const chaptersObj = {
     //Chapitre 10: retirer les choix de ce chapitre.
         mission_infiltration: {
             subtitle: "Mission infiltrer le Château de Flame",
-            text: "Laegarn reussi de vous faire rentrer dans le chateau sans problème. Il reste maintenant de trouver où ils ont pris les enfants (Ygl et Veronica). Vous commencer votre recherche au premier niveau du chateau, vous ne trouvez pas les enfants, mais vous entendez des soldats parler des enfants: `J'espère qu'on va avoir une promotion après le sacrifice, dit le premier soldat.` `J'espère qu'il vont être sacrifier aujourd'hui, car celui du royaume Nifl est agassant, il ne cesse de me supplier de le laisser partir. Il est fou ce petit là!! Si le roi entend ça, il va tuer toute ma famille, puis il me laissera dans une cage remplit de feu, dit un autre soldat.` Les soldats descend un escalier pour aller dans le dungeon, votre équipe les suis sans faire du bruit. Les soldats continue de marcher au déla de la cellule des enfants. Tu n'est pas sur si c'est une bonne idée de sauver les enfants maintenant, tu réfléchis avec ton équipe pour prendre la meilleure décision. Est-ce que vous voulez les sauver maintenant ou attendre un peu?",
+            text: "Laegarn reussi de vous faire rentrer dans le chateau sans problème. Il reste maintenant de trouver où ils ont pris les enfants (Ygl et Veronica). Vous commencer votre recherche au premier niveau du chateau, vous ne trouvez pas les enfants, mais vous entendez des soldats parler des enfants: `J'espère qu'on va avoir une promotion après le sacrifice, dit le premier soldat.` `J'espère qu'il vont être sacrifier aujourd'hui, car celui du royaume Nifl est agassant, il ne cesse de me supplier de le laisser partir. Il est fou ce petit là!! Si le roi entend ça, il va tuer toute ma famille, puis il me laissera dans une cage remplit de feu, dit un autre soldat.` Les soldats descend un escalier pour aller dans le dungeon, votre équipe les suis sans faire du bruit. Les soldats continue de marcher au déla de la cellule des enfants. Tu libère les enfants de la cellule. Fjorm cours embrasser sa soeur Ygl et Veronica ce plein de notre retard.",
             img: "assets/image/soldat.png",
             options: [
                 {
-                    text: "Libérer les enfants de leur cellule.",
-                    action: "goToChapter(`sauve_enfant`)",
-                },
-                {
-                    text: "Retourner dans la chambre du roi.",
-                    action: "goToChapter(`ne_sauve_pas_enfant`)",
-                }
-            ]
-        },
-        //Choix 1 de la mission d'infiltration
-        sauve_enfant: {
-            subtitle: "Réunion de Famille",
-            text: "",
-            img: "assets/image/ygl.png",
-            option: [
-                {
-                    text: "Vous vous dirigez vers la chambre du roi.",
+                    text: "Vous continuez vers la chambre du roi",
                     action: "goToChapter(`combat_final`)",
-                }
-            ]
-        },
-        //Choix 2 de la mission d'infiltration
-        ne_sauve_pas_enfant: {
-            subtitle: "Le rituel de Flamme",
-            text: "",
-            img: "assets/image/soldat_combat.jpg",
-            options: [
-                {
-                    text: "Tu utilise de la magie pour retourner dans le temps. ",
-                    action: "goToChapter(`royaume_muspel`)",
-                }
+                },
             ]
         },
     //Chapitre 11
