@@ -1,3 +1,11 @@
+let tempsRestant = 0;
+//Cette fonction va servir à gerer le temps restant
+function compteurTemps (nombreJour, prochainChapitre) {
+    //Stocker et ajouter le temps avec la valeur dans le paramètre nombreJour
+    tempsRestant += nombreJour;
+    goToChapter("");
+}
+
 //Terminer la création des objets principaux (les lozanges) et commencer les objets des options(les rectangles)
 const chaptersObj = {
     //Chapitre 1
