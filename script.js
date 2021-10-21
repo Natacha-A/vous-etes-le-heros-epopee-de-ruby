@@ -1,3 +1,6 @@
+let lanceTrouver = false; //Booléen
+let rituelReussi = false; //Booléen
+
 let tempsRestant = 0;
 //Cette fonction va servir à gerer le temps restant
 function compteurTemps (nombreJour, prochainChapitre) {
@@ -6,7 +9,24 @@ function compteurTemps (nombreJour, prochainChapitre) {
     //Appeller la fonction goToChapter pour afficher le prochain chapitre et mettre comme paramètre le prochain chapitre
     goToChapter(prochainChapitre);
 }
+//Fonction qui détermine si le joueur est arrivé à temps ou non: Ça fonctionne, mais ce n'est pas parfait
+//Reste à cacher les boutons input du chapitre rencontre gunthrà et de changer l'état de la variable lanceTrouver à true
+function arriverTemps () {
+    //Cacher les boutons quand cette fonction est appellé: pour le moment laisser les boutons dans rencontre_gunthra
+    let choix = document.querySelector(".choix");
 
+    if (tempsRestant < 7) {
+        lanceTrouver == true;
+        goToChapter(`gunthra_vivante`);
+    }
+    else if (tempsRestant === 7) {
+        lanceTrouver == true;
+        goToChapter(`gunthra_lance`);
+    }
+    else if (tempsRestant > 7) {
+        goToChapter(`gunthra_morte`);
+    }
+} 
 //Terminer la création des objets principaux (les lozanges) et commencer les objets des options(les rectangles)
 const chaptersObj = {
     //Chapitre 1
@@ -237,28 +257,28 @@ const chaptersObj = {
             img: "assets/image/general_muspel.webp",
             options: [
                 {
-                    text: "Vous prenez fuite sans regarder derrière vous.",
+                    text: "Vous prenez fuite",
                     action: "goToChapter(`rencontre_gunthra`)",
                 }
             ]
         },
-    //Chapitre 6
+    //Chapitre 6 remplacer la fonction goToChapter avec la fonction de gestion du temps et pour cacher la classe qui affiche les choix
         rencontre_gunthra: {
             subtitle: "À la rencontre de Gunthrà",
-            text: "Fjorm dirige la recherche de sa soeur Gunthrà. Fjorm peut ressentir le pouvoir de sa soeur à cause de son lien avec le dieu de leur royaume Nifl. Dans un rien de temps Fjorm retrouve Gunthrà cachée derrière des ruines d'une maison. Vous vous précipité vers elle, elle est blessée, elle ne sait pas combien de temps elle va survivre encore. Il ne reste pas beaucoup de temps, elle doit donner la lance à sa soeur pour qu'elle puisse faire le rituel de la glace afin d'avoir une chance contre Surtr. Il faut faire vite, est-ce que tu est arrivée avant 7 jours tacticien?",
+            text: "Fjorm dirige la recherche de sa soeur Gunthrà. Fjorm peut ressentir le pouvoir de sa soeur à cause de son lien avec le dieu de leur royaume Nifl.",
             img: "assets/image/fjorm_presse.png",
             options: [
                 {
-                    text: "Vous êtes arrivé en 7 jours pille.",
-                    action: "goToChapter(`gunthra_lance`)",
+                    //text: "Vous êtes arrivé en 7 jours pille",
+                    action: "arriverTemps()",
                 },
                 {
-                    text: "Vous êtes arrivé en moins de 7 jours.",
-                    action: "goToChapter(`gunthra_vivante`)",
+                    //text: "Vous êtes arrivé en moins de 7 jours",
+                    action: "arriverTemps()",
                 },
                 {
-                    text: "Vous êtes arrivé en plus de 7 jours.",
-                    action: "goToChapter(`gunthra_morte`)",
+                    //text: "Vous êtes arrivé en plus de 7 jours",
+                    action: "arriverTemps()",
                 }
             ]
         },
@@ -269,7 +289,7 @@ const chaptersObj = {
             img: "assets/image/fjorm_lance.png",
             options: [
                 {
-                    text: "Vous continuez vers le temple de glace.",
+                    text: "Fjorm vous guide vers le temple.",
                     action: "goToChapter(`temple_glace`)",
                 }
             ]
@@ -277,7 +297,7 @@ const chaptersObj = {
         //Choix 2 du royaume_nifl: si tempsRestant < 7 executer ce choix.
         gunthra_vivante: {
             subtitle: "Réunion de Soeur",
-            text: "Tu arrive avant 7 jours. Vous avez traités les blessures de Gunthrà juste à temps, elle va survivre. Elle vous donne la lance et vous donne une carte du chemin vers le Temple de la Glace.",
+            text: "Dans un rien de temps Fjorm retrouve Gunthrà cachée derrière des ruines d'une maison. Vous vous précipité vers elle, elle est blessée, elle ne sait pas combien de temps elle va survivre encore. Il ne reste pas beaucoup de temps, elle doit donner la lance à sa soeur pour qu'elle puisse faire le rituel de la glace afin d'avoir une chance contre Surtr. Il faut faire vite avant que l'armée de Muspel nous attrape. Fjorm cours embrasser sa soeur. Vous traitez les blessures de Gunthrà juste à temps, elle va survivre. Elle vous donne la lance et vous donne une carte du chemin vers le Temple de la Glace.",
             img: "assets/image/fjorm_determine.jpg",
             options: [
                 {
@@ -292,12 +312,12 @@ const chaptersObj = {
             text: "Gunthrà est morte tué par Surtr avant qu'elle puisse donner la lance à sa soeur Fjorm.",
             img: "assets/image/gunthra_battue.png",
             options: [
-                {
-                    text: "Tu utilise de la magie pour retourner dans le temps.",
-                    action: "goToChapter(`royaume_nifl`)",
+                {   //Choix de recommencer du chapitre village brûle et reset le tempsRestant à 0
+                    text: "Tu retourne dans le temps",
+                    action: "goToChapter(`village_brule`)",
                 },
-                {
-                    text: "Tu décide de continuer votre voyage avec désespoir.",
+                {   //Choix de continuer malgré le fait que Fjorm n'a pas la lance
+                    text: "Vous continuez votre voyage avec désespoir",
                     action: "goToChapter(`temple_glace`)",
                 }
             ]
@@ -362,7 +382,7 @@ const chaptersObj = {
                 }
             ]
         },
-        //Choix et résultat 1 du rituel de glace
+        //Choix et résultat 1 du rituel de glace: Faire avec booléen lanceTrouver == vrai
         rituel_reussi: {
             subtitle: "Rituel Réussi",
             text: "Fjorm perçe le voile glacé du autel avec la lance, puis une lumière éblouissante l'engloutie complètement. Cette lumière lève Fjorm du sol avant de la descendre réenergisée.",
@@ -374,26 +394,26 @@ const chaptersObj = {
                 }
             ]
         },
-        //Choix et résultat 2 du rituel de glace
+        //Choix et résultat 2 du rituel de glace: Faire avec lanceTrouver == False
         rituel_echoue: {
             subtitle: "Mission Échoué",
             text: "Fjorm essaye de faire le rituel sans la lance légendaire, mais elle échoue. Elle meurt peut après le rituel de la glace, transformer en popsicle humain.",
             img: "assets/image/fjorm_perdue.jpg",
             options: [
                 {
-                    text: "Tu utilise de la magie pour retourner dans le temps.",
+                    text: "Tu retourne dans le temps avec de la magie",
                     action: "goToChapter(`royaume_nifl`)",
                 }
             ]
         },
-        //Choix et résultat 3 du rituel de glace
+        //Choix et résultat 3 du rituel de glace: Autre état avec autre fonction? Le retirer si trop compliqué.
         rituel_evite: {
             subtitle: "Fuite de Fjorm",
             text: "Fjorm rentre dans le temple, elle semble voir quelque chose d'effrayant. Cette créature lui dit de quitter le temple et de ne jamais revenir, car la mort l'attend peu importe si elle fait le rituel ou non. Sa durée sur cette terre est très limité. Elle savais cela, mais elle a quand même peur, peur de ne plus être auprès de ces ami, peur que le rituel de glace ne soit pas assez puissant pour combattre Surtr. Elle quitte le temple en pleurant et te dit de l'amener le plus loin que possible du temple.",
             img: "assets/image/fjorm_presse.png",
             options: [
                 {
-                    text: "Vous continuez votre voyage avec déçu du résultat.",
+                    text: "Vous continuez votre voyage déçu du résultat",
                     action: "goToChapter(`royaume_muspel`)",
                 }
             ]
@@ -419,7 +439,7 @@ const chaptersObj = {
             subtitle: "Plan Déguisement",
             text: "Vous isolez un petit group de soldat et vous les tuez en cachette hors de vue des autres. Vous mettez l'uniforme, puis vous suivez un autre group de soldats qui vont vers le chateau.",
             img: "assets/image/summoner_heros_combat.png",
-            option: [
+            options: [
                 {
                     text: "Vous rentrer dans le chateau.",
                     action: "goToChapter(`mission_infiltration`)",
@@ -431,7 +451,7 @@ const chaptersObj = {
             subtitle: "Le rituel de la Flamme",
             text: "Vous êtes capturé rapidement par les soldats. Ils vous amènent dans le temple du rituel de la flamme ou vous êtes sacrifiés un après l'autre dans un bain de flamme et de souffrance.",
             img: "assets/image/soldat.jpg",
-            option: [
+            options: [
                 {
                     text: "Tu retourne dans le temps avec ton pouvoir.",
                     action: "goToChapter(`royaume_muspel`)",
@@ -482,7 +502,7 @@ const chaptersObj = {
                 }
             ]
         },
-        //Choix et résultat 2 combat final
+        //Choix et résultat 2 combat final (Fjorm)
         mauvaise_fin: {
             subtitle: "Un Nouveau Maître",
             text: "Surtr réduit tous les membres de ton équipe en cendre. Tu est encore vivant, mais pas pour longtemps. Avant de fermer tes yeux pour la dernière fois, tu voix Surtr entrain de s'éclatter de rire.",
@@ -494,7 +514,7 @@ const chaptersObj = {
                 }
             ]
         },
-        //Choix et résultat 3 combat final: Retirer la fin neutre.
+        //Choix et résultat 3 combat final: Retirer la fin neutre. (Fjorm à la lance, mais elle a évité le rituel) Retirer si trop compliqué.
         fin_neutre: {
             subtitle: "Battaille Perdue",
             text: "Les enfants sont tués avec la flamme de Surtr, mais le reste de ton équipe est gravement blessé. Tu décide d'utiliser le peu de force qui te reste pour retourner dans le temps, au moment ou de ta rencontre avec Fjorm.",
