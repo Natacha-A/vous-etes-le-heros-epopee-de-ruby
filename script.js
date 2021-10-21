@@ -1,5 +1,5 @@
 let lanceTrouver = false; //Booléen
-let rituelReussi = false; //Booléen
+let rituelReussi = null; //Pas d'information par défault peut changer après
 
 let tempsRestant = 0;
 //Cette fonction va servir à gerer le temps restant
