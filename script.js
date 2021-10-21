@@ -27,6 +27,11 @@ function arriverTemps () {
         goToChapter(`gunthra_morte`);
     }
 } 
+//Réinitialiser la valeur du temps restant quand le joueur clique sur l'option retourner dans le temps dans le chapitre gunthrà morte
+function resetTempsRestant () {
+    tempsRestant = 0;
+    goToChapter(`village_brule`);
+}
 //Terminer la création des objets principaux (les lozanges) et commencer les objets des options(les rectangles)
 const chaptersObj = {
     //Chapitre 1
@@ -265,21 +270,14 @@ const chaptersObj = {
     //Chapitre 6 remplacer la fonction goToChapter avec la fonction de gestion du temps et pour cacher la classe qui affiche les choix
         rencontre_gunthra: {
             subtitle: "À la rencontre de Gunthrà",
-            text: "Fjorm dirige la recherche de sa soeur Gunthrà. Fjorm peut ressentir le pouvoir de sa soeur à cause de son lien avec le dieu de leur royaume Nifl.",
+            text: "Fjorm dirige la recherche de sa soeur Gunthrà. Fjorm peut ressentir le pouvoir de sa soeur à cause de son lien avec le dieu de leur royaume Nifl. Fjorm vous dirige vers des ancients ruines causé par une guerre contre l'armée du Muspel qui a laissé beaucoup de citoyens de Nifl orphelin et sans maison. Plusieurs sont tué entrain de defendre leurs famille et d'autres ont été capturé pour être sacrifié au rituel de la flamme.",
             img: "assets/image/fjorm_presse.png",
             options: [
-                {
-                    //text: "Vous êtes arrivé en 7 jours pille",
+                {   //Mettre un bouton qui est déterminé par les choix précédants du joueur
+                    //Pas besoin de 3 boutons, car les conditions sont dans la fonction arriverTemps()
+                    text: "Tu arrive aux ruines",
                     action: "arriverTemps()",
                 },
-                {
-                    //text: "Vous êtes arrivé en moins de 7 jours",
-                    action: "arriverTemps()",
-                },
-                {
-                    //text: "Vous êtes arrivé en plus de 7 jours",
-                    action: "arriverTemps()",
-                }
             ]
         },
         //Choix 1 du royaume_nifl: si tempsRestant == 7 executer ce choix. (Je ne suis pas sur si je mes le chapitre suivant dans les options. Ils n'y a pas d'option, il y a juste un résultat. Ça va s'afficher automatiquement.)
@@ -314,7 +312,7 @@ const chaptersObj = {
             options: [
                 {   //Choix de recommencer du chapitre village brûle et reset le tempsRestant à 0
                     text: "Tu retourne dans le temps",
-                    action: "goToChapter(`village_brule`)",
+                    action: "resetTempsRestant()",
                 },
                 {   //Choix de continuer malgré le fait que Fjorm n'a pas la lance
                     text: "Vous continuez votre voyage avec désespoir",
