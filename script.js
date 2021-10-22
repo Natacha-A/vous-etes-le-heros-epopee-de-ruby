@@ -43,6 +43,7 @@ function resetTempsRestant () {
     tempsRestant = 0;
     gunthraVivante = true;
     rituelReussi = false;
+    lanceTrouver = false;
     goToChapter(`le_reveil`);
 }
 //Fonction qui gère l'état de la variable lanceTrouver
@@ -72,6 +73,25 @@ function eviterRituel () {
 function trouveLanceNon () {
     if (lanceTrouver == false && gunthraVivante == false) {
         goToChapter(`rituel_echoue`);
+    }
+}
+//Faire 3 fonctions pour chaque fin: bonne, mauvaise et neutre
+function goToBonneFin () {
+    //Doit avoir la lance, réussi le rituel et gunthrà doit être vivante pour avoir la bonne fin
+    if (lanceTrouver == true && rituelReussi == true && gunthraVivante == true) {
+        goToChapter(`bonne_fin`);
+    }
+}
+function goToFinNeutre () {
+    //Doit avoir la lance, mais n'a pas fait le rituel et gunthrà est morte
+    if (lanceTrouver == true && rituelReussi == false && gunthraVivante == false) {
+        goToChapter(`fin_neutre`);
+    }
+}
+function goToMauvaiseFin () {
+    //Tous les conditions sont faux pour avoir la mauvaise fin
+    if (lanceTrouver == false && rituelReussi == false && gunthraVivante == false) {
+        goToChapter(`mauvaise_fin`);
     }
 }
 //Terminer la création des objets principaux (les lozanges) et commencer les objets des options(les rectangles)
@@ -441,8 +461,12 @@ const chaptersObj = {
             img: "assets/image/fjorm_perdue.jpg",
             options: [
                 {       //Recommencer du début de l'histoire
-                    text: "Tu retourne dans le temps avec de la magie",
+                    text: "Tu retourne dans le temps",
                     action: "resetTempsRestant()",
+                },
+                {       //Tu continue malgré le fait que Fjorm est morte
+                    text: "Tu prend la lance en pleurant",
+                    action: "goToChapter(`royaume_muspel`)",
                 }
             ]
         },
@@ -465,7 +489,7 @@ const chaptersObj = {
             img: "assets/image/royaume_muspel.png",
             options: [
                 {
-                    text: "Voler les déguisements d'un petit group de soldats.",
+                    text: "Voler l'uniforme des soldats.",
                     action: "goToChapter(`uniforme_soldat`)",
                 },
                 {
@@ -502,7 +526,7 @@ const chaptersObj = {
         mission_infiltration: {
             subtitle: "Mission infiltrer le Château de Flame",
             text: "Laegarn reussi de vous faire rentrer dans le chateau sans problème. Il reste maintenant de trouver où ils ont pris les enfants (Ygl et Veronica). Vous commencer votre recherche au premier niveau du chateau, vous ne trouvez pas les enfants, mais vous entendez des soldats parler des enfants: `J'espère qu'on va avoir une promotion après le sacrifice, dit le premier soldat.` `J'espère qu'il vont être sacrifier aujourd'hui, car celui du royaume Nifl est agassant, il ne cesse de me supplier de le laisser partir. Il est fou ce petit là!! Si le roi entend ça, il va tuer toute ma famille, puis il me laissera dans une cage remplit de feu, dit un autre soldat.` Les soldats descend un escalier pour aller dans le dungeon, votre équipe les suis sans faire du bruit. Les soldats continue de marcher au déla de la cellule des enfants. Tu libère les enfants de la cellule. Fjorm cours embrasser sa soeur Ygl et Veronica ce plein de notre retard.",
-            img: "assets/image/soldat.png",
+            img: "assets/image/soldat.jpg",
             options: [
                 {
                     text: "Vous continuez vers la chambre du roi",
@@ -517,20 +541,20 @@ const chaptersObj = {
             img: "assets/image/surtr_debout.webp",
             options: [
                 {
-                    text: "Fjorm perçe le coeur de Surt avec sa lance.",
-                    action: "goToChapter(`bonne_fin`)",
+                    text: "Fjorm attaque Surtr",
+                    action: "goToBonneFin()",
                 },
                 {
-                    text: "Fjorm essaye de fuir la battaille.",
-                    action: "goToChapter(`mauvaise_fin`)",
+                    text: "Tu essaye de blesser Surtr",
+                    action: "goToMauvaiseFin()",
                 },
                 {
-                    text: "Fjorm tente de blesser Surtr avec sa lance.",
-                    action: "goToChapter(`fin_neutre`)",
+                    text: "Fjorm tente de blesser Surtr",
+                    action: "goToFinNeutre()",
                 }
             ]
         },
-        //Choix et résultat 1 combat final: condition avec la lance et rituel réussi
+        //Choix et résultat 1 combat final: condition avec la lance, gunthrà est vivante et rituel réussi
         bonne_fin: {
             subtitle: "Espoir pour le future",
             text: "Après un long combat féroce, avec l'aide de Laergarn et sa soeur, Fjorm réussi de planter sa lance dans le coeur du roi de la flamme Surtr et libérer le monde de ce tyrant immortel.",
@@ -542,10 +566,10 @@ const chaptersObj = {
                 }
             ]
         },
-        //Choix et résultat 2 combat final (Fjorm): condition sans la lance et le rituel évité
+        //Choix et résultat 2 combat final (Fjorm): condition sans la lance, gunthrà est morte et le rituel évité
         mauvaise_fin: {
             subtitle: "Un Nouveau Maître",
-            text: "Surtr réduit tous les membres de ton équipe en cendre. Tu est encore vivant, mais pas pour longtemps. Avant de fermer tes yeux pour la dernière fois, tu voix Surtr entrain de s'éclatter de rire.",
+            text: "Sans Fjorm vous n'avez aucune chance de battre Surtr. Il réduit tous les membres de ton équipe en cendre en moins de quelques minutes. Tu est encore vivant, mais pas pour longtemps. Avant de fermer tes yeux pour la dernière fois, tu voix Surtr entrain de s'éclatter de rire face à votre impuissance.",
             img: "assets/image/surtr.jpg",
             options: [
                 {
@@ -554,10 +578,10 @@ const chaptersObj = {
                 }
             ]
         },
-        //Choix et résultat 3 combat final: Retirer la fin neutre. (Condition Fjorm à la lance, mais elle a évité le rituel)
+        //Choix et résultat 3 combat final: Retirer la fin neutre. (Condition Fjorm à la lance, mais elle a évité le rituel et gunthrà est morte)
         fin_neutre: {
             subtitle: "Battaille Perdue",
-            text: "Les enfants sont tués avec la flamme de Surtr, mais le reste de ton équipe est gravement blessé. Tu décide d'utiliser le peu de force qui te reste pour retourner dans le temps, au moment ou de ta rencontre avec Fjorm.",
+            text: "Les enfants sont tués avec la flamme de Surtr, mais le reste de ton équipe est gravement blessé. Tu décide d'utiliser le peu de force qui te reste pour retourner dans le temps, au moment de ta première rencontre avec Fjorm.",
             img: "assets/image/surtr_combat.png",
             options: [
                 {
