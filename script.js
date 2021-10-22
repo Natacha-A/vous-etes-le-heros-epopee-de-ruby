@@ -377,7 +377,7 @@ const chaptersObj = {
                     action: "resetTempsRestant()",
                 },
                 {   //Choix de continuer malgré le fait que Fjorm n'a pas la lance
-                    text: "Vous continuez votre voyage avec désespoir",
+                    text: "Vous continuez avec désespoir",
                     action: "goToChapter(`temple_glace`)",
                 }
             ]
@@ -389,11 +389,11 @@ const chaptersObj = {
             img: "assets/image/temple.jpg",
             options: [
                 {
-                    text: "Fjorm rentre avec détermination dans le temple.",
+                    text: "Fjorm rentre avec détermination",
                     action: "goToChapter(`entrer_dedans`)",
                 },
                 {
-                    text: "Fjorm hésite de rentrer au temple.",
+                    text: "Fjorm hésite de rentrer",
                     action: "goToChapter(`rester_dehors`)",
                 }
             ]
@@ -429,15 +429,15 @@ const chaptersObj = {
             img: "assets/image/fjorm_temple.png",
             options: [
                 {
-                    text: "Fjorm utilise la lance pour faire le rituel.",
+                    text: "Fjorm tient sa lance",
                     action: "trouveLanceOui()",
                 },
                 {
-                    text: "Fjorm essaye de faire le rituel sans la lance.",
+                    text: "Fjorm hésite de s'approcher",
                     action: "trouveLanceNon()",
                 },
                 {
-                    text: "Fjorm quitte le temple sans faire le rituel.",
+                    text: "Fjorm quitte le temple",
                     action: "eviterRituel()",
                 }
             ]
@@ -445,7 +445,7 @@ const chaptersObj = {
         //Choix et résultat 1 du rituel de glace: Faire avec booléen lanceTrouver == vrai
         rituel_reussi: {
             subtitle: "Rituel Réussi",
-            text: "Fjorm perçe le voile glacé du autel avec la lance, puis une lumière éblouissante l'engloutie complètement. Cette lumière lève Fjorm du sol avant de la descendre réenergisée.",
+            text: "Fjorm transperce le voile glacé du autel avec la lance, puis une lumière éblouissante l'engloutie complètement. Cette lumière lève Fjorm du sol avant de la descendre réenergisée.",
             img: "assets/image/fjorm_temple.png",
             options: [
                 {
