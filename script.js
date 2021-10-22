@@ -1,8 +1,9 @@
-let lanceTrouver = false; //Booléen
-let rituelReussi = null; //Pas d'information par défault peut changer après
+let lanceTrouver = false; //Booléen pour changer l'état de la lance: condition requis pour réussir le rituel et pour gagner le combat final
+let rituelReussi = false; //Faux par défault
+let gunthraVivante = true; //Etat que gunthra est vivante au début de l'histoire
 
 let tempsRestant = 0;
-//Cette fonction va servir à gerer le temps restant
+//Cette fonction va servir à gerer l'état du temps restant
 function compteurTemps (nombreJour, prochainChapitre) {
     //Stocker et ajouter le temps avec la valeur dans le paramètre nombreJour
     tempsRestant += nombreJour;
@@ -16,21 +17,62 @@ function arriverTemps () {
     let choix = document.querySelector(".choix");
 
     if (tempsRestant < 7) {
-        lanceTrouver == true;
+        //Appeler la fonction etatTrouveLance() pour changer la valeur de la variable lanceTrouver à true
+        etatTrouveLance();
+        //Gunthrà est vivante
+        gunthraVivante = true;
         goToChapter(`gunthra_vivante`);
     }
     else if (tempsRestant === 7) {
-        lanceTrouver == true;
+        //Fjorm a la lance
+        etatTrouveLance();
+        //Gunthra est morte
+        etatGunthraVivante();
         goToChapter(`gunthra_lance`);
     }
     else if (tempsRestant > 7) {
+        //Gunthra est morte
+        etatGunthraVivante();
+        //Fjorm n'a pas la lance
+        lanceTrouver = false;
         goToChapter(`gunthra_morte`);
     }
 } 
-//Réinitialiser la valeur du temps restant quand le joueur clique sur l'option retourner dans le temps dans le chapitre gunthrà morte
+//Réinitialiser la valeur du temps restant et changer la valeur de gunthraVivante à true quand le joueur clique sur l'option retourner dans le temps dans le chapitre gunthrà morte
 function resetTempsRestant () {
     tempsRestant = 0;
-    goToChapter(`village_brule`);
+    gunthraVivante = true;
+    rituelReussi = false;
+    goToChapter(`le_reveil`);
+}
+//Fonction qui gère l'état de la variable lanceTrouver
+function etatTrouveLance () {
+    //Changer la valeur de lanceTrouver à true avec un égale
+    lanceTrouver = true;
+}
+//Fonction qui gère l'état de gunthra pour l'état eviter le rituel
+function etatGunthraVivante () {
+    gunthraVivante = false;
+}
+//Fonction pour vérifier si le joueur a trouvé la lance et gunthrà est vivante: Les conditions sont séparé pour afficher les 3 boutons
+function trouveLanceOui () {
+    if (lanceTrouver == true && gunthraVivante == true) {
+        rituelReussi = true;
+        goToChapter(`rituel_reussi`);
+    }
+}
+//Fonction ou Fjorm reçoit la lance, mais évite de faire le rituel, car sa soeur est morte
+function eviterRituel () {
+    if (lanceTrouver == true && gunthraVivante == false) {
+        rituelReussi = false;
+        goToChapter(`rituel_evite`);
+    }
+}
+//Fonction pour vérifier si le joueur n'a pas trouvé la lance et que gunthrà est morte
+function trouveLanceNon () {
+    if (lanceTrouver == false && gunthraVivante == false) {
+        goToChapter(`rituel_echoue`);
+    }
 }
 //Terminer la création des objets principaux (les lozanges) et commencer les objets des options(les rectangles)
 const chaptersObj = {
@@ -246,11 +288,11 @@ const chaptersObj = {
         //Résultat du choix 2 du royaume_nifl
         nouveau_membre: {
             subtitle: "Preuve de Force!!",
-            text: "Laergarn et sa soeur épuissées sont impressionnées par votre prouesse sur le terrain. Elles prend la décision de rejoindre votre équipe en tant qu'espion. Elles vont vous faire part des prochaines étapes du plan de leur père.",
+            text: "Laergarn et sa soeur épuissées sont impressionnées par votre prouesse sur le terrain. Elles prend la décision de rejoindre votre équipe en tant qu'espion. Elles vont vous faire part des prochaines étapes du plan de leur père. Elles te dit que le roi se prépare à sacrifier des enfants pour devenir plus fort et il faut l'arrêter avant qu'il réussi si non il va être impossible à vaincre. Vous dites vos adieux pour le moment et continuez votre recherche pour la soeur de Fjorm.",
             img: "assets/image/laergarn_debout.png",
             options: [
                 {
-                    text: "Vous reprenez votre recherche de la soeur de Fjorm.",
+                    text: "Vous reprenez votre recherche dés que possible",
                     action: "goToChapter(`rencontre_gunthra`)",
                 }
             ]
@@ -275,7 +317,7 @@ const chaptersObj = {
             options: [
                 {   //Mettre un bouton qui est déterminé par les choix précédants du joueur
                     //Pas besoin de 3 boutons, car les conditions sont dans la fonction arriverTemps()
-                    text: "Tu arrive aux ruines",
+                    text: "Vous trouvez les ruines ou Gunthrà est cachée",
                     action: "arriverTemps()",
                 },
             ]
@@ -368,15 +410,15 @@ const chaptersObj = {
             options: [
                 {
                     text: "Fjorm utilise la lance pour faire le rituel.",
-                    action: "goToChapter(`rituel_reussi`)",
+                    action: "trouveLanceOui()",
                 },
                 {
                     text: "Fjorm essaye de faire le rituel sans la lance.",
-                    action: "goToChapter(`rituel_echoue`)",
+                    action: "trouveLanceNon()",
                 },
                 {
                     text: "Fjorm quitte le temple sans faire le rituel.",
-                    action: "goToChapter(`rituel_evite`)",
+                    action: "eviterRituel()",
                 }
             ]
         },
@@ -398,9 +440,9 @@ const chaptersObj = {
             text: "Fjorm essaye de faire le rituel sans la lance légendaire, mais elle échoue. Elle meurt peut après le rituel de la glace, transformer en popsicle humain.",
             img: "assets/image/fjorm_perdue.jpg",
             options: [
-                {
+                {       //Recommencer du début de l'histoire
                     text: "Tu retourne dans le temps avec de la magie",
-                    action: "goToChapter(`royaume_nifl`)",
+                    action: "resetTempsRestant()",
                 }
             ]
         },
@@ -410,7 +452,7 @@ const chaptersObj = {
             text: "Fjorm rentre dans le temple, elle semble voir quelque chose d'effrayant. Cette créature lui dit de quitter le temple et de ne jamais revenir, car la mort l'attend peu importe si elle fait le rituel ou non. Sa durée sur cette terre est très limité. Elle savais cela, mais elle a quand même peur, peur de ne plus être auprès de ces ami, peur que le rituel de glace ne soit pas assez puissant pour combattre Surtr. Elle quitte le temple en pleurant et te dit de l'amener le plus loin que possible du temple.",
             img: "assets/image/fjorm_presse.png",
             options: [
-                {
+                {       //Fjorm à la lance, mais gunthrà est morte
                     text: "Vous continuez votre voyage déçu du résultat",
                     action: "goToChapter(`royaume_muspel`)",
                 }
@@ -468,7 +510,7 @@ const chaptersObj = {
                 },
             ]
         },
-    //Chapitre 11
+    //Chapitre 11: Créer une fonction qui gère les 3 conditions positive, négative et neutre
         combat_final: {
             subtitle: "Un Combat Décisive!!",
             text: "C'est maintenant ou jamais! Le temps pour faire face au roi de la flame éternelle Surtr est arrivée. Surtr vous regarde avec une grimace qui forme sur son visage, `Je suis surpris que vous avez réussi de trucquer mon armée, mais c'est fini ici et maintenant!! Vous allez faire une très bonne addition au sacrifice, le pouvoir que ça va me donné, je serais invincible!! Mwuahahahahahaha!!!` `On va voir qui va avoir le dernier mot Surtr!! Fjorm cri en ce précipitant vers le roi pour l'attaquer.` Est-ce que vous êtes prés pour le combat ultime?",
@@ -488,19 +530,19 @@ const chaptersObj = {
                 }
             ]
         },
-        //Choix et résultat 1 combat final
+        //Choix et résultat 1 combat final: condition avec la lance et rituel réussi
         bonne_fin: {
             subtitle: "Espoir pour le future",
-            text: "Après un long combat féroce, Fjorm réussi de tuer le roi de la flamme Surtr et libérer le monde de ce tyrant.",
+            text: "Après un long combat féroce, avec l'aide de Laergarn et sa soeur, Fjorm réussi de planter sa lance dans le coeur du roi de la flamme Surtr et libérer le monde de ce tyrant immortel.",
             img: "assets/image/surtr_perdue.jpg",
             options: [
                 {
-                    text: "Youpe, le monde est sauvé!!",
-                    action: "goToChapter(`le_reveil`)"
+                    text: "Youpi, le monde est sauvé!!",
+                    action: "resetTempsRestant()"
                 }
             ]
         },
-        //Choix et résultat 2 combat final (Fjorm)
+        //Choix et résultat 2 combat final (Fjorm): condition sans la lance et le rituel évité
         mauvaise_fin: {
             subtitle: "Un Nouveau Maître",
             text: "Surtr réduit tous les membres de ton équipe en cendre. Tu est encore vivant, mais pas pour longtemps. Avant de fermer tes yeux pour la dernière fois, tu voix Surtr entrain de s'éclatter de rire.",
@@ -508,11 +550,11 @@ const chaptersObj = {
             options: [
                 {
                     text: "Tu as perdu, rejouer!",
-                    action: "goToChapter(`le_reveil`)"
+                    action: "resetTempsRestant()"
                 }
             ]
         },
-        //Choix et résultat 3 combat final: Retirer la fin neutre. (Fjorm à la lance, mais elle a évité le rituel) Retirer si trop compliqué.
+        //Choix et résultat 3 combat final: Retirer la fin neutre. (Condition Fjorm à la lance, mais elle a évité le rituel)
         fin_neutre: {
             subtitle: "Battaille Perdue",
             text: "Les enfants sont tués avec la flamme de Surtr, mais le reste de ton équipe est gravement blessé. Tu décide d'utiliser le peu de force qui te reste pour retourner dans le temps, au moment ou de ta rencontre avec Fjorm.",
@@ -520,7 +562,7 @@ const chaptersObj = {
             options: [
                 {
                     text: "Tu est blessé, rejouer!",
-                    action: "goToChapter(`le_reveil`)"
+                    action: "resetTempsRestant()"
                 }
             ]
         }
