@@ -82,4 +82,9 @@ body{
     
 }
 
+/*Cacher les vidéos sauf quand leurs chapitres apparaît sur l'écran*/
+/*Par défault la vidéo est en display none pour la cacher*/
+#divVideo {
+    display: none;
+}
 

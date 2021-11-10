@@ -130,11 +130,12 @@ const chaptersObj = {
       },
     ],
   },
-  //Chapitre 2
+  //Chapitre 2: Ajouter une propriété vidéo
   voyage_nifl: {
     subtitle: "Le Voyage Vers le Royaume de Nifl",
     text: "Tu prend la main de Fjorm avec beaucoup d'enthousiasme et tu te précipite dehors avec elle. `*Soupir* Tu est comme un enfant, dit Alfonse en hochant sa tête.` `Hey! Ce n'est pas ma faute que j'aime l'aventure!! tu répond avec embarras. Ah, avant que j'oublie, Fjorm raconte nous ta situation, tu as dit que t'avais besoin de l'aide n'est-ce pas? tu dis.` `Nifl a été attaqué par Muspel, j'ai été séparé de ma famille, je ne sais même pas s'ils sont encore vivants, dit Fjorm avec des larmes qui coule de ses yeux.` `Ok on va t'aider Fjorm, allons-y à Nifl pour retrouver ta soeur!!`",
     img: "assets/image/fjorm_lance.png",
+    video: "assets/video/video_temporaire.mp4",
     options: [
       {
         text: "Votre groupe voyage à travers Askr",
@@ -551,6 +552,7 @@ const chaptersObj = {
     subtitle: "Un Combat Décisive!!",
     text: "C'est maintenant ou jamais! Le temps pour faire face au roi de la flame éternelle Surtr est arrivée. Surtr vous regarde avec une grimace qui forme sur son visage, `Je suis surpris que vous avez réussi de trucquer mon armée, mais c'est fini ici et maintenant!! Vous allez faire une très bonne addition au sacrifice, le pouvoir que ça va me donné, je serais invincible!! Mwuahahahahahaha!!!` `On va voir qui va avoir le dernier mot Surtr!! Fjorm cri en ce précipitant vers le roi pour l'attaquer.` Est-ce que vous êtes prés pour le combat ultime?",
     img: "assets/image/surtr_debout.webp",
+    video: "assets/video/video_temporaire.mp4",
     options: [
       {
         text: "Fjorm attaque Surtr",
@@ -614,16 +616,32 @@ function goToChapter(chapterName) {
   let textDescription = document.getElementById("text");
   let image = document.getElementById("divImage");
   let options = document.getElementById("options");
+  let video = document.getElementById("divVideo");
 
   //Afficher le soustire, la description de l'histoire et l'image à l'aide d'une variable qui contient le tableau des objets des chapitres, le nom de chaque chapitre et la propriété spécifiée dans l'objet.
   chapter.textContent = chaptersObj[chapterName].subtitle;
   textDescription.textContent = chaptersObj[chapterName].text;
-  image.innerHTML = `<img src="${chaptersObj[chapterName].img}" alt="image_chapitre"/>`;
+  
+
+  //Condition pour afficher la vidéo si la propriété video est dans le chapitre
+  //Si la valeur de la propriété vidéo n'égale pas à undefined afficher la vidéo dans la balise div de l'image
+  if (chaptersObj[chapterName].video != undefined) {
+    //Insérer une balise vidéo dans la variable vidéo: note: mettre la vidéo et l'image dans la même balise pour que ça fonctionne
+    video.innerHTML = `<div id="divImage"><video src="${chaptersObj[chapterName].video}" type="video/mp4" controls loop muted autoplay></video></div>`;
+    video.style.display = "block";
+    image.style.display = "none";
+  } else { //Si non afficher l'image comme les autres chapitres
+    //Insérer une balise img dans la variable du même nom
+    image.innerHTML = `<div id="divImage"><img src="${chaptersObj[chapterName].img}" alt="image_chapitre"/></div>`;
+    video.style.display = "none";
+    image.style.display = "block";
+  }
 
   //Il n'y a pas d'erreur dans la console quand j'appelle la fonction, mais l'image ne s'affiche pas.
   console.log(chapter.textContent);
   console.log(textDescription.textContent);
   console.log(image.innerHTML);
+  console.log(video.innerHTML);
 
   //Créer la boucle for() pour afficher les choix dans chaque champ de text.
   let textButton = "";
@@ -639,3 +657,4 @@ function goToChapter(chapterName) {
 goToChapter("le_reveil");
 //Appeler la fonction, n'oublie pas les guillemets: goToChapter("le_reveil");
 //Vérifier que le nombre s'incrémente : compteurTemps(3, "royaume_nifl");
+console.log(chaptersObj["combat_final"].video);
