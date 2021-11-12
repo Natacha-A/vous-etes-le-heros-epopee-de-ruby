@@ -610,6 +610,9 @@ const chaptersObj = {
 //Créer un tableau pour mettre l'objet chaptersObj
 //let chapitreArr = [chaptersObj];
 
+//Mettre le audio en dehors de la fonction goToChapter pour éviter la multiplication du son
+let sound = new Audio("assets/sound/son_temporaire.mp3");
+
 function goToChapter(chapterName) {
   //Récupérer les éléments du DOM (HTML)
   let chapter = document.getElementById("chapitre");
@@ -621,18 +624,17 @@ function goToChapter(chapterName) {
   //Afficher le soustire, la description de l'histoire et l'image à l'aide d'une variable qui contient le tableau des objets des chapitres, le nom de chaque chapitre et la propriété spécifiée dans l'objet.
   chapter.textContent = chaptersObj[chapterName].subtitle;
   textDescription.textContent = chaptersObj[chapterName].text;
-  
 
   //Condition pour afficher la vidéo si la propriété video est dans le chapitre
   //Si la valeur de la propriété vidéo n'égale pas à undefined afficher la vidéo dans la balise div de l'image
   if (chaptersObj[chapterName].video != undefined) {
     //Insérer une balise vidéo dans la variable vidéo: note: mettre la vidéo et l'image dans la même balise pour que ça fonctionne
-    video.innerHTML = `<div id="divImage"><video src="${chaptersObj[chapterName].video}" type="video/mp4" controls loop muted autoplay></video></div>`;
+    video.innerHTML = `<div id="divImage"><video class="video" src="${chaptersObj[chapterName].video}" type="video/mp4" controls loop muted autoplay></video></div>`;
     video.style.display = "block";
     image.style.display = "none";
   } else { //Si non afficher l'image comme les autres chapitres
     //Insérer une balise img dans la variable du même nom
-    image.innerHTML = `<div id="divImage"><img src="${chaptersObj[chapterName].img}" alt="image_chapitre"/></div>`;
+    image.innerHTML = `<div id="divImage"><img class="image" src="${chaptersObj[chapterName].img}" alt="image_chapitre"/></div>`;
     video.style.display = "none";
     image.style.display = "block";
   }
@@ -651,6 +653,19 @@ function goToChapter(chapterName) {
   }
   //Relier le tableau des options au bouton text pour afficher le text à la bonne place.
   options.innerHTML = textButton;
+
+  //Écouter le click des boutons pour exécuter le sons
+  options.addEventListener("click", function () {
+    if (sound.paused === true) {
+      sound.currentTime = 0;
+      sound.play();
+      
+    } else {
+      sound.currentTime = 0;
+    }
+    console.log(sound);
+  });
+  console.log(options);
 }
 
 //Appeller la fonction goToChapter pour vérifier que tout fonctionne.

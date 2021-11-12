@@ -34,8 +34,8 @@ body{
     color: var(--bleu-clair);
 }
 
-/*Ajuster la taille du logo, de l'image temporaire et le text*/
-#divImage, img, .image, #text {
+/*Ajuster la taille du logo, de l'image temporaire, le text et de la vidéo*/
+#divImage, img, .image, #text, .video {
     width: 400px;
 }
 
@@ -84,7 +84,8 @@ body{
 
 /*Cacher les vidéos sauf quand leurs chapitres apparaît sur l'écran*/
 /*Par défault la vidéo est en display none pour la cacher*/
-#divVideo {
+/*#divVideo {
     display: none;
-}
+    width: 400px;
+}*/
 
