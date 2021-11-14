@@ -665,11 +665,25 @@ function goToChapter(chapterName) {
       sound.currentTime = 0;
     }
   console.log(sound);
-  console.log(options);
+  console.log(options);  
 }
+
+/*let chapterName = currentChapter;
+let currentChapter = chaptersObj[chapterName];
+
+//Sauvegarder le chapitre que l'utilisateur est rester sur.
+localStorage.setItem("currentChapter", currentChapter);
+
+if (localStorage.getItem("currentChapter") !== undefined) {
+  goToChapter(chapterName) = localStorage.getItem("currentChapter");
+  //goToChapter(chapterName);
+} else {
+  goToChapter("le_reveil");
+}*/
+
 
 //Appeller la fonction goToChapter pour vérifier que tout fonctionne.
 goToChapter("le_reveil");
 //Appeler la fonction, n'oublie pas les guillemets: goToChapter("le_reveil");
 //Vérifier que le nombre s'incrémente : compteurTemps(3, "royaume_nifl");
-console.log(chaptersObj["combat_final"].video);
+//console.log(chaptersObj["combat_final"].video);
