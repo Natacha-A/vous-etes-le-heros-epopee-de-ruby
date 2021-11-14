@@ -665,21 +665,25 @@ function goToChapter(chapterName) {
       sound.currentTime = 0;
     }
   console.log(sound);
-  console.log(options);  
+  console.log(options);
+
+  //Sauvegarder le chapitre que l'utilisateur est rester sur.
+  localStorage.setItem("chapterName", chapterName);
 }
 
-/*let chapterName = currentChapter;
-let currentChapter = chaptersObj[chapterName];
+//Mettre la valeur du localStorage dans la variable chapterName
+let chapterName = localStorage.getItem("chapterName");
+console.log(chapterName);
 
-//Sauvegarder le chapitre que l'utilisateur est rester sur.
-localStorage.setItem("currentChapter", currentChapter);
-
-if (localStorage.getItem("currentChapter") !== undefined) {
-  goToChapter(chapterName) = localStorage.getItem("currentChapter");
-  //goToChapter(chapterName);
+//Faire la condition du local storage pour vérifier s'il y a quelques chose de sauvegardée dedans.
+if (localStorage.getItem("chapterName") !== undefined) {
+  //Mettre la valeur du local storage dans la fonction goToChapter pour afficher le chapitre sauvegardé.
+  chapterName = localStorage.getItem("chapterName");
+  goToChapter(chapterName);
 } else {
+  //Cette partie ne fonctionne pas?
   goToChapter("le_reveil");
-}*/
+}
 
 
 //Appeller la fonction goToChapter pour vérifier que tout fonctionne.
