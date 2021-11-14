@@ -135,7 +135,6 @@ const chaptersObj = {
     subtitle: "Le Voyage Vers le Royaume de Nifl",
     text: "Tu prend la main de Fjorm avec beaucoup d'enthousiasme et tu te précipite dehors avec elle. `*Soupir* Tu est comme un enfant, dit Alfonse en hochant sa tête.` `Hey! Ce n'est pas ma faute que j'aime l'aventure!! tu répond avec embarras. Ah, avant que j'oublie, Fjorm raconte nous ta situation, tu as dit que t'avais besoin de l'aide n'est-ce pas? tu dis.` `Nifl a été attaqué par Muspel, j'ai été séparé de ma famille, je ne sais même pas s'ils sont encore vivants, dit Fjorm avec des larmes qui coule de ses yeux.` `Ok on va t'aider Fjorm, allons-y à Nifl pour retrouver ta soeur!!`",
     img: "assets/image/fjorm_lance.png",
-    video: "assets/video/video_temporaire.mp4",
     options: [
       {
         text: "Votre groupe voyage à travers Askr",
@@ -495,11 +494,12 @@ const chaptersObj = {
       },
     ],
   },
-  //Chapitre 9: retirer le choix du group capturer de ce chapitre.
+  //Chapitre 9: retirer le choix du group capturer de ce chapitre et ajouter une vidéo d'ambiance.
   royaume_muspel: {
     subtitle: "Le Royaume de Muspel",
-    text: "Vous arrivez à Muspel juste à temps pour voir une énorme armée marchez vers vous. Tu propose à ton équipe de rester discrèt pour éviter un combat prolongué, mais Fjorm et Laergarn propose de séparer un petit group de soldat du reste de l'armée pour voler leurs vêtements de guerre dans le but de faciliter leur quête dans le royaume. Alfonse est entrain de réfléchir à une autre solution, mais il est d'accord avec les filles, il faut continuer de s'avancer sans ce faire repérer par les soldats ou tout autre personne de Muspel. À toi de jouer tacticien, qu'est-ce que tu va faire?",
+    text: "Vous arrivez à Muspel juste à temps pour voir une énorme armée marchez vers vous. Tu propose à ton équipe de rester discrèt pour éviter un combat prolongué, mais Alfonse et Laergarn propose de séparer un petit group de soldat du reste de l'armée pour voler leurs vêtements de guerre dans le but de faciliter leur quête dans le royaume. Alfonse est entrain de réfléchir à une autre solution, mais il est d'accord avec les filles, il faut continuer de s'avancer sans ce faire repérer par les soldats ou tout autre personne de Muspel. À toi de jouer tacticien, qu'est-ce que tu va faire?",
     img: "assets/image/royaume_muspel.png",
+    video: "assets/video/royaume_muspel.mp4",
     options: [
       {
         text: "Voler l'uniforme des soldats.",
@@ -528,6 +528,7 @@ const chaptersObj = {
     subtitle: "Le rituel de la Flamme",
     text: "Vous êtes capturé rapidement par les soldats. Ils vous amènent dans le temple du rituel de la flamme ou vous êtes sacrifiés un après l'autre dans un bain de flamme et de souffrance.",
     img: "assets/image/soldat.jpg",
+    video: "assets/video/group_capturer.mp4",
     options: [
       {
         text: "Tu retourne dans le temps avec ton pouvoir.",
@@ -552,7 +553,6 @@ const chaptersObj = {
     subtitle: "Un Combat Décisive!!",
     text: "C'est maintenant ou jamais! Le temps pour faire face au roi de la flame éternelle Surtr est arrivée. Surtr vous regarde avec une grimace qui forme sur son visage, `Je suis surpris que vous avez réussi de trucquer mon armée, mais c'est fini ici et maintenant!! Vous allez faire une très bonne addition au sacrifice, le pouvoir que ça va me donné, je serais invincible!! Mwuahahahahahaha!!!` `On va voir qui va avoir le dernier mot Surtr!! Fjorm cri en ce précipitant vers le roi pour l'attaquer.` Est-ce que vous êtes prés pour le combat ultime?",
     img: "assets/image/surtr_debout.webp",
-    video: "assets/video/video_temporaire.mp4",
     options: [
       {
         text: "Fjorm attaque Surtr",
@@ -629,7 +629,7 @@ function goToChapter(chapterName) {
   //Si la valeur de la propriété vidéo n'égale pas à undefined afficher la vidéo dans la balise div de l'image
   if (chaptersObj[chapterName].video != undefined) {
     //Insérer une balise vidéo dans la variable vidéo: note: mettre la vidéo et l'image dans la même balise pour que ça fonctionne
-    video.innerHTML = `<div id="divImage"><video class="video" src="${chaptersObj[chapterName].video}" type="video/mp4" controls loop muted autoplay></video></div>`;
+    video.innerHTML = `<div id="divImage"><video class="video" src="${chaptersObj[chapterName].video}" type="video/mp4" loop muted autoplay></video></div>`;
     video.style.display = "block";
     image.style.display = "none";
   } else { //Si non afficher l'image comme les autres chapitres
@@ -654,17 +654,17 @@ function goToChapter(chapterName) {
   //Relier le tableau des options au bouton text pour afficher le text à la bonne place.
   options.innerHTML = textButton;
 
-  //Écouter le click des boutons pour exécuter le sons
-  options.addEventListener("click", function () {
-    if (sound.paused === true) {
+  //Écouter le click des boutons pour exécuter le sons quand il ne joue pas et l'arrêtter quand il joue.
+  //Ça continue d'ajouter d'autres balises audio, c'est bizarre.
+  //Ça marche, mais WTF, je ne comprend pas la condition, lol.
+    if (chaptersObj[chapterName] === chaptersObj[chapterName]) {
       sound.currentTime = 0;
       sound.play();
-      
     } else {
+      sound.pause();
       sound.currentTime = 0;
     }
-    console.log(sound);
-  });
+  console.log(sound);
   console.log(options);
 }
 
