@@ -12,7 +12,11 @@ function compteurTemps(nombreJour, prochainChapitre) {
 
   //Sauvegarder la valeur du temps restant dans le localStorage
   localStorage.setItem("tempsRestant", tempsRestant);
+
+  tempsRestant = localStorage.getItem("tempsRestant");
 }
+
+
 
 //Fonction qui détermine si le joueur est arrivé à temps ou non: Ça fonctionne, mais ce n'est pas parfait
 //Reste à cacher les boutons input du chapitre rencontre gunthrà et de changer l'état de la variable lanceTrouver à true
@@ -28,8 +32,8 @@ function arriverTemps() {
     goToChapter(`gunthra_vivante`);
 
     //Sauvegarder la valeur de la lanceTrouver et de gunthraVivante dans le localStorage
-    localStorage.setItem("lanceTrouver", lanceTrouver);
-    localStorage.setItem("gunthraVivante", gunthraVivante);
+    //localStorage.setItem("lanceTrouver", lanceTrouver);
+    //localStorage.setItem("gunthraVivante", gunthraVivante);
   } else if (tempsRestant === 7) {
     //Fjorm a la lance
     lanceTrouver = true;
@@ -38,8 +42,8 @@ function arriverTemps() {
     goToChapter(`gunthra_lance`);
 
     //Sauvegarder la valeur de la lanceTrouver et de gunthraVivante dans le localStorage
-    localStorage.setItem("lanceTrouver", lanceTrouver);
-    localStorage.setItem("gunthraVivante", gunthraVivante);
+    //localStorage.setItem("lanceTrouver", lanceTrouver);
+    //localStorage.setItem("gunthraVivante", gunthraVivante);
   } else if (tempsRestant > 7) {
     //Gunthra est morte
     gunthraVivante = false;
@@ -48,8 +52,8 @@ function arriverTemps() {
     goToChapter(`gunthra_morte`);
 
     //Sauvegarder la valeur de la lanceTrouver et de gunthraVivante dans le localStorage
-    localStorage.setItem("lanceTrouver", lanceTrouver);
-    localStorage.setItem("gunthraVivante", gunthraVivante);
+    //localStorage.setItem("lanceTrouver", lanceTrouver);
+    //localStorage.setItem("gunthraVivante", gunthraVivante);
   }
 }
 //Réinitialiser la valeur du temps restant et changer la valeur de gunthraVivante à true quand le joueur clique sur l'option retourner dans le temps dans le chapitre gunthrà morte
@@ -72,43 +76,43 @@ function etatGunthraVivante() {
 //Fonction pour vérifier si le joueur a trouvé la lance et gunthrà est vivante: Les conditions sont séparé pour afficher les 3 boutons
 function trouveLanceOui() {
   //Récuperer la valeur de la lanceTrouver et de gunthraVivante du localStorage.
-  //localStorage.getItem("lanceTrouver");
-  //localStorage.getItem("gunthraVivante");
+  //lanceTrouver = localStorage.getItem("lanceTrouver");
+  //gunthraVivante = localStorage.getItem("gunthraVivante");
 
   if (lanceTrouver == true && gunthraVivante == true) {
     rituelReussi = true;
     goToChapter(`rituel_reussi`);
 
     //Sauvegarder la valeur du rituelReussi dans le localStorage
-    localStorage.setItem("rituelReussi", rituelReussi);
+    //localStorage.setItem("rituelReussi", rituelReussi);
   }
 }
 //Fonction ou Fjorm reçoit la lance, mais évite de faire le rituel, car sa soeur est morte
 function eviterRituel() {
   //Récuperer la valeur de la lanceTrouver et de gunthraVivante du localStorage.
-  //localStorage.getItem("lanceTrouver");
-  //localStorage.getItem("gunthraVivante");
+  //lanceTrouver = localStorage.getItem("lanceTrouver");
+  //gunthraVivante = localStorage.getItem("gunthraVivante");
 
   if (lanceTrouver == true && gunthraVivante == false) {
     rituelReussi = false;
     goToChapter(`rituel_evite`);
 
     //Sauvegarder la valeur du rituelReussi dans le localStorage
-    localStorage.setItem("rituelReussi", rituelReussi);
+    //localStorage.setItem("rituelReussi", rituelReussi);
   }
 }
 //Fonction pour vérifier si le joueur n'a pas trouvé la lance et que gunthrà est morte
 function trouveLanceNon() {
   //Récuperer la valeur de la lanceTrouver et de gunthraVivante du localStorage.
-  //localStorage.getItem("lanceTrouver");
-  //localStorage.getItem("gunthraVivante");
+  //lanceTrouver = localStorage.getItem("lanceTrouver");
+  //gunthraVivante = localStorage.getItem("gunthraVivante");
 
   if (lanceTrouver == false && gunthraVivante == false) {
     rituelReussi = false;
     goToChapter(`rituel_echoue`);
 
     //Sauvegarder la valeur du rituelReussi dans le localStorage
-    localStorage.setItem("rituelReussi", rituelReussi);
+    //localStorage.setItem("rituelReussi", rituelReussi);
   }
 }
 //Faire 3 fonctions pour chaque fin: bonne, mauvaise et neutre
@@ -139,20 +143,22 @@ function goToMauvaiseFin() {
   }
 }
 
-//Récupérer les valeurs de tous les variables d'états, je ne comprend pas, HELP!!!
+
+
+/*//Récupérer les valeurs de tous les variables d'états, je ne comprend pas, HELP!!!
 //Si la valeur des variables égale à la valeur dans le localStorage les initialiser avec cette valeur, si non les donner leur valeur de base.
-if (localStorage.getItem("tempsRestant", tempsRestant) != undefined) {
+if (localStorage.getItem("tempsRestant") != undefined) {
   //Récuperer la valeur de la lanceTrouver, de gunthraVivante et du rituelReussi dans le localStorage
   tempsRestant = localStorage.getItem("tempsRestant");
-  lanceTrouver = localStorage.getItem("lanceTrouver");
-  gunthraVivante = localStorage.getItem("gunthraVivante");
-  rituelReussi = localStorage.getItem("rituelReussi");
+  //lanceTrouver = localStorage.getItem("lanceTrouver");
+  //gunthraVivante = localStorage.getItem("gunthraVivante");
+  //rituelReussi = localStorage.getItem("rituelReussi");
 } else {
   tempsRestant = 0;
   lanceTrouver = false;
   gunthraVivante = true;
   rituelReussi = false;
-}
+}*/
 
 //Terminer la création des objets principaux (les lozanges) et commencer les objets des options(les rectangles)
 const chaptersObj = {
