@@ -2,17 +2,24 @@ let lanceTrouver = false; //Booléen pour changer l'état de la lance: condition
 let rituelReussi = false; //Faux par défault
 let gunthraVivante = true; //Etat que gunthra est vivante au début de l'histoire
 
+//Faire la condition pour vérifier si la lance a été trouvé ou non. Si l'état de la variable a changé tu récupère le localStorage, si non tu laisse la valeur par défault de la variable par défault.
 //Récupérer la valeur sauvegardée dans le localStorage des variables d'états.
 if (localStorage.getItem("lanceTrouver") != undefined) {
-  lanceTrouver = localStorage.getItem("lanceTrouver"); //Me retourne la valeur par défault False
-} else {
-  lanceTrouver = false;
-}
+  lanceTrouver = localStorage.getItem("lanceTrouver"); //Me retourne la valeur récupérer dans le localStorage
+
+} /*else {
+  lanceTrouver = false; //Me retourne la valeur par défault False
+}*/
 
 if (localStorage.getItem("gunthraVivante") != undefined) {
-  gunthraVivante = localStorage.getItem("gunthraVivante"); //Me retourne la valeur par défault False
-} else {
+  gunthraVivante = localStorage.getItem("gunthraVivante"); //Me retourne la valeur récupérer dans le localStorage
+
+} /*else {
   gunthraVivante = true;
+}*/
+
+if (localStorage.getItem("rituelReussi") != undefined) {
+  rituelReussi = localStorage.getItem("rituelReussi"); //Me retourne la valeur récupérer dans le localStorage
 }
 
 let tempsRestant = 0;
@@ -99,16 +106,18 @@ function etatGunthraVivante() {
 
 //Fonction pour vérifier si le joueur a trouvé la lance et gunthrà est vivante: Les conditions sont séparé pour afficher les 3 boutons
 function trouveLanceOui() {
-  //Récuperer la valeur de la lanceTrouver et de gunthraVivante du localStorage.
-  //lanceTrouver = localStorage.getItem("lanceTrouver");
-  //gunthraVivante = localStorage.getItem("gunthraVivante");
+  //Sauvegarder la valeur de la lanceTrouver et de gunthraVivante du localStorage.
+  //lanceTrouver = true;
+  //gunthraVivante = true;
+  //lanceTrouver = localStorage.setItem("lanceTrouver", lanceTrouver);
+  //gunthraVivante = localStorage.setItem("gunthraVivante", gunthraVivante);
 
   if (lanceTrouver == true && gunthraVivante == true) {
     rituelReussi = true;
     goToChapter(`rituel_reussi`);
 
     //Sauvegarder la valeur du rituelReussi dans le localStorage
-    //localStorage.setItem("rituelReussi", rituelReussi);
+    localStorage.setItem("rituelReussi", rituelReussi);
   }
 }
 //Fonction ou Fjorm reçoit la lance, mais évite de faire le rituel, car sa soeur est morte
@@ -122,7 +131,7 @@ function eviterRituel() {
     goToChapter(`rituel_evite`);
 
     //Sauvegarder la valeur du rituelReussi dans le localStorage
-    //localStorage.setItem("rituelReussi", rituelReussi);
+    localStorage.setItem("rituelReussi", rituelReussi);
   }
 }
 //Fonction pour vérifier si le joueur n'a pas trouvé la lance et que gunthrà est morte
@@ -136,7 +145,7 @@ function trouveLanceNon() {
     goToChapter(`rituel_echoue`);
 
     //Sauvegarder la valeur du rituelReussi dans le localStorage
-    //localStorage.setItem("rituelReussi", rituelReussi);
+    localStorage.setItem("rituelReussi", rituelReussi);
   }
 }
 //Faire 3 fonctions pour chaque fin: bonne, mauvaise et neutre
@@ -767,42 +776,6 @@ if (localStorage.getItem("tempsRestant") != undefined) {
   //gunthraVivante = localStorage.getItem("gunthraVivante");
   //rituelReussi = localStorage.getItem("rituelReussi");
 } //Pas besoin du else, car utilise la valeur par défault de la variable tempsRestant
-
-/*//Faire la condition pour vérifier si la lance a été trouvé ou non. Si l'état de la variable a changé tu récupère le localStorage, si non tu laisse la valeur par défault de la variable par défault.
-if (localStorage.getItem("lanceTrouver") != undefined) {
-  lanceTrouver = localStorage.getItem("lanceTrouver"); //Me retourne la valeur par défault False
-
-  //Récipérer les données du chapterName stocké dans le localStorage et appeller la fonction pour afficher le prochain chapitre.
-  chapterName = localStorage.getItem("chapterName");
-  goToChapter(chapterName);
-} else {
-  lanceTrouver = false;
-  //Récuperer la valeur par défault quand la condition n'est pas respecté.
-  localStorage.setItem("lanceTrouver", lanceTrouver);
-  lanceTrouver = localStorage.getItem("lanceTrouver");
-
-  //Récipérer les données du chapterName stocké dans le localStorage et appeller la fonction pour afficher le prochain chapitre.
-  chapterName = localStorage.getItem("chapterName");
-  goToChapter(chapterName);
-}*/
-
-/*//Faire la condition pour vérifier si gunthra est vivante ou non comme la lance.
-if (localStorage.getItem("gunthraVivante") != undefined) {
-  gunthraVivante = localStorage.getItem("gunthraVivante"); //Me retourne la valeur par défault False
-
-  //Récipérer les données du chapterName stocké dans le localStorage et appeller la fonction pour afficher le prochain chapitre.
-  chapterName = localStorage.getItem("chapterName");
-  goToChapter(chapterName);
-} else {
-  gunthraVivante = true;
-  //Récuperer la valeur par défault quand la condition n'est pas respecté.
-  localStorage.setItem("gunthraVivante", gunthraVivante);
-  gunthraVivante = localStorage.getItem("gunthraVivante");
-
-  //Récipérer les données du chapterName stocké dans le localStorage et appeller la fonction pour afficher le prochain chapitre.
-  chapterName = localStorage.getItem("chapterName");
-  goToChapter(chapterName);
-}*/
 
 //Essayer de mettre la condition de la lance, de gunthra et du rituel ensemble et regarder si ça marche: 3 conditions en 1 avec les getItem des 3 variables.
 
