@@ -2,6 +2,20 @@ let lanceTrouver = false; //Booléen pour changer l'état de la lance: condition
 let rituelReussi = false; //Faux par défault
 let gunthraVivante = true; //Etat que gunthra est vivante au début de l'histoire
 
+if (localStorage.getItem("lanceTrouver") != undefined) {
+  lanceTrouver = localStorage.getItem("lanceTrouver"); //Me retourne la valeur par défault False
+} else {
+  lanceTrouver = false;
+}
+
+if (localStorage.getItem("gunthraVivante") != undefined) {
+  gunthraVivante = localStorage.getItem("gunthraVivante"); //Me retourne la valeur par défault False
+} else {
+  gunthraVivante = true;
+}
+  
+
+
 let tempsRestant = 0;
 //Cette fonction va servir à gerer l'état du temps restant
 function compteurTemps(nombreJour, prochainChapitre) {
@@ -735,7 +749,7 @@ if (localStorage.getItem("tempsRestant") != undefined) {
   //rituelReussi = localStorage.getItem("rituelReussi");
 } //Pas besoin du else, car utilise la valeur par défault de la variable tempsRestant
 
-//Faire la condition pour vérifier si la lance a été trouvé ou non. Si l'état de la variable a changé tu récupère le localStorage, si non tu laisse la valeur par défault de la variable par défault.
+/*//Faire la condition pour vérifier si la lance a été trouvé ou non. Si l'état de la variable a changé tu récupère le localStorage, si non tu laisse la valeur par défault de la variable par défault.
 if (localStorage.getItem("lanceTrouver") != undefined) {
   lanceTrouver = localStorage.getItem("lanceTrouver"); //Me retourne la valeur par défault False
 
@@ -751,9 +765,9 @@ if (localStorage.getItem("lanceTrouver") != undefined) {
   //Récipérer les données du chapterName stocké dans le localStorage et appeller la fonction pour afficher le prochain chapitre.
   chapterName = localStorage.getItem("chapterName");
   goToChapter(chapterName);
-}
+}*/
 
-//Faire la condition pour vérifier si gunthra est vivante ou non comme la lance.
+/*//Faire la condition pour vérifier si gunthra est vivante ou non comme la lance.
 if (localStorage.getItem("gunthraVivante") != undefined) {
   gunthraVivante = localStorage.getItem("gunthraVivante"); //Me retourne la valeur par défault False
 
@@ -769,7 +783,7 @@ if (localStorage.getItem("gunthraVivante") != undefined) {
   //Récipérer les données du chapterName stocké dans le localStorage et appeller la fonction pour afficher le prochain chapitre.
   chapterName = localStorage.getItem("chapterName");
   goToChapter(chapterName);
-}
+}*/
 
 //Essayer de mettre la condition de la lance, de gunthra et du rituel ensemble et regarder si ça marche: 3 conditions en 1 avec les getItem des 3 variables.
 
