@@ -134,15 +134,6 @@ function goToMauvaiseFin() {
   }
 }
 
-
-
- /*else {
-  tempsRestant = 0;
-  lanceTrouver = false;
-  gunthraVivante = true;
-  rituelReussi = false;
-}*/
-
 //Terminer la création des objets principaux (les lozanges) et commencer les objets des options(les rectangles)
 const chaptersObj = {
   //Chapitre 1
@@ -714,8 +705,6 @@ function goToChapter(chapterName) {
   localStorage.setItem("chapterName", chapterName);
 }
 
-
-
 //Mettre la valeur du localStorage dans la variable chapterName
 let chapterName = localStorage.getItem("chapterName");
 console.log(chapterName);
@@ -755,6 +744,13 @@ if (localStorage.getItem("lanceTrouver") != undefined) {
   goToChapter(chapterName);
 } else {
   lanceTrouver = false;
+  //Récuperer la valeur par défault quand la condition n'est pas respecté.
+  localStorage.setItem("lanceTrouver", lanceTrouver);
+  lanceTrouver = localStorage.getItem("lanceTrouver");
+
+  //Récipérer les données du chapterName stocké dans le localStorage et appeller la fonction pour afficher le prochain chapitre.
+  chapterName = localStorage.getItem("chapterName");
+  goToChapter(chapterName);
 }
 
 //Faire la condition pour vérifier si gunthra est vivante ou non comme la lance.
@@ -766,6 +762,13 @@ if (localStorage.getItem("gunthraVivante") != undefined) {
   goToChapter(chapterName);
 } else {
   gunthraVivante = true;
+  //Récuperer la valeur par défault quand la condition n'est pas respecté.
+  localStorage.setItem("gunthraVivante", gunthraVivante);
+  gunthraVivante = localStorage.getItem("gunthraVivante");
+
+  //Récipérer les données du chapterName stocké dans le localStorage et appeller la fonction pour afficher le prochain chapitre.
+  chapterName = localStorage.getItem("chapterName");
+  goToChapter(chapterName);
 }
 
 //Essayer de mettre la condition de la lance, de gunthra et du rituel ensemble et regarder si ça marche: 3 conditions en 1 avec les getItem des 3 variables.
