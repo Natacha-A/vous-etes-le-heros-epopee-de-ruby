@@ -2,6 +2,7 @@ let lanceTrouver = false; //Booléen pour changer l'état de la lance: condition
 let rituelReussi = false; //Faux par défault
 let gunthraVivante = true; //Etat que gunthra est vivante au début de l'histoire
 
+//Récupérer la valeur sauvegardée dans le localStorage des variables d'états.
 if (localStorage.getItem("lanceTrouver") != undefined) {
   lanceTrouver = localStorage.getItem("lanceTrouver"); //Me retourne la valeur par défault False
 } else {
@@ -13,8 +14,6 @@ if (localStorage.getItem("gunthraVivante") != undefined) {
 } else {
   gunthraVivante = true;
 }
-  
-
 
 let tempsRestant = 0;
 //Cette fonction va servir à gerer l'état du temps restant
@@ -36,23 +35,43 @@ function arriverTemps() {
 
   if (tempsRestant < 7) {
     //Appeler la fonction etatTrouveLance() pour changer la valeur de la variable lanceTrouver à true
-    etatTrouveLance();
+    //Changer la valeur de lanceTrouver à true avec un égale
+    lanceTrouver = true;
+    //Sauvegarder le nouveau état pour la variable lanceTrouver seulement
+    localStorage.setItem("lanceTrouver", lanceTrouver);
+    
     //Gunthrà est vivante: état par défault
     gunthraVivante = true;
+    //Sauvegarder le nouveau état pour la variable gunthraVivante seulement
+    localStorage.setItem("gunthraVivante", gunthraVivante);
+
     goToChapter(`gunthra_vivante`);
 
   } else if (tempsRestant === 7) {
-    //Fjorm a la lance: Appeler la fonction etatTrouveLance() pour changer la valeur de la variable lanceTrouver à true
-    etatTrouveLance();
-    //Gunthra est morte: Appeler la fonction etatGunthraVivante() pour changer la valeur de la variable gunthraVivante à false
-    etatGunthraVivante()
+    //Fjorm a la lance:
+    //Changer la valeur de lanceTrouver à true avec un égale
+    lanceTrouver = true;
+    //Sauvegarder le nouveau état pour la variable lanceTrouver seulement
+    localStorage.setItem("lanceTrouver", lanceTrouver);
+    
+    //Gunthra est morte: changer la valeur de la variable gunthraVivante à false
+    gunthraVivante = false;
+    //Sauvegarder le nouveau état pour la variable gunthraVivante seulement
+    localStorage.setItem("gunthraVivante", gunthraVivante);
+
     goToChapter(`gunthra_lance`);
 
   } else if (tempsRestant > 7) {
-    //Gunthra est morte: Appeler la fonction etatGunthraVivante() pour changer la valeur de la variable gunthraVivante à false
-    etatGunthraVivante();
     //Fjorm n'a pas la lance: état par défault
     lanceTrouver = false;
+    //Sauvegarder le nouveau état pour la variable lanceTrouver seulement
+    localStorage.setItem("lanceTrouver", lanceTrouver);
+
+    //Gunthra est morte: changer la valeur de la variable gunthraVivante à false
+    gunthraVivante = false;
+    //Sauvegarder le nouveau état pour la variable gunthraVivante seulement
+    localStorage.setItem("gunthraVivante", gunthraVivante);
+
     goToChapter(`gunthra_morte`);
   }
 }
@@ -64,7 +83,7 @@ function resetTempsRestant() {
   lanceTrouver = false;
   goToChapter(`le_reveil`);
 }
-//Fonction qui gère l'état de la variable lanceTrouver
+/*//Fonction qui gère l'état de la variable lanceTrouver
 function etatTrouveLance() {
   //Changer la valeur de lanceTrouver à true avec un égale
   lanceTrouver = true;
@@ -76,7 +95,7 @@ function etatGunthraVivante() {
   gunthraVivante = false;
   //Sauvegarder le nouveau état pour la variable gunthraVivante seulement
   localStorage.setItem("gunthraVivante", gunthraVivante);
-}
+}*/
 
 //Fonction pour vérifier si le joueur a trouvé la lance et gunthrà est vivante: Les conditions sont séparé pour afficher les 3 boutons
 function trouveLanceOui() {
