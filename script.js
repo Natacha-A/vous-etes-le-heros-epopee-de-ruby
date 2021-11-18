@@ -6,21 +6,21 @@ let gunthraVivante = true; //Etat que gunthra est vivante au début de l'histoir
 //Récupérer la valeur sauvegardée dans le localStorage des variables d'états.
 if (localStorage.getItem("lanceTrouver") != undefined) {
   lanceTrouver = localStorage.getItem("lanceTrouver"); //Me retourne la valeur récupérer dans le localStorage
-
 } /*else {
   lanceTrouver = false; //Me retourne la valeur par défault False
 }*/
 
 if (localStorage.getItem("gunthraVivante") != undefined) {
   gunthraVivante = localStorage.getItem("gunthraVivante"); //Me retourne la valeur récupérer dans le localStorage
-
 } /*else {
   gunthraVivante = true;
 }*/
 
 if (localStorage.getItem("rituelReussi") != undefined) {
   rituelReussi = localStorage.getItem("rituelReussi"); //Me retourne la valeur récupérer dans le localStorage
-}
+} /*else {
+  rituelReussi = false;
+}*/
 
 let tempsRestant = 0;
 //Cette fonction va servir à gerer l'état du temps restant
@@ -85,24 +85,18 @@ function arriverTemps() {
 //Réinitialiser la valeur du temps restant et changer la valeur de gunthraVivante à true quand le joueur clique sur l'option retourner dans le temps dans le chapitre gunthrà morte
 function resetTempsRestant() {
   tempsRestant = 0;
+  lanceTrouver = false;
   gunthraVivante = true;
   rituelReussi = false;
-  lanceTrouver = false;
+  
+  //Sauvegarder la nouvelle valeur de chaque variable.
+  localStorage.setItem("tempsRestant", tempsRestant);
+  localStorage.setItem("lanceTrouver", lanceTrouver);
+  localStorage.setItem("gunthraVivante",gunthraVivante);
+  localStorage.setItem("rituelReussi", rituelReussi);
+
   goToChapter(`le_reveil`);
 }
-/*//Fonction qui gère l'état de la variable lanceTrouver
-function etatTrouveLance() {
-  //Changer la valeur de lanceTrouver à true avec un égale
-  lanceTrouver = true;
-  //Sauvegarder le nouveau état pour la variable lanceTrouver seulement
-  localStorage.setItem("lanceTrouver", lanceTrouver);
-}
-//Fonction qui gère l'état de gunthra pour l'état eviter le rituel
-function etatGunthraVivante() {
-  gunthraVivante = false;
-  //Sauvegarder le nouveau état pour la variable gunthraVivante seulement
-  localStorage.setItem("gunthraVivante", gunthraVivante);
-}*/
 
 //Fonction pour vérifier si le joueur a trouvé la lance et gunthrà est vivante: Les conditions sont séparé pour afficher les 3 boutons
 function trouveLanceOui() {
@@ -747,9 +741,8 @@ function goToChapter(chapterName) {
   localStorage.setItem("chapterName", chapterName);
 }
 
-//Mettre la valeur du localStorage dans la variable chapterName
+//Déclarer la variable chapterName et lui donner la valeur du localStorage
 let chapterName = localStorage.getItem("chapterName");
-console.log(chapterName);
 
 //Faire la condition du local storage pour vérifier s'il y a quelques chose de sauvegardée dedans.
 if (localStorage.getItem("chapterName") != undefined) {
@@ -760,7 +753,6 @@ if (localStorage.getItem("chapterName") != undefined) {
   //Cette partie ne fonctionne pas?
   goToChapter("le_reveil");
 }
-
 
 //Faire une condition pour chaque variable d'état pour s'assurer que tout fonctionne.
 //Récupérer les valeurs de tous les variables d'états, je ne comprend pas, HELP!!!
