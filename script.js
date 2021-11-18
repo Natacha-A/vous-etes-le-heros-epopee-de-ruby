@@ -4,15 +4,18 @@ let gunthraVivante = true; //Etat que gunthra est vivante au début de l'histoir
 
 //Faire la condition pour vérifier si la lance a été trouvé ou non. Si l'état de la variable a changé tu récupère le localStorage, si non tu laisse la valeur par défault de la variable par défault.
 //Récupérer la valeur sauvegardée dans le localStorage des variables d'états.
-if (localStorage.getItem("lanceTrouver") != undefined) {
+if ((lanceTrouver == true || lanceTrouver == "true") && (gunthraVivante == true || gunthraVivante == "true")) {
   lanceTrouver = localStorage.getItem("lanceTrouver"); //Me retourne la valeur récupérer dans le localStorage
+  gunthraVivante = localStorage.getItem("gunthraVivante"); //Me retourne la valeur récupérer dans le localStorage
+  trouveLanceOui();
 } /*else {
   lanceTrouver = false; //Me retourne la valeur par défault False
+  gunthraVivante = true;
 }*/
 
-if (localStorage.getItem("gunthraVivante") != undefined) {
+/*if (localStorage.getItem("gunthraVivante") != undefined) {
   gunthraVivante = localStorage.getItem("gunthraVivante"); //Me retourne la valeur récupérer dans le localStorage
-} /*else {
+} else {
   gunthraVivante = true;
 }*/
 
