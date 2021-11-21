@@ -4,23 +4,18 @@ let gunthraVivante = true; //Etat que gunthra est vivante au début de l'histoir
 
 //Faire la condition pour vérifier si la lance a été trouvé ou non. Si l'état de la variable a changé tu récupère le localStorage, si non tu laisse la valeur par défault de la variable par défault.
 //Récupérer la valeur sauvegardée dans le localStorage des variables d'états.
+//Si ce qui est sauvegardé équivaut è la string "true" alors la valeur sera un boolean true, sinon un boolean false
 if (localStorage.getItem("lanceTrouver") != undefined) {
-  lanceTrouver = localStorage.getItem("lanceTrouver"); //Me retourne la valeur récupérer dans le localStorage
-} /*else {
-  lanceTrouver = false; //Me retourne la valeur par défault False
-}*/
+  lanceTrouver = localStorage.getItem("lanceTrouver") == "true"; //Me retourne la valeur récupérer dans le localStorage
+} 
 
 if (localStorage.getItem("gunthraVivante") != undefined) {
-  gunthraVivante = localStorage.getItem("gunthraVivante"); //Me retourne la valeur récupérer dans le localStorage
-} /*else {
-  gunthraVivante = true;
-}*/
+  gunthraVivante = localStorage.getItem("gunthraVivante") == "true"; //Me retourne la valeur récupérer dans le localStorage
+}
 
 if (localStorage.getItem("rituelReussi") != undefined) {
-  rituelReussi = localStorage.getItem("rituelReussi"); //Me retourne la valeur récupérer dans le localStorage
-} /*else {
-  rituelReussi = false;
-}*/
+  rituelReussi = localStorage.getItem("rituelReussi") == "true"; //Me retourne la valeur récupérer dans le localStorage
+} 
 
 let tempsRestant = 0;
 //Cette fonction va servir à gerer l'état du temps restant
@@ -687,9 +682,8 @@ function goToChapter(chapterName) {
   //Récupérer les éléments du DOM (HTML)
   let chapter = document.getElementById("chapitre");
   let textDescription = document.getElementById("text");
-  let image = document.getElementById("divImage");
+  let media = document.getElementById("media");
   let options = document.getElementById("options");
-  let video = document.getElementById("divVideo");
 
   //Afficher le soustire, la description de l'histoire et l'image à l'aide d'une variable qui contient le tableau des objets des chapitres, le nom de chaque chapitre et la propriété spécifiée dans l'objet.
   chapter.textContent = chaptersObj[chapterName].subtitle;
@@ -699,21 +693,16 @@ function goToChapter(chapterName) {
   //Si la valeur de la propriété vidéo n'égale pas à undefined afficher la vidéo dans la balise div de l'image
   if (chaptersObj[chapterName].video != undefined) {
     //Insérer une balise vidéo dans la variable vidéo: note: mettre la vidéo et l'image dans la même balise pour que ça fonctionne
-    video.innerHTML = `<div id="divImage"><video class="video" src="${chaptersObj[chapterName].video}" type="video/mp4" loop muted autoplay></video></div>`;
-    video.style.display = "block";
-    image.style.display = "none";
+    media.innerHTML = `<video class="video" src="${chaptersObj[chapterName].video}" type="video/mp4" loop muted autoplay></video>`;
   } else { //Si non afficher l'image comme les autres chapitres
     //Insérer une balise img dans la variable du même nom
-    image.innerHTML = `<div id="divImage"><img class="image" src="${chaptersObj[chapterName].img}" alt="image_chapitre"/></div>`;
-    video.style.display = "none";
-    image.style.display = "block";
+    media.innerHTML = `<img class="image" src="${chaptersObj[chapterName].img}" alt="image_chapitre"/>`;
   }
 
   //Il n'y a pas d'erreur dans la console quand j'appelle la fonction, mais l'image ne s'affiche pas.
   console.log(chapter.textContent);
   console.log(textDescription.textContent);
-  console.log(image.innerHTML);
-  console.log(video.innerHTML);
+  console.log(media.innerHTML);
 
   //Créer la boucle for() pour afficher les choix dans chaque champ de text.
   let textButton = "";
@@ -724,16 +713,9 @@ function goToChapter(chapterName) {
   //Relier le tableau des options au bouton text pour afficher le text à la bonne place.
   options.innerHTML = textButton;
 
-  //Écouter le click des boutons pour exécuter le sons quand il ne joue pas et l'arrêtter quand il joue.
-  //Ça continue d'ajouter d'autres balises audio, c'est bizarre.
-  //Ça marche, mais WTF, je ne comprend pas la condition, lol.
-    if (chaptersObj[chapterName] === chaptersObj[chapterName]) {
-      sound.currentTime = 0;
-      sound.play();
-    } else {
-      sound.pause();
-      sound.currentTime = 0;
-    }
+  sound.currentTime = 0; // Mettre le son au début
+  sound.play(); // Jouer le son
+
   console.log(sound);
   console.log(options);
 
