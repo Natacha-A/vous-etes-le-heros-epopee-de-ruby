@@ -85,10 +85,7 @@ function resetTempsRestant() {
   rituelReussi = false;
   
   //Sauvegarder la nouvelle valeur de chaque variable.
-  localStorage.setItem("tempsRestant", tempsRestant);
-  localStorage.setItem("lanceTrouver", lanceTrouver);
-  localStorage.setItem("gunthraVivante",gunthraVivante);
-  localStorage.setItem("rituelReussi", rituelReussi);
+  localStorage.clear();
 
   goToChapter(`le_reveil`);
 }

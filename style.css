@@ -35,7 +35,12 @@ body{
 }
 
 /*Ajuster la taille du logo, de l'image temporaire, le text et de la vidéo*/
-#divImage, img, .image, #text, .video {
+#divImage, img, .image, .video {
+    width: 400px;
+    height: 500px;
+}
+
+#text {
     width: 400px;
 }
 
@@ -52,10 +57,12 @@ body{
     color: var(--bleu-fonce);
     /*background-color: var(--bleu-clair);*/
     padding: 5px;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 /*Aligner les 3 options horizontalement et mettre le plus d'espace entre les éléments*/
-#options {
+#options, #reset {
     display: flex;
     width: 400px;
     margin: 10px;
@@ -65,7 +72,7 @@ body{
 }
 
 /*Mise en page du style des boutons*/
-.choix {
+.choix, #btn-reset {
     background-color: var(--bleu-fonce);
     color: var(--bleu-clair);
     text-transform: capitalize;
@@ -76,7 +83,7 @@ body{
 }
 
 /*Effet de survole sur les boutons*/
-.choix:hover {
+.choix:hover, #btn-reset:hover {
     background-color: var(--orange);
     color: var(--rouge);
     
