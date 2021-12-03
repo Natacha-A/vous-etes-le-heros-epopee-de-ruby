@@ -7,7 +7,7 @@ let gunthraVivante = true; //Etat que gunthra est vivante au début de l'histoir
 //Si ce qui est sauvegardé équivaut è la string "true" alors la valeur sera un boolean true, sinon un boolean false
 if (localStorage.getItem("lanceTrouver") != undefined) {
   lanceTrouver = localStorage.getItem("lanceTrouver") == "true"; //Me retourne la valeur récupérer dans le localStorage
-} 
+}
 
 if (localStorage.getItem("gunthraVivante") != undefined) {
   gunthraVivante = localStorage.getItem("gunthraVivante") == "true"; //Me retourne la valeur récupérer dans le localStorage
@@ -15,7 +15,7 @@ if (localStorage.getItem("gunthraVivante") != undefined) {
 
 if (localStorage.getItem("rituelReussi") != undefined) {
   rituelReussi = localStorage.getItem("rituelReussi") == "true"; //Me retourne la valeur récupérer dans le localStorage
-} 
+}
 
 let tempsRestant = 0;
 //Cette fonction va servir à gerer l'état du temps restant
@@ -672,6 +672,7 @@ const chaptersObj = {
 //Créer un tableau pour mettre l'objet chaptersObj
 //let chapitreArr = [chaptersObj];
 
+let chbsoundTrack = document.querySelector(".chb-soundTrack");
 //Mettre le audio en dehors de la fonction goToChapter pour éviter la multiplication du son
 let sound = new Audio("assets/sound/son_temporaire.mp3");
 
@@ -710,8 +711,14 @@ function goToChapter(chapterName) {
   //Relier le tableau des options au bouton text pour afficher le text à la bonne place.
   options.innerHTML = textButton;
 
-  sound.currentTime = 0; // Mettre le son au début
-  sound.play(); // Jouer le son
+  //Si le checkbox est coché jouer le son sinon le mettre sur pause
+  if (chbsoundTrack.checked == true) {
+    //console.log(chbsoundTrack.checked);
+    sound.currentTime = 0; // Mettre le son au début
+    sound.play(); // Jouer le son
+  } else {
+    sound.pause();
+  }
 
   console.log(sound);
   console.log(options);
