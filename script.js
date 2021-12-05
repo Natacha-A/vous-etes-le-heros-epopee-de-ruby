@@ -229,7 +229,7 @@ const chaptersObj = {
   massacre_paysans: {
     subtitle: "Sacrifice Essentiel",
     text: "Tu ignore les cris désepérer des paysans et tout le monde meurt. `Comment ose tu les laisser mourrir comme ça!? dit Alfonse et Fjorm simultanément.` `On doit faire vite, on n'a pas le temps à perdre! Il faut qu'on retrouve la soeur de Fjorm le plus rapidement possible!! tu dis pressé.`",
-    img: "assets/image/summoner_heros.webp",
+    img: "assets/image/summoner_heros_retraite.png",
     options: [
       {
         text: "Tu quitte le village sans regarder derrière toi",
@@ -365,7 +365,7 @@ const chaptersObj = {
   combat_general: {
     subtitle: "Combat Décisive",
     text: "Au début, Laergarn et sa soeur se moquent de vos efforts de résister à l'attaque de leur père Surtr. Parcontre, tu ne cède pas, tu les invites à un combat contre toi et ton équipe pour décider qu'est-ce qui va ce passer après. Si on perd tu peut nous tuer, mais si on gagne vous vous tassez de notre chemin. On va rencontrer Gunthrà que vous le voulez ou non!!",
-    img: "assets/image/summoner_heros.webp",
+    img: "assets/image/summoner_heros_souri.png",
     options: [
       {
         text: "Vous gagnez le combat contre les générals.",
@@ -457,7 +457,7 @@ const chaptersObj = {
   temple_glace: {
     subtitle: "Le Rituel de Glace",
     text: "Arrivée au temple de la glace, Fjorm fait face à une décision entrer et faire le rituel ou non. Il y a un risque à faire ce rituel, mais Fjorm sait cela depuis longtemps. Sa détermination à vaincre Surtr et libérer le monde de ce dictateur écrase sa peur de mourrir, mais quand même... Le rituel pourrait ne simplement pas marcher et là quoi faire... Personne ne serait capable de tuer le roi avec le pouvoir de la flame éternelle. NON, il faut faire ce rituel à tout prix!! C'est notre seule chance de vaincre Surtr! dit Fjorm. Tacticien, c'est à toi de jouer, qu'est ce que vous allez faire?",
-    img: "assets/image/temple.jpg",
+    img: "assets/image/royaume_nifl.png",
     options: [
       {
         text: "Fjorm rentre avec détermination",
@@ -489,7 +489,7 @@ const chaptersObj = {
     options: [
       {
         text: "Tu utilise de la magie pour retourner dans le temps.",
-        action: "goToChapter(`royaume_nifl`)",
+        action: "resetTempsRestant()",
       },
     ],
   },
@@ -722,6 +722,15 @@ function goToChapter(chapterName) {
 
   console.log(sound);
   console.log(options);
+
+  //Boucle forEach à l'extérieur de la fonction pour ajouter classe quand le chapitre charge
+  let body = document.querySelector("body");
+  if (chaptersObj[chapterName] == chaptersObj[chapterName]) {
+    body.classList.add(chapterName);
+  } else {
+    body.remove(chapterName);
+  }
+  console.log(body);
 
   //Sauvegarder le chapitre que l'utilisateur est rester sur.
   localStorage.setItem("chapterName", chapterName);

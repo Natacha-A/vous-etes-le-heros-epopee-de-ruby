@@ -36,12 +36,13 @@ body{
 
 /*Ajuster la taille du logo, de l'image temporaire, le text et de la vidéo*/
 #divImage, img, .image, .video {
-    width: 400px;
-    height: 500px;
+    width: 175px;
 }
 
 #text {
     width: 400px;
+    margin: 0px;
+    margin-bottom: 5px;
 }
 
 /*Aligner le titre au centre de l'affiche*/
@@ -50,6 +51,8 @@ body{
     color: var(--jaune);
     width: 100%;
     -webkit-text-stroke: 1px var(--orange);
+    margin-bottom: 0px;
+    margin-top: 5px;
 }
 
 #chapitre {
@@ -65,10 +68,14 @@ body{
 #options, #reset {
     display: flex;
     width: 400px;
-    margin: 10px;
+    margin: 5px;
     flex-direction: row;
     justify-content: space-between;
     align-self: center;
+}
+/*Donner une marge du bas de 10px*/
+#reset  {
+    margin-bottom: 10px;
 }
 
 /*Mise en page du style des boutons*/
