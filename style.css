@@ -12,6 +12,10 @@
     font-family: "Brazier Flame";
 }
 
+html, body {
+    height: 100%;
+}
+
 /*Mise en page du body et centrer le div #game*/
 body{
     margin: 0px;
@@ -96,11 +100,34 @@ body{
     
 }
 
+/*Ajouter une image en arrière-plan et changer la couleur du text et des boutons*/
+/*Faire le même style qu'ici pour gunthrà morte, rituel échoué(changer la couleur de l'arrière-plan) et la mauvaise fin(mettre une autre image ou une vidéo)*/
+.village_detruit {
+    background-image: url("assets/image/village_brule_01.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-/*Cacher les vidéos sauf quand leurs chapitres apparaît sur l'écran*/
-/*Par défault la vidéo est en display none pour la cacher*/
-/*#divVideo {
-    display: none;
-    width: 400px;
-}*/
+.village_detruit #idGame {
+    background-color: var(--rouge);
+}
 
+.village_detruit .logoJeu {
+    color: var(--rouge);
+}
+
+.village_detruit #text, .village_detruit #chapitre {
+    color: var(--orange);
+}
+
+.village_detruit .choix, .village_detruit #btn-reset, .village_detruit label {
+    background-color: var(--orange);
+    color: var(--rouge);
+}
+
+.village_detruit .choix:hover, .village_detruit #btn-reset:hover, .village_detruit label:hover {
+    background-color: var(--orange);
+    color: var(--jaune);
+}
+
+/*Faire un autre style pour gunthrà vivante et le chapitre du repos en groupe (Faire un dégradé)*/

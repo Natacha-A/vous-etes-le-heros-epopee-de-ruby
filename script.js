@@ -723,13 +723,9 @@ function goToChapter(chapterName) {
   console.log(sound);
   console.log(options);
 
-  //Boucle forEach à l'extérieur de la fonction pour ajouter classe quand le chapitre charge
+  //Nope juste le className
   let body = document.querySelector("body");
-  if (chaptersObj[chapterName] == chaptersObj[chapterName]) {
-    body.classList.add(chapterName);
-  } else {
-    body.remove(chapterName);
-  }
+  body.className = chapterName;
   console.log(body);
 
   //Sauvegarder le chapitre que l'utilisateur est rester sur.
