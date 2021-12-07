@@ -94,18 +94,152 @@ body{
 }
 
 /*Effet de survole sur les boutons*/
-.choix:hover, #btn-reset:hover {
+.choix:hover, #btn-reset:hover, label:hover {
     background-color: var(--orange);
     color: var(--rouge);
     
 }
 
 /*Ajouter une image en arrière-plan et changer la couleur du text et des boutons*/
+/*Le reveil*/
+.le_reveil {
+    background-image: url("assets/image/royaume_askr.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.le_reveil #idGame {
+    background-color: var(--bleu-clair);
+}
+
+.le_reveil .logoJeu {
+    color: var(--bleu-moyen);
+    -webkit-text-stroke: 1px var(--bleu-fonce);
+}
+
+.le_reveil #text {
+    color: var(--bleu-fonce);
+    -webkit-text-stroke: 1px var(--bleu-moyen);
+}
+
+.le_reveil .choix, .le_reveil #btn-reset, .le_reveil label {
+    background-color: var(--bleu-moyen);
+    color: var(--bleu-clair);
+}
+
+.le_reveil .choix:hover, .le_reveil #btn-reset:hover, .le_reveil label:hover {
+    background-color: var(--bleu-fonce);
+}
+/*Le sommeil*/
+.le_sommeil {
+    background-image: url("assets/image/royaume_askr.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.le_sommeil #idGame {
+    background-color: var(--bleu-clair);
+}
+
+.le_sommeil .logoJeu {
+    color: var(--bleu-moyen);
+    -webkit-text-stroke: 1px var(--bleu-fonce);
+}
+
+.le_sommeil #text {
+    color: var(--bleu-fonce);
+    -webkit-text-stroke: 1px var(--bleu-moyen);
+}
+
+.le_sommeil .choix, .le_sommeil #btn-reset, .le_sommeil label {
+    background-color: var(--bleu-moyen);
+    color: var(--bleu-clair);
+}
+
+.le_sommeil .choix:hover, .le_sommeil #btn-reset:hover, .le_sommeil label:hover {
+    background-color: var(--bleu-fonce);
+}
+/*Faire le début de chaque chapitre du royaume de Nifl avec ce style*/
+/*royaume_nifl*/
+.royaume_nifl {
+    background-image: url("assets/image/royaume_nifl.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+.royaume_nifl .logoJeu {
+    color: var(--bleu-fonce);
+    -webkit-text-stroke: 1px var(--bleu-clair);
+}
+
+/*repos_group*/
+.repos_group {
+    background-image: url("assets/image/nifl.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+.repos_group .logoJeu {
+    color: var(--bleu-fonce);
+    -webkit-text-stroke: 1px var(--bleu-clair);
+}
+
+/*Temple de glace*/
+.temple_glace {
+    background-image: url("assets/image/royaume_nifl.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+.temple_glace .logoJeu {
+    color: var(--bleu-fonce);
+    -webkit-text-stroke: 1px var(--bleu-clair);
+}
+
+/*Gunthrà vivante*/
+.gunthra_vivante {
+    background-image: url("assets/image/nifl.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+.gunthra_vivante .logoJeu {
+    color: var(--bleu-fonce);
+    -webkit-text-stroke: 1px var(--bleu-clair);
+}
+
+/*Gunthrà lance*/
+.gunthra_lance {
+    background-image: url("assets/image/nifl.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+.gunthra_lance .logoJeu {
+    color: var(--bleu-fonce);
+    -webkit-text-stroke: 1px var(--bleu-clair);
+}
+
+/*Entrer dedans*/
+.entrer_dedans {
+    background-image: url("assets/image/royaume_nifl.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+.entrer_dedans .logoJeu {
+    color: var(--bleu-fonce);
+    -webkit-text-stroke: 1px var(--bleu-clair);
+}
+
 /*Faire le même style qu'ici pour gunthrà morte, rituel échoué(changer la couleur de l'arrière-plan) et la mauvaise fin(mettre une autre image ou une vidéo)*/
 .village_detruit {
     background-image: url("assets/image/village_brule_01.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: 50%;
 }
 
 .village_detruit #idGame {
@@ -129,5 +263,256 @@ body{
     background-color: var(--orange);
     color: var(--jaune);
 }
+/*Chapitre blessure grave: changer le background-image si possible*/
+.blessure_grave {
+    background-image: url("assets/image/general_muspel.webp");
+    background-color: var(--orange);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+}
+.blessure_grave #idGame {
+    background-color: var(--rouge);
+}
 
-/*Faire un autre style pour gunthrà vivante et le chapitre du repos en groupe (Faire un dégradé)*/
+.blessure_grave .logoJeu {
+    color: var(--jaune);
+}
+
+.blessure_grave #text, .blessure_grave #chapitre {
+    color: var(--orange);
+}
+
+.blessure_grave .choix, .blessure_grave #btn-reset, .blessure_grave label {
+    background-color: var(--orange);
+    color: var(--rouge);
+}
+
+.blessure_grave .choix:hover, .blessure_grave #btn-reset:hover, .blessure_grave label:hover {
+    background-color: var(--orange);
+    color: var(--jaune);
+}
+/*Chapitre gunthra morte*/
+.gunthra_morte {
+    background-image: url("assets/image/surtr_debout.webp");
+    background-color: var(--orange);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+}
+
+.gunthra_morte #idGame {
+    background-color: var(--rouge);
+}
+
+.gunthra_morte .logoJeu {
+    color: var(--rouge);
+}
+
+.gunthra_morte #text, .gunthra_morte #chapitre {
+    color: var(--orange);
+}
+
+.gunthra_morte .choix, .gunthra_morte #btn-reset, .gunthra_morte label {
+    background-color: var(--orange);
+    color: var(--rouge);
+}
+
+.gunthra_morte .choix:hover, .gunthra_morte #btn-reset:hover, .gunthra_morte label:hover {
+    background-color: var(--orange);
+    color: var(--jaune);
+}
+
+/*Faire un style pour les bons choix et un autre pour les mauvais choix*/
+.victoire_village {
+    background-image: url("assets/image/village_askr.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.victoire_village #idGame {
+    background-color: var(--bleu-clair);
+}
+
+.victoire_village .logoJeu {
+    color: var(--bleu-moyen);
+    -webkit-text-stroke: 1px var(--bleu-fonce);
+}
+
+.victoire_village #text {
+    color: var(--bleu-fonce);
+    -webkit-text-stroke: 1px var(--bleu-moyen);
+}
+
+.victoire_village .choix, .victoire_village #btn-reset, .victoire_village label {
+    background-color: var(--bleu-moyen);
+    color: var(--bleu-clair);
+}
+
+.victoire_village .choix:hover, .victoire_village #btn-reset:hover, .victoire_village label:hover {
+    background-color: var(--bleu-fonce);
+}
+
+/*Rituel réussi*/
+.rituel_reussi {
+    background-image: url("assets/image/royaume_nifl.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+.rituel_reussi .logoJeu {
+    color: var(--bleu-fonce);
+    -webkit-text-stroke: 1px var(--bleu-clair);
+}
+.rituel_reussi .choix, .rituel_reussi #btn-reset, .rituel_reussi label {
+    color: var(--bleu-clair);
+}
+
+.rituel_reussi .choix:hover, .rituel_reussi #btn-reset:hover, .rituel_reussi label:hover {
+    background-color: var(--bleu-clair);
+    color: var(--bleu-fonce);
+}
+
+/*Rituel Échoué*/
+.rituel_echoue {
+    background-image: url("assets/image/nifl.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+.rituel_echoue .logoJeu {
+    color: var(--bleu-fonce);
+    -webkit-text-stroke: 1px var(--bleu-clair);
+}
+
+/*Rituel évité*/
+.rituel_evite {
+    background-image: url("assets/image/nifl.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+.rituel_evite .logoJeu {
+    color: var(--bleu-fonce);
+    -webkit-text-stroke: 1px var(--bleu-clair);
+}
+
+/*Royaume de muspel*/
+.royaume_muspel {
+    background-image: url("assets/image/muspel_v3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.royaume_muspel #idGame {
+    background-color: var(--rouge);
+}
+
+.royaume_muspel .logoJeu {
+    color: var(--rouge);
+}
+
+.royaume_muspel #text, .royaume_muspel #chapitre {
+    color: var(--orange);
+}
+
+.royaume_muspel .choix, .royaume_muspel #btn-reset, .royaume_muspel label {
+    background-color: var(--orange);
+    color: var(--rouge);
+}
+
+.royaume_muspel .choix:hover, .royaume_muspel #btn-reset:hover, .royaume_muspel label:hover {
+    background-color: var(--orange);
+    color: var(--jaune);
+}
+
+/*Bonne Fin*/
+.bonne_fin {
+    background-image: url("assets/image/nifl.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bonne_fin #idGame {
+    background-color: var(--bleu-clair);
+}
+
+.bonne_fin .logoJeu {
+    color: var(--bleu-moyen);
+    -webkit-text-stroke: 1px var(--bleu-fonce);
+}
+
+.bonne_fin #text {
+    color: var(--bleu-fonce);
+    -webkit-text-stroke: 1px var(--bleu-moyen);
+}
+
+.bonne_fin .choix, .bonne_fin #btn-reset, .bonne_fin label {
+    background-color: var(--bleu-moyen);
+    color: var(--bleu-clair);
+}
+
+.bonne_fin .choix:hover, .bonne_fin #btn-reset:hover, .bonne_fin label:hover {
+    background-color: var(--bleu-fonce);
+}
+
+/*Mauvaise Fin*/
+.mauvaise_fin {
+    background-image: url("assets/image/surtr.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.mauvaise_fin #idGame {
+    background-color: var(--rouge);
+}
+
+.mauvaise_fin .logoJeu {
+    color: var(--rouge);
+}
+
+.mauvaise_fin #text, .mauvaise_fin #chapitre {
+    color: var(--orange);
+}
+
+.mauvaise_fin .choix, .mauvaise_fin #btn-reset, .mauvaise_fin label {
+    background-color: var(--orange);
+    color: var(--rouge);
+}
+
+.mauvaise_fin .choix:hover, .mauvaise_fin #btn-reset:hover, .mauvaise_fin label:hover {
+    background-color: var(--orange);
+    color: var(--jaune);
+}
+
+/*Fin Neutre*/
+.fin_neutre {
+    background-image: url("assets/image/muspel_v3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.fin_neutre #idGame {
+    background-color: var(--rouge);
+}
+
+.fin_neutre .logoJeu {
+    color: var(--rouge);
+}
+
+.fin_neutre #text, .fin_neutre #chapitre {
+    color: var(--orange);
+}
+
+.fin_neutre .choix, .fin_neutre #btn-reset, .fin_neutre label {
+    background-color: var(--orange);
+    color: var(--rouge);
+}
+
+.fin_neutre .choix:hover, .fin_neutre #btn-reset:hover, .fin_neutre label:hover {
+    background-color: var(--orange);
+    color: var(--jaune);
+}
