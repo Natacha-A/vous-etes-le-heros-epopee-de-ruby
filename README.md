@@ -2,7 +2,7 @@
 
 **En ligne:** (https://natacha-a.github.io/vous-etes-le-heros-epopee-de-ruby/)
 
-[Développement web- Projet vous êtes le héros](https://github.com/Natacha-A/vous-etes-le-heros-epopee-de-ruby)
+[Développement web- Projet vous êtes le héros] https://github.com/Natacha-A/vous-etes-le-heros-epopee-de-ruby
 
 **Genre:** Action et Fantaisie
 
