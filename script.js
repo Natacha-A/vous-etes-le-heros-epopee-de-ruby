@@ -167,7 +167,7 @@ const chaptersObj = {
   //Chapitre 1
   le_reveil: {
     subtitle: "L'aventure Commence!!",
-    text: "Tu te reveille au son de quelqu'un qui cogne à la porte. C'est Fjorm, elle vous supplie de l'aider contre le royaume de Muspel qui menace de détruire son royaume Nifl.",
+    text: "Tu te réveilles au son de quelqu'un qui cogne à la porte. C'est Fjorm, elle vous supplie de l'aider contre le royaume de Muspel qui menace de détruire son royaume Nifl.",
     img: "assets/image/fjorm_determine.jpg",
     options: [
       {
@@ -175,7 +175,7 @@ const chaptersObj = {
         action: "goToChapter(`voyage_nifl`)",
       },
       {
-        text: "Tu refuse de te lever du lit",
+        text: "Tu refuses de te lever du lit",
         action: "goToChapter(`le_sommeil`)",
       },
     ],
@@ -183,11 +183,11 @@ const chaptersObj = {
   //Condition if else if pour les choix du tableau des options: goToChapter(chapterName);
   le_sommeil: {
     subtitle: "Je suis fatigué...",
-    text: "*Yawn* je veux dormir encore, je ne veux pas me lever, quitte sans moi Alfonse, tu dit. Mais sérieux!? Cette jeune femme nous demande de l'aide et toi tu ne pense qu'à dormir!? Si tu ne veux pas te lever je vais te prendre par force tacticien! dit Alfonse. *THUD* OUCH!! ok ok ok, je vais venir, tu dit. Sheesh Alfonse, tu exagère un peu, tu chuchote à toi même.",
+    text: "*Yawn* je veux dormir encore, je ne veux pas me lever, quitte sans moi Alfonse, tu dis. Mais sérieux!? Cette jeune femme nous demande de l'aide et toi tu ne penses qu'à dormir!? Si tu ne veux pas te lever je vais te prendre par force tacticien! dit Alfonse. *THUD* OUCH!! Ok ok ok, je vais venir, tu dis. Sheesh Alfonse, tu exagères un peu, tu chuchotes à toi-même.",
     img: "assets/image/royaume_askr.png",
     options: [
       {
-        text: "Tu te dirige vers la porte pour saluer l'étranger",
+        text: "Tu te diriges vers la porte pour saluer l'étranger",
         action: "goToChapter(`voyage_nifl`)",
       },
     ],
@@ -195,7 +195,7 @@ const chaptersObj = {
   //Chapitre 2: Ajouter une propriété vidéo
   voyage_nifl: {
     subtitle: "Le Voyage Vers le Royaume de Nifl",
-    text: "Tu prend la main de Fjorm avec beaucoup d'enthousiasme et tu te précipite dehors avec elle. `*Soupir* Tu est comme un enfant, dit Alfonse en hochant sa tête.` `Hey! Ce n'est pas ma faute que j'aime l'aventure!! tu répond avec embarras. Ah, avant que j'oublie, Fjorm raconte nous ta situation, tu as dit que t'avais besoin de l'aide n'est-ce pas? tu dis.` `Nifl a été attaqué par Muspel, j'ai été séparé de ma famille, je ne sais même pas s'ils sont encore vivants, dit Fjorm avec des larmes qui coule de ses yeux.` `Ok on va t'aider Fjorm, allons-y à Nifl pour retrouver ta soeur!!`",
+    text: "Tu prends la main de Fjorm avec beaucoup d'enthousiasme et tu te précipites dehors avec elle. `*Soupir* Tu est comme un enfant, dit Alfonse en hochant sa tête.` `Hey! Ce n'est pas ma faute que j'aime l'aventure!! tu réponds avec embarras. Ah, avant que j'oublie, Fjorm raconte nous ta situation, tu as dit que t'avais besoin de l'aide n'est-ce pas? tu dis.` `Nifl a été attaqué par Muspel, j'ai été séparé de ma famille, je ne sais même pas s'ils sont encore vivants, dit Fjorm avec des larmes qui coule de ses yeux.` `Ok on va t'aider Fjorm, allons-y à Nifl pour retrouver ta soeur!!`",
     img: "assets/image/fjorm_lance.png",
     options: [
       {
@@ -207,19 +207,19 @@ const chaptersObj = {
   //Chapitre 3: la décision ici affect si Fjorm reçoit la lance ou non.
   village_brule: {
     subtitle: "Un Dilemme incontournable",
-    text: "Tu entend des cris venant d'un village assez proche. Vous vous précipiteriez vers celui-ci. Une fois arrivée au village, un villageois gravement blessé vous demande de les aider `À l'aide notre village est entrain de se faire attaquer, aider nous je vous ensupplie` il dit avant de succomber à ces blessures.",
+    text: "Tu entends des cris venant d'un village assez proche. Vous vous précipiteriez vers celui-ci. Une fois arrivé au village, un villageois gravement blessé vous demande de les aider. `À l'aide notre village est en train de se faire attaquer, aider-nous je vous en supplie` il dit avant de succomber à ces blessures.",
     img: "assets/image/village_brule_02.png",
     options: [
       {
-        text: "Tu ignore leurs cris",
+        text: "Tu ignores leurs cris",
         action: "goToChapter(`massacre_paysans`)",
       },
       {
-        text: "Tu évacue village",
+        text: "Tu évacues village",
         action: "goToChapter(`armee_muspel`)",
       },
       {
-        text: "Tu dévisage un plan",
+        text: "Tu dévisages un plan",
         action: "goToChapter(`pression_equipe`)",
       },
     ],
@@ -228,11 +228,11 @@ const chaptersObj = {
   //Choix 1 du village qui brûle.
   massacre_paysans: {
     subtitle: "Sacrifice Essentiel",
-    text: "Tu ignore les cris désepérer des paysans et tout le monde meurt. `Comment ose tu les laisser mourrir comme ça!? dit Alfonse et Fjorm simultanément.` `On doit faire vite, on n'a pas le temps à perdre! Il faut qu'on retrouve la soeur de Fjorm le plus rapidement possible!! tu dis pressé.`",
+    text: "Tu ignores les cris désespérer des paysans et tout le monde meurt. `Comment ose-tu les laisser mourir comme ça!? disent Alfonse et Fjorm simultanément.` `On doit faire vite, on n'a pas le temps à perdre! Il faut qu'on retrouve la soeur de Fjorm le plus rapidement possible!! tu dis pressé.`",
     img: "assets/image/summoner_heros_retraite.png",
     options: [
       {
-        text: "Tu quitte le village sans regarder derrière toi",
+        text: "Tu quittes le village sans regarder derrière toi",
         action: "compteurTemps(2, `village_detruit`)",
       },
     ],
@@ -240,23 +240,23 @@ const chaptersObj = {
   //Résultat 1 du vilage qui brûle.
   village_detruit: {
     subtitle: "Monstre",
-    text: "Le village est complétement détruit et il n'y a aucun survivant. Tu poursuis ton voyage sans remord. Bravo, tu as laisser tous les citoyens du villages mourrir! J'espère que tu est fière de toi même... Tu est un monstre!!",
+    text: "Le village est complètement détruit et il n'y a aucun survivant. Tu poursuis ton voyage sans remord. Bravo, tu as laissé tous les citoyens du village mourir! J'espère que tu es fière de toi-même... Tu es un monstre!!",
     img: "assets/image/summoner_heros_souri.png",
     options: [
       {
-        text: "Tu continue vers Nifl.",
+        text: "Tu continues vers Nifl.",
         action: "goToChapter(`royaume_nifl`)",
       },
     ],
   },
   //Choix 3 du village qui brûle.
   pression_equipe: {
-    subtitle: "Un Risque Morale",
-    text: "Ton équipe te presse de te dépecher, car l'armée enemie s'avance vers vous.",
+    subtitle: "Un Risque Moral",
+    text: "Ton équipe te presse de te dépêcher, car l'armée ennemie s'avance vers vous.",
     img: "assets/image/alfonse.png",
     options: [
       {
-        text: "Tu surprend l'enemi",
+        text: "Tu surprends l'ennemi",
         action: "goToChapter(`assassinat_secret`)",
       },
     ],
@@ -264,7 +264,7 @@ const chaptersObj = {
   //Résultat 3 du vilage qui brûle.
   assassinat_secret: {
     subtitle: "Le Plan Secret",
-    text: "Vous séparez des petits group de soldats pour mieux les abattres sans ce faire voir par les autres qui sont occupés à détruire le village et à pourchasser les villageois.",
+    text: "Vous séparez des petits groupes de soldats pour mieux les abattre sans se faire voir par les autres qui sont occupés à détruire le village et à pourchasser les villageois.",
     img: "assets/image/alfonse_attaque.png",
     options: [
       {
@@ -280,11 +280,11 @@ const chaptersObj = {
   //Chapitre 4 et choix 2 du village qui brûle.
   armee_muspel: {
     subtitle: "Un Choix Mortel",
-    text: "L'armée enemie vous prend par surprise. Laveaten, le premier général de Muspel attaque le joueur, mais tu esquive son attaque prématuré assez facilement. Alfonse et le reste de ton équipe se précipitent à tes côtés, les villageois encore vivant ce tasse du chemin le plus vite possible et le reste sont entrain de brûler vivant à cause de la flame éternelle. Le combat commence tous les armes sont pointées vers l'enemi qui va gagner?",
+    text: "L'armée ennemie vous prend par surprise. Laveaten, le premier général de Muspel attaque le joueur, mais tu esquives son attaque prématurée assez facilement. Alfonse et le reste de ton équipe se précipitent à tes côtés, les villageois encore vivants se tasse du chemin le plus vite possible et le reste sont entrain de brûler vivant à cause de la flamme éternelle. Le combat commence toutes les armes sont pointées vers l'ennemi qui va gagner?",
     img: "assets/image/laveaten_combat.jpg",
     options: [
       {
-        text: "Tu défend le village de l'armée!",
+        text: "Tu défends le village de l'armée!",
         action: "compteurTemps(3, `survivant_village`)",
       },
       {
@@ -296,7 +296,7 @@ const chaptersObj = {
   //Résultat 1 de l'armée de muspel
   survivant_village: {
     subtitle: "Première Victoire",
-    text: "L'armée ce discipe et vous aidez les survivants à éteindre le feu. Ils vous remerci avec un peu de nourriture. Puis, vous dites vos adieux et vous quittez le village un peu déçu que vous n'avez pas sauvé tout les paysans.",
+    text: "L'armée se dissipe et vous aidez les survivants à éteindre le feu. Les villageois vous remercient avec un peu de nourriture. Puis, vous dites vos adieux et vous quittez le village un peu déçu que vous n'avez pas sauvé tous les paysans.",
     img: "assets/image/village_brule_01.jpg",
     options: [
       {
@@ -308,7 +308,7 @@ const chaptersObj = {
   //Résultat 2 de l'assassinat secret
   victoire_village: {
     subtitle: "Sains et Sauve!!",
-    text: "Les autres soldats fuient les lieux. Vous avez sauvé tous les paysans. Vous les aidez à éteindre le reste du feu et ils vous remerci avec un grand festin et une soirée de repos dans une taverne.",
+    text: "Les autres soldats fuient les lieux. Vous avez sauvé tous les paysans. Vous les aidez à éteindre le reste du feu et ils vous remercient avec un grand festin et une soirée de repos dans une taverne.",
     img: "assets/image/village_askr.png",
     options: [
       {
