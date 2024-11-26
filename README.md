@@ -2,6 +2,11 @@
 
 **En ligne:** https://natacha-a.github.io/vous-etes-le-heros-epopee-de-ruby/
 
+# License
+# License
+Tous les Droits d'auteur pour vont a Natacha-A </br>
+Je n'offre aucune licence pour ce projet L'épopée de Ruby
+
 [Développement web- Projet vous êtes le héros] https://github.com/Natacha-A/vous-etes-le-heros-epopee-de-ruby
 
 **Genre:** Action et Fantaisie
