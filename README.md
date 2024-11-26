@@ -3,7 +3,6 @@
 **En ligne:** https://natacha-a.github.io/vous-etes-le-heros-epopee-de-ruby/
 
 # License
-# License
 Tous les Droits d'auteur pour vont a Natacha-A </br>
 Je n'offre aucune licence pour ce projet L'épopée de Ruby
 
